@@ -1,0 +1,173 @@
+/* ============================================
+   layout.css — Project Detail Page Layout
+   ============================================ */
+
+:root {
+  --bg-primary: #0a0f1c;
+  --bg-secondary: #111827;
+  --card-surface: #1e293b;
+  --accent-primary: #06b6d4;
+  --accent-secondary: #3b82f6;
+  --accent-gradient: linear-gradient(135deg, #06b6d4, #3b82f6);
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --font-body: 'Inter', sans-serif;
+  --font-accent: 'JetBrains Mono', monospace;
+}
+
+/* --- Reset --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- HTML & Body --- */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* --- Google Fonts Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+/* --- Navbar --- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(10, 15, 28, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+/* --- Main Content --- */
+#main-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+}
+
+/* --- Project Header --- */
+#project-header {
+  margin-bottom: 48px;
+}
+
+.project-header-image {
+  width: 100%;
+  height: auto;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-top: 24px;
+  border: 1px solid var(--glass-border);
+}
+
+/* --- Project Details --- */
+#project-details {
+  margin-bottom: 48px;
+}
+
+.project-details-content {
+  margin-top: 16px;
+}
+
+.project-details-content .body-text {
+  margin-bottom: 16px;
+}
+
+.project-details-content .body-text:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Image Gallery --- */
+#project-gallery {
+  margin-bottom: 48px;
+}
+
+.project-gallery-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.gallery-image-container {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--card-surface);
+  border: 1px solid var(--glass-border);
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px 12px 0 0;
+}
+
+/* --- Footer --- */
+#footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 32px 24px;
+  border-top: 1px solid var(--glass-border);
+}
+
+#footer p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.footer-icon {
+  width: 24px;
+  height: 24px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  filter: brightness(0) invert(1);
+}
+
+.footer-icon:hover {
+  opacity: 1;
+}
+
+/* --- Responsive --- */
+@media (min-width: 640px) {
+  #main-content {
+    padding: 60px 40px 80px;
+  }
+
+  .gallery-image-container.half-width {
+    width: calc(50% - 10px);
+  }
+}
+
+@media (min-width: 1024px) {
+  #main-content {
+    padding: 80px 24px 100px;
+  }
+
+  .navbar {
+    padding: 16px 48px;
+  }
+}

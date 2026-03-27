@@ -1,32 +1,10 @@
-
-
-<!-- 
-  IMPORTANT! 
-  
-  Keep this file unchanged to use as a template for all future project pages. 
-
-  For every new project you add to your portfolio, make a copy of this file in the
-  'project-pages' folder with a name related to the project.
--->
-
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-    <!-- 
-      TODO
-
-      Upload your Unemployable (or whatever photo you like) to the assets/images folder
-      and change the name of the image below to match the uploaded one
-
-      Change the title in the <title> tag to whatever you would like the title of your portfolio to be
-
-      This should be the same across all pages.
-     -->
-     <link rel="icon" href="../assets/images/1311.png" />
-     <title>Unemployables Portfolio</title>
-    <meta name="description" content="My portfolio site designed to showcase my projects.">
+     <link rel="icon" href="../assets/images/favicon.svg" />
+     <title>AR System with AI Assistant</title>
+    <meta name="description" content="Bachelor's Thesis — Real-time augmented reality system with AI assistant.">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 		<link rel="stylesheet" href="../css/layout.css">
@@ -38,9 +16,9 @@
 	<body>
     <!-- NAVBAR -->
     <div class="navbar">
-      <a class="nav-title-link" href="../index.html#1">
+      <a class="nav-title-link" href="../index.html#projects">
         <image src="../assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-        <span class="nav-title">José Teo / Projects</span>
+        <span class="nav-title">Teo Lorente / Projects</span>
         <a class="button" href="mailto:joseteolorentevallecillos@gmail.com">
           <span class="button-text">Contact Me</span>
         </a>
@@ -52,72 +30,34 @@
 
       <!-- PROJECT HEADER -->
       <div id="project-header">
-          <!-- 
-            TODO
-
-            - Change the 'main-title' text to the name of your project
-            - Change the 'body-text' text to a short and sweet description of your project (maybe the same as the one on the project card)
-            - Change "desktop.jpeg" to the image filename you uploaded in the assets/images folder.
-          -->
-        <div class="main-title">Project Name</div>
-        <div class="body-text">A small description about the project goes here, get the reader hooked on the project and tell them why they should continue to read this page. Give it a sweet tagline.</div>
-        <image class="project-header-image" src="../assets/images/desktop.jpeg">
+        <div class="main-title">AR System with AI Assistant (Bachelor's Thesis — 9.2/10)</div>
+        <div class="body-text">A real-time augmented reality system integrating computer vision, deep learning, and natural language processing — transforming affordable VR glasses into an interactive AR workspace.</div>
+        <image class="project-header-image" src="../assets/images/ar_system.png">
       </div>
 
       <!-- PROJECT DETAILS -->
-      <!-- 
-        TODO
-
-        - Change the 'subheader-text' to whatever header you want for project details
-        - Add paragraphs using the <div class="body-text"></div> elements in the "project-details-content"
-      -->
       <div id="project-details">
         <div class="subheader-text">Project Details / Background</div>
         <div class="project-details-content">
-          <div class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tristique risus nec feugiat in fermentum. Sed id semper risus in hendrerit gravida. Placerat duis ultricies lacus sed. Id neque aliquam vestibulum morbi blandit cursus risus. Elit pellentesque habitant morbi tristique senectus et netus et. Elementum tempus egestas sed sed risus pretium quam. Nibh ipsum consequat nisl vel pretium lectus quam id leo. Vitae congue mauris rhoncus aenean vel elit.</div>
-          <div class="body-text">Vitae justo eget magna fermentum. Imperdiet nulla malesuada pellentesque elit eget gravida. Aliquet nec ullamcorper sit amet. Aliquet sagittis id consectetur purus. Ac tortor dignissim convallis aenean. Enim neque volutpat ac tincidunt vitae. Lobortis feugiat vivamus at augue. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Viverra orci sagittis eu volutpat. Massa tincidunt nunc pulvinar sapien et ligula. Donec enim diam vulputate ut.</div>
+          <div class="body-text">Designed and developed a real-time augmented reality (AR) system with computer vision and deep learning, leveraging OpenCV, PyTorch, and Keras. The system renders a 3D representation of a Windows PC on any physical surface using visual markers, creating an interactive AR workspace.</div>
+          <div class="body-text">Engineered an AI-powered assistant named "Alberto" with natural language processing (NLP) capabilities and CNN-based facial recognition for secure authentication. The assistant executes voice commands, controls system functions, and interacts with the AR environment.</div>
+          <div class="body-text">Implemented gesture recognition allowing hands-free interaction with AR components, including a virtual mouse controlled by hand movements tracked through computer vision algorithms.</div>
+          <div class="body-text">Innovated a cost-effective AR solution by transforming consumer VR glasses combined with a smartphone into an interactive AR device via server-client real-time streaming with a custom Android APK.</div>
+          <div class="body-text">Optimized real-time image processing through multi-threaded processing to balance GPU/CPU workloads, ensuring smooth AR rendering and responsive interaction at low latency.</div>
         </div>
       </div>
 
       <!-- IMAGE GALLERY -->
       <div id="project-gallery">
-        <!-- TODO - Change the 'subheader-text' to whatever you want the Gallery section header to say -->
         <div class="subheader-text">Image Gallery</div>
         <div class="project-gallery-content">
-            <!-- 
-              TODO
-
-              This is where the images in the gallery live. Here's a simple gallery image for you to copy:
-
-              Full Width Image:
-
-                <div class="gallery-image-container">
-                  <img src="../assets/images/IMAGE_NAME" class="gallery-image">
-                  <span class="image-caption">IMAGE_CAPTION</span>
-                </div>
-
-              Half Width Image: 
-
-                <div class="gallery-image-container half-width">
-                  <img src="../assets/images/IMAGE_NAME" class="gallery-image">
-                  <span class="image-caption">IMAGE_CAPTION</span>
-                </div>
-
-              - To add an image to the this area, copy one of the above, paste it below this comment, and change the following:
-                  - IMAGE_NAME: the name of the image file in assets/images
-                  - IMAGE_CAPTION: to the caption of the image
-            -->
-            <div class="gallery-image-container half-width">
-              <img src="../assets/images/code.jpeg" class="gallery-image">
-              <span class="image-caption">Give your image a caption. People love context.</span>
-            </div>
-            <div class="gallery-image-container half-width">
-              <img src="../assets/images/sketchbook.jpeg" class="gallery-image">
-              <span class="image-caption">Give your image a caption. People love context.</span>
+            <div class="gallery-image-container">
+              <img src="../assets/images/ar_system.png" class="gallery-image">
+              <span class="image-caption">AR System — Real-time augmented reality interface</span>
             </div>
             <div class="gallery-image-container">
-              <img src="../assets/images/camera.jpeg" class="gallery-image">
-              <span class="image-caption">Give your image a caption. People love context.</span>
+              <img src="../assets/images/ar_structure.jpg" class="gallery-image">
+              <span class="image-caption">System Architecture — Server-client streaming pipeline</span>
             </div>
         </div>
       </div>
@@ -125,38 +65,16 @@
 
     <!-- FOOTER -->
     <div id="footer">
-      <!-- 
-        TODO - Change href to your Instagram account (can also delete entire "a" element if no Instagram) 
-
-        This should be the same across all pages.
-      -->
-      <a class="icon-link" target="_blank" href="https://instagram.com/teo_lorente">
-        <image src="../assets/icons/instagram.svg" class="footer-icon"/>
-      </a>
-      <!-- 
-        TODO - Change href to your Twitter account (can also delete entire "a" element if no Twitter) 
-      
-        This should be the same across all pages.
-      -->
-      <a class="icon-link" target="_blank" href="https://twitter.com/teo_lorente">
-        <image src="../assets/icons/twitter.svg" class="footer-icon"/>
-      </a>
-
       <a class="icon-link" target="_blank" href="https://www.linkedin.com/in/joseteodosiolorente">
         <image src="../assets/icons/linkedin.svg" class="footer-icon"/>
       </a>
-      <!-- 
-        TODO - Change the email after "mailto" to your contact email 
-      
-        This should be the same across all pages.
-      -->
       <a class="icon-link" href="mailto:joseteolorentevallecillos@gmail.com">
         <image src="../assets/icons/mail.svg" class="footer-icon"/>
       </a>
     </div>
 
     <footer id="footer">
-      <p>© 2024 José Teo Lorente Vallecillos Portfolio. All rights reserved.</p>
+      <p>&copy; 2026 Jos&eacute; Teodosio Lorente Vallecillos. All rights reserved.</p>
     </footer>
 
 	</body>

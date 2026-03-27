@@ -1,46 +1,23 @@
-
-
-<!-- 
-  IMPORTANT! 
-  
-  Keep this file unchanged to use as a template for all future project pages. 
-
-  For every new project you add to your portfolio, make a copy of this file in the
-  'project-pages' folder with a name related to the project.
--->
-
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-    <!-- 
-      TODO
-
-      Upload your Unemployable (or whatever photo you like) to the assets/images folder
-      and change the name of the image below to match the uploaded one
-
-      Change the title in the <title> tag to whatever you would like the title of your portfolio to be
-
-      This should be the same across all pages.
-     -->
-     <link rel="icon" href="../assets/images/1311.png" />
-     <title>Moore Machine</title>
-    <meta name="description" content="Explore the fascinating world of finite state machines with a Moore Machine implementation.">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="../assets/images/favicon.svg" />
+		<title>Moore Machine Simulator</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 		<link rel="stylesheet" href="../css/layout.css">
-    <link rel="stylesheet" href="../css/typography.css">
-    <link rel="stylesheet" href="../css/utilities.css">
+		<link rel="stylesheet" href="../css/typography.css">
+		<link rel="stylesheet" href="../css/utilities.css">
 
 		<script defer src="../js/script.js"></script>
 	</head>
 	<body>
     <!-- NAVBAR -->
     <div class="navbar">
-      <a class="nav-title-link" href="../index.html#6">
+      <a class="nav-title-link" href="../index.html#projects">
         <image src="../assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-        <span class="nav-title">José Teo / Projects</span>
+        <span class="nav-title">Teo Lorente / Projects</span>
         <a class="button" href="mailto:joseteolorentevallecillos@gmail.com">
           <span class="button-text">Contact Me</span>
         </a>
@@ -52,113 +29,45 @@
 
       <!-- PROJECT HEADER -->
       <div id="project-header">
-          <!-- 
-            TODO
-
-            - Change the 'main-title' text to the name of your project
-            - Change the 'body-text' text to a short and sweet description of your project (maybe the same as the one on the project card)
-            - Change "desktop.jpeg" to the image filename you uploaded in the assets/images folder.
-          -->
-        <div class="main-title">Moore Machine</div>
-        <div class="body-text">Explore the fascinating world of finite state machines with a Moore Machine implementation. This project dives deep into the realm of sequential logic design, providing insight into the operation and functionality of these fundamental computational models.</div>
+        <div class="main-title">Moore Machine Simulator</div>
+        <div class="body-text">An implementation of Moore finite state machines exploring automata theory, formal languages, and the hierarchy of computation models.</div>
         <image class="project-header-image" src="../assets/images/moore_machine.png">
       </div>
 
       <!-- PROJECT DETAILS -->
-      <!-- 
-        TODO
-
-        - Change the 'subheader-text' to whatever header you want for project details
-        - Add paragraphs using the <div class="body-text"></div> elements in the "project-details-content"
-      -->
       <div id="project-details">
         <div class="subheader-text">Project Details / Background</div>
         <div class="project-details-content">
-          <div class="body-text">In this project, the focus lies on the conceptualization and implementation of a Moore Machine, a type of finite state machine characterized by its output being solely determined by its current state. Through this endeavor, a thorough understanding of sequential logic design principles is developed.</div>
-          <div class="body-text">The project encompasses the design and construction of state transition diagrams and state tables, illustrating the intricate relationships between states, inputs, and outputs. Each component is meticulously crafted to ensure robustness and efficiency in operation.</div>
-          <div class="body-text">Furthermore, the implementation of the Moore Machine involves the utilization of digital logic components and circuits, providing hands-on experience in translating abstract concepts into tangible computational systems. Through this project, participants gain valuable insights into the foundational principles of digital system design.</div>
+          <div class="body-text">Implemented a Moore Machine as part of an Automata and Formal Languages course, demonstrating proficiency in mathematical language including formal proof generation. The project explores the relationship between different types of automata and their computational capabilities.</div>
+          <div class="body-text">Utilized finite automata, stack machines, and Turing machines for designing models in language recognition and problem-solving. The implementation showcases the hierarchy relationships between language classes and their corresponding machine types, from regular languages to context-free and recursively enumerable languages.</div>
+          <div class="body-text">Applied diverse computation models for numeric and string function calculations, illustrating practical applications of theoretical computer science concepts. The project bridges the gap between abstract automata theory and concrete implementation, providing tools for visualizing state transitions and output generation.</div>
         </div>
       </div>
 
       <!-- IMAGE GALLERY -->
-      <!-- <div id="project-gallery"> -->
-        <!-- TODO - Change the 'subheader-text' to whatever you want the Gallery section header to say -->
+      <div id="project-gallery">
         <div class="subheader-text">Image Gallery</div>
         <div class="project-gallery-content">
-            <!-- 
-              TODO
-
-              This is where the images in the gallery live. Here's a simple gallery image for you to copy:
-
-              Full Width Image:
-
-                <div class="gallery-image-container">
-                  <img src="../assets/images/IMAGE_NAME" class="gallery-image">
-                  <span class="image-caption">IMAGE_CAPTION</span>
-                </div>
-
-              Half Width Image: 
-
-                <div class="gallery-image-container half-width">
-                  <img src="../assets/images/IMAGE_NAME" class="gallery-image">
-                  <span class="image-caption">IMAGE_CAPTION</span>
-                </div>
-
-              - To add an image to the this area, copy one of the above, paste it below this comment, and change the following:
-                  - IMAGE_NAME: the name of the image file in assets/images
-                  - IMAGE_CAPTION: to the caption of the image
-            -->
-            <div class="gallery-image-container half-width">
-              <img src="../assets/images/code.jpeg" class="gallery-image">
-              <span class="image-caption">Give your image a caption. People love context.</span>
-            </div>
-            <div class="gallery-image-container half-width">
-              <img src="../assets/images/sketchbook.jpeg" class="gallery-image">
-              <span class="image-caption">Give your image a caption. People love context.</span>
-            </div>
             <div class="gallery-image-container">
-              <img src="../assets/images/camera.jpeg" class="gallery-image">
-              <span class="image-caption">Give your image a caption. People love context.</span>
+              <img src="../assets/images/moore_machine.png" class="gallery-image">
+              <span class="image-caption">Moore Machine — State transition diagram</span>
             </div>
         </div>
-      </div> 
-      <!---->
+      </div>
     </div>
 
     <!-- FOOTER -->
     <div id="footer">
-      <!-- 
-        TODO - Change href to your Instagram account (can also delete entire "a" element if no Instagram) 
-
-        This should be the same across all pages.
-      -->
-      <a class="icon-link" target="_blank" href="https://instagram.com/teo_lorente">
-        <image src="../assets/icons/instagram.svg" class="footer-icon"/>
-      </a>
-      <!-- 
-        TODO - Change href to your Twitter account (can also delete entire "a" element if no Twitter) 
-      
-        This should be the same across all pages.
-      -->
-      <a class="icon-link" target="_blank" href="https://twitter.com/teo_lorente">
-        <image src="../assets/icons/twitter.svg" class="footer-icon"/>
-      </a>
-
       <a class="icon-link" target="_blank" href="https://www.linkedin.com/in/joseteodosiolorente">
         <image src="../assets/icons/linkedin.svg" class="footer-icon"/>
       </a>
-      <!-- 
-        TODO - Change the email after "mailto" to your contact email 
-      
-        This should be the same across all pages.
-      -->
       <a class="icon-link" href="mailto:joseteolorentevallecillos@gmail.com">
         <image src="../assets/icons/mail.svg" class="footer-icon"/>
       </a>
     </div>
 
     <footer id="footer">
-      <p>© 2024 José Teo Lorente Vallecillos Portfolio. All rights reserved.</p>
+      <p>&copy; 2026 Jos&eacute; Teodosio Lorente Vallecillos. All rights reserved.</p>
     </footer>
 
 	</body>

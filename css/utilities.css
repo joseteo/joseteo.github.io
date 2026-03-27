@@ -1,0 +1,92 @@
+/* ============================================
+   utilities.css — Project Detail Page Utilities
+   ============================================ */
+
+/* --- Half-width image container --- */
+.half-width {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .half-width {
+    width: calc(50% - 10px);
+  }
+}
+
+/* --- Navigation Link --- */
+.nav-title-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--text-primary, #f1f5f9);
+}
+
+.nav-title-link:hover .nav-title {
+  color: var(--accent-primary, #06b6d4);
+}
+
+/* --- Back Arrow --- */
+.right-arrow-icon {
+  width: 20px;
+  height: 20px;
+  transform: rotate(180deg);
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.nav-title-link:hover .right-arrow-icon {
+  opacity: 1;
+}
+
+/* --- Button --- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: 1px solid var(--accent-primary, #06b6d4);
+  color: var(--accent-primary, #06b6d4);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-left: auto;
+}
+
+.button:hover {
+  background-color: var(--accent-primary, #06b6d4);
+  color: var(--bg-primary, #0a0f1c);
+}
+
+/* --- Icon Link (Footer) --- */
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.icon-link:hover {
+  transform: translateY(-2px);
+}
+
+/* --- Selection --- */
+::selection {
+  background-color: var(--accent-primary, #06b6d4);
+  color: var(--bg-primary, #0a0f1c);
+}
+
+/* --- Custom Scrollbar --- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary, #0a0f1c);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-primary, #06b6d4);
+  border-radius: 3px;
+}
