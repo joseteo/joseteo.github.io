@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+     <link rel="icon" href="../assets/images/favicon.svg" />
+     <title>Edge AI Face Authentication</title>
+    <meta name="description" content="A quantized convolutional neural network for secure facial authentication, optimized for real-time inference on low-power NPU hardware in healthcare edge devices.">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/typography.css">
+    <link rel="stylesheet" href="../css/utilities.css">
+		<script defer src="../js/script.js"></script>
+	</head>
+	<body>
+    <div class="navbar">
+      <a class="nav-title-link" href="../index.html#projects">
+        <image src="../assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+        <span class="nav-title">Teo Lorente / Projects</span>
+        <a class="button" href="mailto:joseteolorentevallecillos@gmail.com">
+          <span class="button-text">Contact Me</span>
+        </a>
+      </a>
+    </div>
+    <div id="main-content">
+      <div id="project-header">
+        <div class="main-title">Edge AI Face Authentication</div>
+        <div class="body-text">A quantized convolutional neural network for secure facial authentication, optimized for real-time inference on low-power NPU hardware in healthcare edge devices.</div>
+      </div>
+      <div id="project-details">
+        <div class="subheader-text">WHAT I BUILT</div>
+        <div class="project-details-content">
+          <div class="body-text">I developed a lightweight convolutional neural network model for facial recognition-based patient authentication. The model was designed from the ground up to run directly on edge healthcare devices, enabling secure identity verification without requiring cloud round-trips or external connectivity.</div>
+          <div class="body-text">The authentication system includes a complete enrollment and matching pipeline. During enrollment, facial embeddings are securely captured and stored on-device. At authentication time, the model generates a new embedding from the live camera feed and performs a similarity match against stored profiles, all within milliseconds on the local hardware.</div>
+          <div class="body-text">This edge-first approach was driven by the healthcare context, where network reliability cannot be guaranteed and where keeping biometric data on-device enhances both security and privacy compliance.</div>
+        </div>
+      </div>
+      <div id="project-details">
+        <div class="subheader-text">TECHNICAL APPROACH</div>
+        <div class="project-details-content">
+          <div class="body-text">I trained a CNN architecture tailored for facial feature extraction, balancing model capacity against the strict computational constraints of the target edge hardware. The architecture was designed with depthwise separable convolutions and efficient attention mechanisms to maximize accuracy within a small parameter budget.</div>
+          <div class="body-text">To achieve real-time performance on the proprietary low-power NPU hardware, I applied INT8 quantization techniques. This involved quantization-aware training to minimize accuracy degradation, careful calibration of quantization parameters, and extensive validation to ensure the quantized model maintained authentication accuracy suitable for healthcare security requirements.</div>
+          <div class="body-text">The deployment pipeline included secure model packaging, on-device inference optimization, and a matching algorithm tuned to balance false acceptance and false rejection rates appropriate for a healthcare identity verification context.</div>
+        </div>
+      </div>
+      <div id="project-details">
+        <div class="subheader-text">IMPACT</div>
+        <div class="project-details-content">
+          <div class="body-text">The system enabled real-time patient identity verification running entirely on edge devices, eliminating the need for cloud-based authentication and the associated latency, connectivity dependencies, and data transfer concerns.</div>
+          <div class="body-text">The quantized model runs at interactive speeds on the NPU hardware, delivering inference results fast enough for a seamless user experience during patient check-in and authentication workflows. This performance was achieved while maintaining authentication accuracy that meets the security standards required in healthcare environments.</div>
+          <div class="body-text">By keeping all biometric processing on-device, the system provides a privacy-preserving authentication solution that aligns with healthcare data protection requirements and reduces the attack surface for sensitive patient identity data.</div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <a class="icon-link" target="_blank" href="https://www.linkedin.com/in/joseteodosiolorente">
+        <image src="../assets/icons/linkedin.svg" class="footer-icon"/>
+      </a>
+      <a class="icon-link" href="mailto:joseteolorentevallecillos@gmail.com">
+        <image src="../assets/icons/mail.svg" class="footer-icon"/>
+      </a>
+    </div>
+    <footer id="footer">
+      <p>&copy; 2026 Jos&eacute; Teodosio Lorente Vallecillos. All rights reserved.</p>
+    </footer>
+	</body>
+</html>

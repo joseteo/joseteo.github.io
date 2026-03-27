@@ -3,6 +3,21 @@
   "children": [
     {
       "type": "frame",
+      "id": "GphLr",
+      "x": -1221,
+      "y": 4500,
+      "name": "Img — Patient Monitoring",
+      "width": 800,
+      "height": 500,
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "./images/generated-1774612442187.png",
+        "mode": "fill"
+      }
+    },
+    {
+      "type": "frame",
       "id": "WMbLL",
       "x": 0,
       "y": 0,
@@ -4194,6 +4209,81 @@
         "type": "image",
         "enabled": true,
         "url": "./images/generated-1774611259066.png",
+        "mode": "fill"
+      }
+    },
+    {
+      "type": "frame",
+      "id": "dE0IN",
+      "x": 0,
+      "y": 4500,
+      "name": "Img — Patient Monitoring",
+      "width": 600,
+      "height": 400,
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "./images/generated-1774612467195.png",
+        "mode": "fill"
+      }
+    },
+    {
+      "type": "frame",
+      "id": "wZ0j4",
+      "x": 700,
+      "y": 4500,
+      "name": "Img — Face Auth",
+      "width": 600,
+      "height": 400,
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "./images/generated-1774612521509.png",
+        "mode": "fill"
+      }
+    },
+    {
+      "type": "frame",
+      "id": "8s32i",
+      "x": 1400,
+      "y": 4500,
+      "name": "Img — Healthcare Pipeline",
+      "width": 600,
+      "height": 400,
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "./images/generated-1774612556402.png",
+        "mode": "fill"
+      }
+    },
+    {
+      "type": "frame",
+      "id": "bdmAG",
+      "x": 2100,
+      "y": 4500,
+      "name": "Img — Carbon Analytics",
+      "width": 600,
+      "height": 400,
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "./images/generated-1774612576511.png",
+        "mode": "fill"
+      }
+    },
+    {
+      "type": "frame",
+      "id": "71pQH",
+      "x": 2800,
+      "y": 4500,
+      "name": "Img — Enterprise RAG",
+      "width": 600,
+      "height": 400,
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "./images/generated-1774612615145.png",
         "mode": "fill"
       }
     }

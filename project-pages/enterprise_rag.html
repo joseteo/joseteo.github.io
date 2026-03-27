@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+     <link rel="icon" href="../assets/images/favicon.svg" />
+     <title>Enterprise RAG System</title>
+    <meta name="description" content="A production Retrieval-Augmented Generation system for internal knowledge retrieval and decision support, deployed at enterprise scale with monitoring and continuous optimization.">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/typography.css">
+    <link rel="stylesheet" href="../css/utilities.css">
+		<script defer src="../js/script.js"></script>
+	</head>
+	<body>
+    <div class="navbar">
+      <a class="nav-title-link" href="../index.html#projects">
+        <image src="../assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+        <span class="nav-title">Teo Lorente / Projects</span>
+        <a class="button" href="mailto:joseteolorentevallecillos@gmail.com">
+          <span class="button-text">Contact Me</span>
+        </a>
+      </a>
+    </div>
+    <div id="main-content">
+      <div id="project-header">
+        <div class="main-title">Enterprise RAG System</div>
+        <div class="body-text">A production Retrieval-Augmented Generation system for internal knowledge retrieval and decision support, deployed at enterprise scale with monitoring and continuous optimization.</div>
+      </div>
+      <div id="project-details">
+        <div class="subheader-text">WHAT I BUILT</div>
+        <div class="project-details-content">
+          <div class="body-text">I designed and deployed a Retrieval-Augmented Generation system that enables natural language queries over internal documentation and knowledge bases. The system serves as a decision-support tool, surfacing relevant information from large and diverse document collections in response to user questions.</div>
+          <div class="body-text">The system supports a variety of use cases — from quick factual lookups to complex queries that require synthesizing information across multiple documents. Users interact through a natural language interface, and the system returns grounded answers with source attribution so that responses can be verified against the original documents.</div>
+          <div class="body-text">The architecture was designed for production reliability at enterprise scale, with built-in guardrails to prevent hallucinated or off-topic responses, quality monitoring to track answer accuracy over time, and administrative controls for managing the document corpus and access permissions.</div>
+        </div>
+      </div>
+      <div id="project-details">
+        <div class="subheader-text">TECHNICAL APPROACH</div>
+        <div class="project-details-content">
+          <div class="body-text">The document ingestion pipeline handles diverse document formats — including PDFs, office documents, and structured data — with format-specific parsing, cleaning, and chunking strategies. Chunk sizes and overlap parameters were tuned to balance retrieval precision against context completeness for downstream answer generation.</div>
+          <div class="body-text">The retrieval layer implements a vector search architecture for semantic similarity matching. Documents are embedded using transformer-based models and indexed in a vector database optimized for low-latency nearest-neighbor queries. The retrieval pipeline includes re-ranking and filtering stages to improve the relevance of retrieved passages before they are passed to the generation model.</div>
+          <div class="body-text">The generation component orchestrates retrieved context with the language model, applying prompt engineering techniques to produce accurate, grounded answers. Guardrails enforce response boundaries, detect potential hallucinations, and ensure source attribution. A response quality monitoring system tracks metrics such as retrieval relevance, answer faithfulness, and user satisfaction over time.</div>
+        </div>
+      </div>
+      <div id="project-details">
+        <div class="subheader-text">IMPACT</div>
+        <div class="project-details-content">
+          <div class="body-text">The system was deployed at enterprise scale for internal knowledge retrieval, providing employees with instant access to information previously locked in scattered documentation. This significantly reduced the time spent searching for answers across document repositories, wikis, and knowledge bases.</div>
+          <div class="body-text">The system reliably handles diverse document formats and query types, with source attribution that gives users confidence in the accuracy of responses. The ability to trace every answer back to its source documents has been particularly valued in contexts where decision-making requires verifiable information.</div>
+          <div class="body-text">Continuous quality monitoring and optimization workflows ensure that the system improves over time. Retrieval and generation metrics are tracked in production dashboards, enabling the team to identify degradation, fine-tune components, and expand the document corpus based on usage patterns and user feedback.</div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <a class="icon-link" target="_blank" href="https://www.linkedin.com/in/joseteodosiolorente">
+        <image src="../assets/icons/linkedin.svg" class="footer-icon"/>
+      </a>
+      <a class="icon-link" href="mailto:joseteolorentevallecillos@gmail.com">
+        <image src="../assets/icons/mail.svg" class="footer-icon"/>
+      </a>
+    </div>
+    <footer id="footer">
+      <p>&copy; 2026 Jos&eacute; Teodosio Lorente Vallecillos. All rights reserved.</p>
+    </footer>
+	</body>
+</html>

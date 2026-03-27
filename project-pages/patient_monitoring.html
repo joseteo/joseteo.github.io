@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+     <link rel="icon" href="../assets/images/favicon.svg" />
+     <title>Patient Risk Prediction System — 92% F1-Score</title>
+    <meta name="description" content="An AI-driven patient monitoring system analyzing real-time biosignals for hospitalization risk prediction, deployed in a healthcare environment serving thousands of patients.">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/typography.css">
+    <link rel="stylesheet" href="../css/utilities.css">
+		<script defer src="../js/script.js"></script>
+	</head>
+	<body>
+    <div class="navbar">
+      <a class="nav-title-link" href="../index.html#projects">
+        <image src="../assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+        <span class="nav-title">Teo Lorente / Projects</span>
+        <a class="button" href="mailto:joseteolorentevallecillos@gmail.com">
+          <span class="button-text">Contact Me</span>
+        </a>
+      </a>
+    </div>
+    <div id="main-content">
+      <div id="project-header">
+        <div class="main-title">Patient Risk Prediction System — 92% F1-Score</div>
+        <div class="body-text">An AI-driven patient monitoring system analyzing real-time biosignals for hospitalization risk prediction, deployed in a healthcare environment serving thousands of patients.</div>
+      </div>
+      <div id="project-details">
+        <div class="subheader-text">WHAT I BUILT</div>
+        <div class="project-details-content">
+          <div class="body-text">I built a predictive analytics system that processes continuous biosignal streams — including ECG, SpO2, and heart rate variability — to identify patients at elevated risk of hospitalization. The system ingests real-time physiological data and transforms it into actionable risk scores that clinicians can use during triage and ongoing patient monitoring.</div>
+          <div class="body-text">A core component of the system is its real-time alerting mechanism, which generates clinician-facing notifications when a patient's risk profile crosses critical thresholds. These alerts integrate directly into existing clinical workflows, ensuring that high-risk patients receive timely attention without overwhelming care teams with false positives.</div>
+          <div class="body-text">The system was designed to support triage workflows in a healthcare environment serving thousands of patients under continuous monitoring, enabling care teams to allocate resources more effectively based on data-driven risk assessments.</div>
+        </div>
+      </div>
+      <div id="project-details">
+        <div class="subheader-text">TECHNICAL APPROACH</div>
+        <div class="project-details-content">
+          <div class="body-text">The foundation of the system is a robust time-series feature engineering pipeline that extracts clinically meaningful features from raw physiological signals. This includes statistical summaries, frequency-domain features, and temporal patterns derived from sliding windows over continuous biosignal streams.</div>
+          <div class="body-text">For risk scoring, I developed an ensemble approach combining gradient-boosted models with deep learning architectures. The gradient-boosted models provided strong baseline performance with interpretable feature importances, while the deep learning components captured complex temporal dependencies in the biosignal data that traditional models could not.</div>
+          <div class="body-text">The inference layer was built as a FastAPI-based service optimized for low-latency predictions in a clinical decision support context. The service handles real-time data ingestion, feature computation, and model inference within tight latency requirements to ensure that risk scores are always current and clinically relevant.</div>
+        </div>
+      </div>
+      <div id="project-details">
+        <div class="subheader-text">IMPACT</div>
+        <div class="project-details-content">
+          <div class="body-text">The system achieved a 92% F1-score on the hospitalization risk prediction task, demonstrating strong performance across both precision and recall. This balance was critical in a clinical setting where both missed detections and false alarms carry significant consequences.</div>
+          <div class="body-text">Through iterative model optimization and threshold tuning, false positives were reduced by 30% compared to the baseline approach. This reduction enabled clinicians to focus their attention on genuinely at-risk patients, improving both workflow efficiency and the quality of clinical decision-making.</div>
+          <div class="body-text">The system was deployed in a production healthcare environment serving thousands of patients under continuous monitoring, providing round-the-clock risk assessment and contributing to more proactive and data-informed patient care.</div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <a class="icon-link" target="_blank" href="https://www.linkedin.com/in/joseteodosiolorente">
+        <image src="../assets/icons/linkedin.svg" class="footer-icon"/>
+      </a>
+      <a class="icon-link" href="mailto:joseteolorentevallecillos@gmail.com">
+        <image src="../assets/icons/mail.svg" class="footer-icon"/>
+      </a>
+    </div>
+    <footer id="footer">
+      <p>&copy; 2026 Jos&eacute; Teodosio Lorente Vallecillos. All rights reserved.</p>
+    </footer>
+	</body>
+</html>
