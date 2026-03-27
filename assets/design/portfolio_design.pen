@@ -3310,6 +3310,892 @@
           ]
         }
       ]
+    },
+    {
+      "type": "frame",
+      "id": "BCJYu",
+      "x": 0,
+      "y": 2700,
+      "name": "Project Page — AR System",
+      "clip": true,
+      "width": 1440,
+      "height": 1600,
+      "fill": "#0A0F1C",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "xMppD",
+          "name": "Navbar",
+          "width": "fill_container",
+          "height": 60,
+          "fill": "rgba(10,15,28,0.95)",
+          "padding": [
+            0,
+            48
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "vd4QU",
+              "name": "navLeft",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "9c92i",
+                  "name": "arrow",
+                  "fill": "#F1F5F9",
+                  "content": "←",
+                  "fontFamily": "Inter",
+                  "fontSize": 18
+                },
+                {
+                  "type": "text",
+                  "id": "2wGJi",
+                  "name": "navTitle",
+                  "fill": "#F1F5F9",
+                  "content": "Teo Lorente / Projects",
+                  "fontFamily": "JetBrains Mono",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ofyxh",
+              "name": "contactBtn",
+              "cornerRadius": 6,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#06B6D4"
+              },
+              "padding": [
+                10,
+                20
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "1fJdZ",
+                  "name": "contactText",
+                  "fill": "#06B6D4",
+                  "content": "Contact Me",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "rectangle",
+          "id": "0GU96",
+          "name": "divider",
+          "fill": "rgba(255,255,255,0.08)",
+          "width": "fill_container",
+          "height": 1
+        },
+        {
+          "type": "frame",
+          "id": "oYA9I",
+          "name": "Content",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": [
+            40,
+            270
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "DKiz7",
+              "name": "title",
+              "fill": "#FFFFFF",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "AR System with AI Assistant\n(Bachelor's Thesis — 9.2/10)",
+              "lineHeight": 1.2,
+              "fontFamily": "Inter",
+              "fontSize": 40,
+              "fontWeight": "800"
+            },
+            {
+              "type": "text",
+              "id": "Lswwc",
+              "name": "tagline",
+              "fill": "#94A3B8",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "A real-time augmented reality system integrating computer vision, deep learning, and natural language processing — transforming affordable VR glasses into an interactive AR workspace.",
+              "lineHeight": 1.75,
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "r1dno",
+              "name": "Hero Image",
+              "width": "fill_container",
+              "height": 350,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./images/generated-1774610495094.png",
+                "mode": "fill"
+              },
+              "cornerRadius": 12,
+              "stroke": {
+                "thickness": 1,
+                "fill": "rgba(255,255,255,0.08)"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "BFwkn",
+              "name": "Details Section",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "EzYvC",
+                  "name": "detailsLabel",
+                  "fill": "#06B6D4",
+                  "content": "PROJECT DETAILS / BACKGROUND",
+                  "fontFamily": "JetBrains Mono",
+                  "fontSize": 12,
+                  "fontWeight": "600",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "R9xIQ",
+                  "name": "p1",
+                  "fill": "#94A3B8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Designed and developed a real-time augmented reality (AR) system with computer vision and deep learning, leveraging OpenCV, PyTorch, and Keras. The system renders a 3D representation of a Windows PC on any physical surface using visual markers.",
+                  "lineHeight": 1.75,
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "OfHru",
+                  "name": "p2",
+                  "fill": "#94A3B8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Engineered an AI-powered assistant named \"Alberto\" with NLP capabilities and CNN-based facial recognition for secure authentication. The assistant executes voice commands and interacts with the AR environment.",
+                  "lineHeight": 1.75,
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "JaDSM",
+                  "name": "p3",
+                  "fill": "#94A3B8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Innovated a cost-effective AR solution by transforming consumer VR glasses + smartphone into an interactive AR device via server-client real-time streaming with a custom Android APK.",
+                  "lineHeight": 1.75,
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "nwHUa",
+      "x": 1600,
+      "y": 2700,
+      "name": "Project Page — Sumo Robot",
+      "clip": true,
+      "width": 1440,
+      "height": 1400,
+      "fill": "#0A0F1C",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "TQrI5",
+          "name": "Navbar",
+          "width": "fill_container",
+          "height": 60,
+          "fill": "rgba(10,15,28,0.95)",
+          "padding": [
+            0,
+            48
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "BEanU",
+              "name": "navL2",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "mpxNT",
+                  "fill": "#F1F5F9",
+                  "content": "←",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "eSEyp",
+                  "fill": "#F1F5F9",
+                  "content": "Teo Lorente / Projects",
+                  "fontFamily": "JetBrains Mono",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "g7Vtt",
+              "name": "btn2",
+              "cornerRadius": 6,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#06B6D4"
+              },
+              "padding": [
+                10,
+                20
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "owXWK",
+                  "fill": "#06B6D4",
+                  "content": "Contact Me",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "rectangle",
+          "id": "F3SAw",
+          "fill": "rgba(255,255,255,0.08)",
+          "width": "fill_container",
+          "height": 1
+        },
+        {
+          "type": "frame",
+          "id": "oBvuQ",
+          "name": "Content",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": [
+            40,
+            270
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "PHZEi",
+              "fill": "#FFFFFF",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Autonomous Sumo Robot —\nCompetition Finalist",
+              "lineHeight": 1.2,
+              "fontFamily": "Inter",
+              "fontSize": 40,
+              "fontWeight": "800"
+            },
+            {
+              "type": "text",
+              "id": "wlSMm",
+              "fill": "#94A3B8",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "An autonomous sumo wrestling robot with intelligent navigation, sensor fusion, and a custom deception strategy that reached the finals at the University of Granada robotics competition.",
+              "lineHeight": 1.75,
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "SXwNc",
+              "name": "Hero Image",
+              "width": "fill_container",
+              "height": 350,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./images/generated-1774610573743.png",
+                "mode": "fill"
+              },
+              "cornerRadius": 12,
+              "stroke": {
+                "thickness": 1,
+                "fill": "rgba(255,255,255,0.08)"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "WRaw8",
+              "name": "Details",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "N1qGB",
+                  "fill": "#06B6D4",
+                  "content": "PROJECT DETAILS / BACKGROUND",
+                  "fontFamily": "JetBrains Mono",
+                  "fontSize": 12,
+                  "fontWeight": "600",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "V9RLo",
+                  "fill": "#94A3B8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Built an autonomous sumo robot powered by four electric motors with 3 ultrasonic sensors for opponent tracking and IR edge detection. Dual Arduino boards with H-bridge motor drivers enabled precise coordination.",
+                  "lineHeight": 1.75,
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "VV0rF",
+                  "fill": "#94A3B8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Engineered a custom black-tape boundary deception strategy that tricked opponent IR sensors, leading the team to the competition finals at the University of Granada.",
+                  "lineHeight": 1.75,
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "JDwIT",
+      "x": 3200,
+      "y": 2700,
+      "name": "Project Page — Moore Machine",
+      "clip": true,
+      "width": 1440,
+      "height": 1400,
+      "fill": "#0A0F1C",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "1Cjfi",
+          "name": "Navbar",
+          "width": "fill_container",
+          "height": 60,
+          "fill": "rgba(10,15,28,0.95)",
+          "padding": [
+            0,
+            48
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "c9VJ3",
+              "name": "navL3",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "3NVhH",
+                  "fill": "#F1F5F9",
+                  "content": "←",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "dd7IS",
+                  "fill": "#F1F5F9",
+                  "content": "Teo Lorente / Projects",
+                  "fontFamily": "JetBrains Mono",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Vh7t6",
+              "name": "btn3",
+              "cornerRadius": 6,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#06B6D4"
+              },
+              "padding": [
+                10,
+                20
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Jye1I",
+                  "fill": "#06B6D4",
+                  "content": "Contact Me",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "rectangle",
+          "id": "auY1v",
+          "fill": "rgba(255,255,255,0.08)",
+          "width": "fill_container",
+          "height": 1
+        },
+        {
+          "type": "frame",
+          "id": "1d4Mh",
+          "name": "Content",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": [
+            40,
+            270
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "xzgPH",
+              "fill": "#FFFFFF",
+              "content": "Moore Machine Simulator",
+              "lineHeight": 1.2,
+              "fontFamily": "Inter",
+              "fontSize": 40,
+              "fontWeight": "800"
+            },
+            {
+              "type": "text",
+              "id": "zEAqb",
+              "fill": "#94A3B8",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "An implementation of Moore finite state machines exploring automata theory, formal languages, and the hierarchy of computation models.",
+              "lineHeight": 1.75,
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "MZ7CG",
+              "name": "Hero Image",
+              "width": "fill_container",
+              "height": 350,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./images/generated-1774610623758.png",
+                "mode": "fill"
+              },
+              "cornerRadius": 12,
+              "stroke": {
+                "thickness": 1,
+                "fill": "rgba(255,255,255,0.08)"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "cmx6H",
+              "name": "Details",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "96iBB",
+                  "fill": "#06B6D4",
+                  "content": "PROJECT DETAILS / BACKGROUND",
+                  "fontFamily": "JetBrains Mono",
+                  "fontSize": 12,
+                  "fontWeight": "600",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "edmZM",
+                  "fill": "#94A3B8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Implemented a Moore Machine demonstrating proficiency in finite automata, stack machines, and Turing machines. Explores language hierarchy relationships between classes and machines.",
+                  "lineHeight": 1.75,
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "Bhq4C",
+                  "fill": "#94A3B8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Applied diverse computation models for numeric and string function calculations, illustrating practical applications of theoretical computer science concepts.",
+                  "lineHeight": 1.75,
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "ehKdZ",
+      "x": 4800,
+      "y": 2700,
+      "name": "Project Page — Monopoly Game",
+      "clip": true,
+      "width": 1440,
+      "height": 1400,
+      "fill": "#0A0F1C",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "xaZtg",
+          "name": "Navbar",
+          "width": "fill_container",
+          "height": 60,
+          "fill": "rgba(10,15,28,0.95)",
+          "padding": [
+            0,
+            48
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "qXHMI",
+              "name": "navL4",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "vuwRQ",
+                  "fill": "#F1F5F9",
+                  "content": "←",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "4lF39",
+                  "fill": "#F1F5F9",
+                  "content": "Teo Lorente / Projects",
+                  "fontFamily": "JetBrains Mono",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "cMJ4A",
+              "name": "btn4",
+              "cornerRadius": 6,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#06B6D4"
+              },
+              "padding": [
+                10,
+                20
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "qih6w",
+                  "fill": "#06B6D4",
+                  "content": "Contact Me",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "rectangle",
+          "id": "4TmPU",
+          "fill": "rgba(255,255,255,0.08)",
+          "width": "fill_container",
+          "height": 1
+        },
+        {
+          "type": "frame",
+          "id": "uwIzz",
+          "name": "Content",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": [
+            40,
+            270
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "7wsPk",
+              "fill": "#FFFFFF",
+              "content": "Monopoly — MVC Architecture",
+              "lineHeight": 1.2,
+              "fontFamily": "Inter",
+              "fontSize": 40,
+              "fontWeight": "800"
+            },
+            {
+              "type": "text",
+              "id": "kaiOD",
+              "fill": "#94A3B8",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "A full implementation of the classic Monopoly board game in Java, built with the Model-View-Controller design pattern and object-oriented programming principles.",
+              "lineHeight": 1.75,
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "GVCp6",
+              "name": "Hero Image",
+              "width": "fill_container",
+              "height": 350,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./images/generated-1774610668456.png",
+                "mode": "fill"
+              },
+              "cornerRadius": 12,
+              "stroke": {
+                "thickness": 1,
+                "fill": "rgba(255,255,255,0.08)"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "erR5G",
+              "name": "Details",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "JdTCR",
+                  "fill": "#06B6D4",
+                  "content": "PROJECT DETAILS / BACKGROUND",
+                  "fontFamily": "JetBrains Mono",
+                  "fontSize": 12,
+                  "fontWeight": "600",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "5XTjq",
+                  "fill": "#94A3B8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Developed a complete Monopoly game in Java with MVC architecture. Clean separation of game logic (Model), user interface (View), and input handling (Controller) for modular, maintainable code.",
+                  "lineHeight": 1.75,
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "G7cpR",
+                  "fill": "#94A3B8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Designed a 2D graphical user interface with OOP-driven game logic including turn management, property purchasing, rent calculation, and auction mechanics.",
+                  "lineHeight": 1.75,
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "CZFlg",
+              "name": "galleryLabel",
+              "fill": "#06B6D4",
+              "content": "IMAGE GALLERY",
+              "fontFamily": "JetBrains Mono",
+              "fontSize": 12,
+              "fontWeight": "600",
+              "letterSpacing": 2
+            },
+            {
+              "type": "frame",
+              "id": "qVw6Y",
+              "name": "Gallery Row",
+              "width": "fill_container",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Bn3Z7",
+                  "name": "img1",
+                  "width": "fill_container",
+                  "height": 200,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1774610705750.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "rgba(255,255,255,0.08)"
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "RqgY8",
+                  "name": "img2",
+                  "width": "fill_container",
+                  "height": 200,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1774610719888.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "rgba(255,255,255,0.08)"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "q4REh",
+              "name": "Details",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "1Cn5w",
+                  "fill": "#06B6D4",
+                  "content": "PROJECT DETAILS / BACKGROUND",
+                  "fontFamily": "JetBrains Mono",
+                  "fontSize": 12,
+                  "fontWeight": "600",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "amfaX",
+                  "fill": "#94A3B8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Developed a complete Monopoly game in Java with MVC architecture. Clean separation of game logic, UI, and input handling for modular code.",
+                  "lineHeight": 1.75,
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "kjg9j",
+      "x": 6340,
+      "y": 0,
+      "name": "GAIA Agent Card Image",
+      "metadata": {
+        "type": "unsplash",
+        "username": "mariolagr",
+        "link": "https://unsplash.com/@mariolagr",
+        "author": "MARIOLA GROBELSKA"
+      },
+      "width": 800,
+      "height": 500,
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "./images/generated-1774611259066.png",
+        "mode": "fill"
+      }
     }
   ]
 }
