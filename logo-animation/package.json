@@ -1,0 +1,16 @@
+{
+  "name": "jt-logo-animation",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npx remotion studio",
+    "render": "npx remotion render LogoAnimation logo-animation.mp4 --codec h264",
+    "render-gif": "npx remotion render LogoAnimation logo-animation.gif --codec gif --every-nth-frame 2"
+  },
+  "dependencies": {
+    "remotion": "^4.0.0",
+    "@remotion/cli": "^4.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

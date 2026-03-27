@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0E7490"/>
+      <stop offset="100%" stop-color="#1E40AF"/>
+    </linearGradient>
+    <linearGradient id="border-grad" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.27"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.27"/>
+    </linearGradient>
+  </defs>
+  <rect x="0.75" y="0.75" width="198.5" height="198.5" rx="31.25" fill="url(#bg-grad)" stroke="url(#border-grad)" stroke-width="1.5"/>
+  <text x="46" y="128" font-family="'JetBrains Mono', monospace" font-size="84" font-weight="700" fill="#FFFFFF">T</text>
+  <text x="101" y="128" font-family="'JetBrains Mono', monospace" font-size="84" font-weight="700" fill="#FFFFFF" opacity="0.5">L</text>
+  <circle cx="157.5" cy="69.5" r="3.5" fill="#67E8F9"/>
+</svg>

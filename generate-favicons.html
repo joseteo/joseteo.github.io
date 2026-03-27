@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generate TL Favicons</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+</head>
+<body style="background:#0a0f1c;color:#fff;font-family:sans-serif;padding:40px;">
+<h1>TL Favicon Generator</h1>
+<p>Click each button to download the PNG. Save to <code>assets/images/</code>, then delete this file.</p>
+
+<div style="display:flex;gap:40px;flex-wrap:wrap;">
+  <div>
+    <h3>32px Favicon</h3>
+    <canvas id="c32" width="32" height="32" style="border:1px solid #333;"></canvas>
+    <canvas id="c32x4" width="128" height="128" style="margin-left:12px;border:1px solid #333;"></canvas>
+    <span style="color:#64748b;font-size:12px;">(4x preview)</span>
+    <br>
+    <button onclick="download('c32','favicon-32.png')" style="margin-top:8px;">Download favicon-32.png</button>
+  </div>
+  <div>
+    <h3>180px Apple Touch Icon</h3>
+    <canvas id="c180" width="180" height="180" style="border:1px solid #333;"></canvas>
+    <br>
+    <button onclick="download('c180','apple-touch-icon.png')" style="margin-top:8px;">Download apple-touch-icon.png</button>
+  </div>
+  <div>
+    <h3>Pencil Reference</h3>
+    <p style="color:#64748b;font-size:12px;">Match this from the Pencil mockup:</p>
+    <ul style="color:#94a3b8;font-size:13px;line-height:1.8;">
+      <li>"T" full white, vertically centered-low</li>
+      <li>"L" ~35% opacity — clearly secondary</li>
+      <li>Gradient: cyan top-left → dark blue bottom-right</li>
+      <li>Small accent dot top-right</li>
+      <li>Corner radius 12% of size</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+document.fonts.ready.then(() => {
+
+  function drawLogo(canvas) {
+    const ctx = canvas.getContext('2d');
+    const s = canvas.width;
+
+    // ── Rounded rect background ──────────────────────────────
+    // rx=24 on 200px = 12%
+    const r = s * 0.12;
+
+    // 135deg gradient: top-left cyan → bottom-right blue
+    const grad = ctx.createLinearGradient(0, 0, s, s);
+    grad.addColorStop(0, '#22D3EE');
+    grad.addColorStop(0.6, '#3B82F6');
+    grad.addColorStop(1, '#2563EB');
+
+    ctx.beginPath();
+    ctx.moveTo(r, 0);
+    ctx.arcTo(s, 0, s, s, r);
+    ctx.arcTo(s, s, 0, s, r);
+    ctx.arcTo(0, s, 0, 0, r);
+    ctx.arcTo(0, 0, s, 0, r);
+    ctx.closePath();
+    ctx.fillStyle = grad;
+    ctx.fill();
+
+    // ── Letters ──────────────────────────────────────────────
+    // Pencil: font-size 100 on 200 = 50%, y baseline at 140/200 = 70%
+    // "T" x=24/200=12%, "L" x=96/200=48%
+    const fontSize = Math.round(s * 0.50);
+    ctx.font = `bold ${fontSize}px "JetBrains Mono", monospace`;
+    ctx.textBaseline = 'alphabetic';
+    const baselineY = s * 0.72;
+
+    // "T" — primary, full white
+    ctx.fillStyle = '#FFFFFF';
+    ctx.globalAlpha = 1.0;
+    ctx.fillText('T', s * 0.12, baselineY);
+
+    // "L" — secondary, 35% opacity to match Pencil's visual weight
+    // (on bright gradient, 0.40 reads too bright — 0.35 matches better)
+    ctx.globalAlpha = 0.35;
+    ctx.fillText('L', s * 0.48, baselineY);
+    ctx.globalAlpha = 1.0;
+
+    // ── Accent dot ───────────────────────────────────────────
+    // Pencil: cx=177 cy=47 r=7 on 200px → 88.5%, 23.5%, 3.5%
+    const dotR = Math.max(s * 0.035, 1.5); // min 1.5px for 32px canvas
+    ctx.beginPath();
+    ctx.arc(s * 0.885, s * 0.235, dotR, 0, Math.PI * 2);
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fill();
+  }
+
+  drawLogo(document.getElementById('c32'));
+  drawLogo(document.getElementById('c180'));
+
+  // 4x scaled preview of 32px favicon
+  const preview = document.getElementById('c32x4');
+  const pCtx = preview.getContext('2d');
+  pCtx.imageSmoothingEnabled = false;
+  pCtx.drawImage(document.getElementById('c32'), 0, 0, 128, 128);
+});
+
+function download(id, filename) {
+  const a = document.createElement('a');
+  a.download = filename;
+  a.href = document.getElementById(id).toDataURL('image/png');
+  a.click();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="anim-border" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#22D3EE"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background with border -->
+  <rect x="1" y="1" width="198" height="198" rx="31" fill="#0F172A" stroke="url(#anim-border)" stroke-width="2" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.4s" fill="freeze"/>
+    <animate attributeName="rx" values="60;31" dur="0.6s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1"/>
+    <animateTransform attributeName="transform" type="scale" values="0;1" dur="0.5s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1"/>
+  </rect>
+
+  <!-- T letter -->
+  <text x="46" y="128" font-family="'JetBrains Mono', monospace" font-size="84" font-weight="700" fill="#22D3EE" opacity="0">
+    T
+    <animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.3s" fill="freeze"/>
+    <animateTransform attributeName="transform" type="translate" values="-20,0;0,0" dur="0.5s" begin="0.3s" fill="freeze" calcMode="spline" keySplines="0.25 0.46 0.45 0.94"/>
+  </text>
+
+  <!-- L letter -->
+  <text x="101" y="128" font-family="'JetBrains Mono', monospace" font-size="84" font-weight="700" fill="#3B82F6" opacity="0">
+    L
+    <animate attributeName="opacity" values="0;0.85" dur="0.4s" begin="0.5s" fill="freeze"/>
+    <animateTransform attributeName="transform" type="translate" values="20,0;0,0" dur="0.5s" begin="0.5s" fill="freeze" calcMode="spline" keySplines="0.25 0.46 0.45 0.94"/>
+  </text>
+
+  <!-- Accent dot -->
+  <circle cx="157.5" cy="69.5" r="3.5" fill="#22D3EE" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.3s" begin="0.7s" fill="freeze"/>
+    <animate attributeName="r" values="0;5;3.5" dur="0.4s" begin="0.7s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1;0.25 0.46 0.45 0.94" keyTimes="0;0.6;1"/>
+  </circle>
+</svg>

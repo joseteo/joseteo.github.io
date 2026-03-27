@@ -1,427 +1,894 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>José Teodosio Lorente Vallecillos | Head of AI & Data Engineering</title>
+    <meta name="description" content="Head of AI & Data Engineering at Devera. Specializing in LLM agents, RAG systems, and healthcare AI.">
 
-    
-    <link rel="icon" href="./assets/images/index_b.png" />
-		<title>Personal Portfolio</title>
-    <meta name="description" content="My portfolio site designed to showcase my projects.">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="José Teodosio Lorente Vallecillos | Head of AI & Data Engineering">
+    <meta property="og:description" content="Head of AI & Data Engineering at Devera. Specializing in LLM agents, RAG systems, and healthcare AI.">
+    <meta property="og:image" content="assets/images/og-image.png">
+    <meta property="og:url" content="https://joseteo.github.io">
 
-		<link rel="stylesheet" href="./css/layout.css">
-    <link rel="stylesheet" href="./css/typography.css">
-    <link rel="stylesheet" href="./css/utilities.css">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="José Teodosio Lorente Vallecillos | Head of AI & Data Engineering">
+    <meta name="twitter:description" content="Head of AI & Data Engineering at Devera. Specializing in LLM agents, RAG systems, and healthcare AI.">
+    <meta name="twitter:image" content="assets/images/og-image.png">
 
-		<script defer src="./js/script.js"></script>
-	</head>
-	<body>
-    <!-- NAVBAR -->
-    <div class="navbar">
-      <a class="nav-title-link" href="./index.html">
-        <!-- TODO - Change the "Portfolio Title" to whatever you want displayed in the top left -->
-        <span class="nav-title">José Teo</span>
-         <!-- TODO - Change the email after 'mailto:' to your email address for contact -->
-        <a class="button" href="mailto:joseteolorentevallecillos@gmail.com">
-          <span class="button-text">Contact Me</span>
-        </a>
-      </a>
-    </div>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
 
-    <!-- MAIN PAGE CONTENT -->
-    <div id="main-content">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-      <!-- PORTFOLIO HEADER -->
-      <div id="portfolio-header">
-        <div id="portfolio-header-image-container">
-          <!-- 
-            TODO
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
 
-            - Change the img "src" attribute to point to the Unemployable image you uploaded (or whatever image).
-            - Change the number to point to your Unemployable & replace the OpenSea link with your own
-            - If you aren't using an Unemployable as your image, remove the entire "a" element
-          -->
-          <img src="./assets/images/CuerpoR.jpg" class="portfolio-header-image">
-        </div>
+    <!-- Skip to Content -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
-          <!-- 
-            TODO
-
-            - Change the main-title to whatver you want
-            - Change the body-text after that to a quick introduction to what you do
-            - Edit the button text if you feel like it. It will link to the projects section below.
-          -->
-        <div id="portfolio-header-text-container">
-            <div class="header-text">
-              <span class="main-title">Hey, I'm Teo.</span>
-              <div class="body-text">A focused and enthusiastic software engineer with a keen interest in software development and artificial intelligence. By comprehensive exposure to the underlying concepts and applying them vividly to various projects, my love for these domains came into being. 
-                I am a passionate individual who thrives to build and apply algorithms to solve real-world industry problems.</div>
-            </div>
-            <a class="button" id="my-work-link">
-              <span class="button-text">Check out my projects</span> 
-              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="scroll-progress" id="scroll-progress"></div>
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo" aria-label="Teo Lorente — Home">
+                <img src="assets/icons/logo-jt.svg" alt="TL Logo" class="nav-logo-img" width="36" height="36">
+                <span class="nav-logo-text">TL</span>
             </a>
-        </div>
-      </div>
-
-      <!-- ABOUT SECTION -->
-      <!-- 
-        TODO
-
-        - Change the subheader-text to whatever header you want
-        - Add paragraphs using the <div class="body-text"></div> elements in the "about-section-content"
-      -->
-      <div id="about-section">
-        <span class="subheader-text">My Background / About Me</span>
-        <div class="about-section-content">
-          <div class="body-text">
-            Hello! I'm José Teodosio Lorente Vallecillos, a passionate computer engineer and software developer with a solid academic background and practical experience in various exciting projects. Let me share more about my education, skills, and what drives me in and outside the world of technology.
-          </div>
-          <div class="body-text">
-            <strong>Education</strong>
-            <ul>
-              <li>
-                <strong>Degree in Computer Engineering</strong>
-                <br>
-                <em>Technical School of Computer Engineering and Telecommunications, Granada, Spain</em>
-                <br>
-                <em>2018 - 2024</em>
-                <br>
-                During my university years, I gained in-depth knowledge in key areas such as algorithms, object-oriented programming, web development, artificial intelligence, and more. I actively participated in challenging projects that allowed me to apply theoretical skills in real-world situations.
-              </li>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-          </div>
-          <div class="body-text">
-            <strong>Skills</strong>
-            <div class="skill-group">
-              <div>
-                <strong>Programming Languages:</strong>
-                <div class="image-container">
-                  <img src="./assets/icons/python.svg" alt="Python">
-                  <div class="image-tooltip">Python</div>
-                </div>
-                
-                <div class="image-container">
-                  <img src="./assets/icons/cpp.svg" alt="C/C++">
-                  <div class="image-tooltip">C/C++</div>
-                </div>
-
-                <div class="image-container">
-                  <img src="./assets/icons/java.svg" alt="Java">
-                  <div class="image-tooltip">Java</div>
-                </div>
-
-                <div class="image-container">
-                  <img src="./assets/icons/javascript.svg" alt="JavaScript">
-                  <div class="image-tooltip">JavaScript</div>
-                </div>
-
-                <div class="image-container">
-                  <img src="./assets/icons/css-3.svg" alt="CSS">
-                  <div class="image-tooltip">CSS</div>
-                </div>
-
-                <div class="image-container">
-                  <img src="./assets/icons/html-5.svg" alt="HTML">
-                  <div class="image-tooltip">HTML</div>
-                </div>
-
-                <div class="image-container">
-                  <img src="./assets/icons/php.svg" alt="PHP">
-                  <div class="image-tooltip">PHP</div>
-                </div>
-                
-                <div class="image-container">
-                  <img src="./assets/icons/ruby.svg" alt="Ruby">
-                  <div class="image-tooltip">Ruby</div>
-                </div>
-                
-                <div class="image-container">
-                  <img src="./assets/icons/flutter.svg" alt="Flutter">
-                  <div class="image-tooltip">Flutter</div>
-                </div>
-                
-                <div class="image-container">
-                  <img src="./assets/icons/dart.svg" alt="Dart">
-                  <div class="image-tooltip">Dart</div>
-                </div>
-                
-                <div class="image-container">
-                  <img src="./assets/icons/sql.svg" alt="SQL">
-                  <div class="image-tooltip">SQL</div>
-                </div>
-                
-                <div class="image-container">
-                  <img src="./assets/icons/mysql.svg" alt="MySQL">
-                  <div class="image-tooltip">MySQL</div>
-                </div>
-                
-                <div class="image-container">
-                  <img src="./assets/icons/git.svg" alt="Git">
-                  <div class="image-tooltip">Git</div>
-                </div>
-                
-
-                <!-- Agrega imágenes para los demás lenguajes según sea necesario -->
-              </div>
-              <div>
-                <strong>Technologies and Tools:</strong>
-                <div class="image-container">
-                  <img src="./assets/icons/linux.svg" alt="Linux">
-                  <div class="image-tooltip">Linux</div>
-                </div>
-                
-                <div class="image-container">
-                  <img src="./assets/icons/pytorch.svg" alt="Pytorch">
-                  <div class="image-tooltip">PyTorch</div>
-                </div>
-                
-                <div class="image-container">
-                  <img src="./assets/icons/docker.svg" alt="Docker">
-                  <div class="image-tooltip">Docker</div>
-                </div>
-                
-                <div class="image-container">
-                  <img src="./assets/icons/opencv.svg" alt="OpenCV">
-                  <div class="image-tooltip">OpenCV</div>
-                </div>
-
-                <div class="image-container">
-                  <img src="./assets/icons/opengl.svg" alt="OpenGL">
-                  <div class="image-tooltip">OpenGL</div>
-                </div>
-
-                
-
-                <!-- Agrega imágenes para las demás tecnologías y herramientas según sea necesario -->
-              </div>
-            </div>
-          </div>
-        
-          <!-- 
-          <div class="body-text">
-            <strong>Highlighted Projects</strong>
-            <ul>
-              <li>
-                <strong>Augmented Reality System with Neural Network-Powered Assistant</strong>
-                <p>Led a project in ubiquitous and environmental computing, developing an augmented reality system with real-time image recognition and processing. Created a 3D augmented reality representation of a Windows PC on a table with markers defining its borders. Implemented an AI-powered personal assistant named Alberto for basic conversations and user command execution.</p>
-              </li>
-              <li>
-                <strong>Flutter App with Ruby on Rails Backend for Motorcycle Customization</strong>
-                <p>Developed a motorcycle configurator app using Dart and Flutter with a backend powered by Ruby on Rails. Implemented a secure user authentication system with hashed passwords and robust database security measures. Designed a relational database to store user profiles, orders, and precise configurations.</p>
-              </li>
-              <li>
-                <strong>Interactive 3D Scene with Handcrafted Models and Animations</strong>
-                <p>Created a dynamic 3D scene in C++ using OpenGL, featuring handcrafted .ply models and intricate animations. Implemented a keyboard-controlled menu system for activating five simultaneous animations, switching cameras, and adjusting lighting.</p>
-              </li>
-            </ul>
-          </div>-->
-          <div class="body-text">
-            <strong>About Me</strong>
-            <p>Passionate about problem-solving and creative software development, I am always seeking new opportunities to learn and grow. My focus goes beyond code; I look for innovative solutions that positively impact user experience and the industry as a whole.</p>
-            <p>I'm an active individual with a passion for sports, having participated in federated competitions across various disciplines. Over the years, I've achieved success, earning trophies and medals in almost every sport I've pursued. My favorites include rugby, surfing, skiing, football, and basketball. However, above all, my heart belongs to the world of cars.</p>
-            <p>From a young age, cars have captured my fascination, and that enthusiasm has only grown. While I haven't yet entered professional rallying, it's a dream I aspire to fulfill at a high European level. I've already competed in karting and closely follow Formula 1, staying deeply connected to the world of automobiles.</p>
-            <p>Beyond sports, another one of my passions is assembling LEGO sets. Whether it's creating intricate car models or exploring various categories, I find joy in the creativity and attention to detail that LEGO building offers.</p>
-            <p>Thank you for visiting my portfolio. If you have any questions or an interesting project, I'd love to hear from you!</p>
-          </div>
+            <a href="assets/cv/Curriculum_Vitae_José_Teodosio_Lorente_Vallecillos.pdf" class="btn btn-outline btn-sm" download>Download CV</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-      </div>
-      
+    </nav>
 
-      <!-- PROJECTS / MY WORK SECTION -->
-      <div id="my-work-section">
-        <!-- TODO - Change the subheader-text to whatever you want the Projects section header to say -->
-        <span class="subheader-text">My Work / My Projects</span>
+    <!-- Main Content -->
+    <main id="main-content">
 
-        <div class="projects-container" id="projects">
-          <!-- 
-            TODO
-
-            This is where the project cards live. Here's a base level project card for you to copy:
-            <div class="project-card">
-              <img src="./assets/images/IMAGE_NAME" class="project-image">
-              <div class="project-card-text-container">
-                <div class="subheader-text project-title">PROJECT_NAME</div>
-                <div class="body-text project-card-text">SMALL_PROJECT_DESCRIPTION</div>
-              </div>
-              <a class="button" href="./project-pages/PROJECT_PAGE_NAME.html">
-                <span class="button-text">Read More</span>
-                <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-              </a>
-            </div>
-
-            - To add a project to the this area, copy the above, paste it below this comment, and change the following:
-                - IMAGE_NAME: the name of the image file in assets/images
-                - PROJECT_NAME: the name of the project (keep it short, it only shows 1 line)
-                - SMALL_PROJECT_DESCRIPTION: a quick project description (max 4 lines)
-                - PROJECT_PAGE_NAME.html: the html filename for the project (must be in project-pages folder)
-          -->
-          <div class="project-card" id="1">
-            <img src="./assets/images/ar_system.png" class="project-image">
-            <div class="project-card-text-container">
-              <div class="subheader-text project-title">Augmented Reality System with Neural Network‑Powered Assistant</div>
-              <div class="body-text project-card-text">Led a project in Ubiquitous and Environmental Computing focused on augmented reality (AR), real‑time image recognition, and processing. Developed a sophisticated AR system featuring real‑time image recognition, creating a 3D Augmented Reality Representation of a Windows PC on a table with markers defining its borders.</div>
-            </div>
-            <a class="button" href="./project-pages/building_page.html">
-              <span class="button-text">Read More</span>
-              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-            </a>
-          </div>
-          
-          <div class="project-card" id="2">
-            <img src="./assets/images/community_system.png" class="project-image">
-            <div class="project-card-text-container">
-              <div class="subheader-text project-title">Community Incidents Management System</div>
-              <div class="body-text project-card-text">Led the development of a comprehensive web platform from scratch using HTML, HTTPS, CSS, PHP, and JavaScript, hosted on an Apache server. Designed and implemented a fully functional database system with a user table, allowing residents to register accounts and securely manage incidents in their neighborhood.</div>
-            </div>
-            <a class="button" href="./project-pages/building_page.html">
-              <span class="button-text">Read More</span>
-              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-            </a>
-          </div>
-          
-          <div class="project-card" id="3">
-            <img src="./assets/images/moto_builder2.png" class="project-image">
-            <div class="project-card-text-container">
-              <div class="subheader-text project-title">Flutter App with Ruby on Rails Backend for Motorcycle Customization</div>
-              <div class="body-text project-card-text">Developed a motorcycle configurator app using Dart and Flutter, with a backend powered by Ruby on Rails. Implemented a secure user authentication system with hashed passwords and robust database security measures. Constructed a user‑friendly interface with animated transitions, a structured menu, and a page hierarchy for seamless navigation.</div>
-            </div>
-            <a class="button" href="./project-pages/building_page.html">
-              <span class="button-text">Read More</span>
-              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-            </a>
-          </div>
-          
-          <div class="project-card" id="4">
-            <img src="./assets/images/multimedia_paint.png" class="project-image">
-            <div class="project-card-text-container">
-                <div class="subheader-text project-title">Multimedia Paint Application</div>
-                <div class="body-text project-card-text">
-                    This project involves building an advanced paint program in Java, inspired by Windows Paint but with additional features. The application explores multimedia concepts, including sound, image, graphics, video, and animations.
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <canvas id="particle-canvas"></canvas>
+            <div class="hero-content" data-parallax>
+                <p class="hero-greeting">Hello, I'm</p>
+                <h1 class="hero-name">Teo Lorente</h1>
+                <div class="hero-typed">
+                    <span class="typed-prefix">I </span><span id="typed-output"></span><span class="typed-cursor">|</span>
+                </div>
+                <p class="hero-tagline">Head of AI & Data Engineering — Building intelligent systems that matter</p>
+                <div class="hero-ctas">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-outline">Get In Touch</a>
                 </div>
             </div>
-            <a class="button" href="./project-pages/building_page.html">
-                <span class="button-text">Read More</span>
-                <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-            </a>
-          </div>
-        
+            <div class="scroll-indicator">
+                <div class="scroll-line"></div>
+                <span>SCROLL</span>
+            </div>
+        </section>
 
-          <div class="project-card" id="5">
-            <img src="./assets/images/sumo_robot.jpg" class="project-image">
-            <div class="project-card-text-container">
-              <div class="subheader-text project-title">Autonomous Sumo Wrestling Robot</div>
-              <div class="body-text project-card-text">Designed and built an Autonomous Sumo Wrestling Robot with intelligent movement using four electric motors. Integrated sensors, including three ultrasonic sensors for opponent detection and an infrared sensor to avoid going out of bounds. Developed a unique strategy using a Black‑Taped Plate to induce opponent retreats and successfully reached the Finals.</div>
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">ABOUT ME</span>
+                    <h2 class="section-title">Know Who I Am</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="about-grid">
+                    <div class="about-photo-wrapper">
+                        <div class="about-photo-border"></div>
+                        <img src="assets/images/CuerpoR.jpg" alt="José Teodosio Lorente Vallecillos" class="about-photo">
+                    </div>
+                    <div class="about-text">
+                        <p>I'm a Head of AI & Data Engineering at Devera, where I lead the design and deployment of intelligent systems that drive real-world impact. With a strong foundation in computer science and a Master's in AI & Data Engineering (9.5/10 GPA), I specialize in building production-grade LLM agents, RAG architectures, and scalable data pipelines for domains like sustainability and healthcare.</p>
+                        <p>Previously at Remote Care Partners, I developed AI-powered patient monitoring systems, achieving a 92% F1-score on hospitalization risk prediction and deploying quantized CNNs for real-time face authentication on edge devices. I thrive at the intersection of research and engineering — turning cutting-edge AI into robust, deployable solutions.</p>
+                        <div class="stats-row">
+                            <div class="stat">
+                                <span class="stat-number" data-target="2">0</span><span class="stat-suffix">+</span>
+                                <span class="stat-label">Years in AI</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number" data-target="92">0</span><span class="stat-suffix">%</span>
+                                <span class="stat-label">F1-Score</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number" data-target="9.5">0</span><span class="stat-suffix">/10</span>
+                                <span class="stat-label">MSc GPA</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number" data-target="0.019">0</span><span class="stat-suffix">%</span>
+                                <span class="stat-label">Top Percentile</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <a class="button" href="./project-pages/building_page.html">
-              <span class="button-text">Read More</span>
-              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-            </a>
-          </div>
-          
-          <div class="project-card" id="6">
-            <img src="./assets/images/moore_machine.png" class="project-image">
-            <div class="project-card-text-container">
-              <div class="subheader-text project-title">Moore Machine Implementation and Competencies</div>
-              <div class="body-text project-card-text">Implemented a Moore Machine and demonstrated proficiency in mathematical language, including proof generation. Utilized Finite Automata, stack machines, and Turing machines for designing models in language recognition problem‑solving. Explored hierarchy relationships between language classes and machines, showcasing a comprehensive understanding of interconnections.</div>
-            </div>
-            <a class="button" href="./project-pages/building_page.html">
-              <span class="button-text">Read More</span>
-              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-            </a>
-          </div>
+        </section>
 
-          <div class="project-card" id="7">
-            <img src="./assets/images/3d_scene.jpg" class="project-image">
-            <div class="project-card-text-container">
-              <div class="subheader-text project-title">Interactive 3D Scene with Handcrafted Models and Animations</div>
-              <div class="body-text project-card-text">Developed a dynamic 3D scene in C++ using OpenGL, featuring handcrafted .ply models and intricate animations. Implemented a keyboard‑controlled menu system for activating five simultaneous animations, switching cameras, and adjusting lighting. Applied textures to enhance visual realism within the scene, elevating the overall user experience.</div>
+        <!-- Experience Section -->
+        <section id="experience" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">EXPERIENCE</span>
+                    <h2 class="section-title">Where I've Worked</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="timeline">
+                    <!-- Devera -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Sep 2025 — Present</div>
+                        <div class="timeline-card glass-card">
+                            <h3>Head of AI & Data Engineering</h3>
+                            <p class="timeline-company">Devera</p>
+                            <ul>
+                                <li>Led redesign of core AI infrastructure, establishing scalable foundations for intelligent automation across the platform</li>
+                                <li>Architected scalable data pipelines for carbon footprint estimation, enabling real-time sustainability analytics</li>
+                                <li>Designed and deployed RAG systems for document understanding and knowledge retrieval at enterprise scale</li>
+                                <li>Full lifecycle ownership from research and prototyping through production deployment and monitoring</li>
+                            </ul>
+                            <div class="timeline-tags">
+                                <span>LLM Agents</span>
+                                <span>RAG</span>
+                                <span>Data Pipelines</span>
+                                <span>Python</span>
+                                <span>AWS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Remote Care Partners - Engineer -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Sep 2024 — Sep 2025</div>
+                        <div class="timeline-card glass-card">
+                            <h3>AI & ML Engineer</h3>
+                            <p class="timeline-company">Remote Care Partners</p>
+                            <ul>
+                                <li>AI-driven patient monitoring: built end-to-end systems for predictive healthcare analytics serving thousands of patients</li>
+                                <li>Quantized CNN for face authentication: deployed lightweight deep learning models on edge devices for secure patient verification</li>
+                                <li>Real-time biosignals integration: engineered pipelines processing continuous vital sign streams for anomaly detection</li>
+                                <li>Achieved 92% F1-score on hospitalization risk prediction model, directly impacting clinical decision-making</li>
+                            </ul>
+                            <div class="timeline-tags">
+                                <span>PyTorch</span>
+                                <span>TensorFlow</span>
+                                <span>FastAPI</span>
+                                <span>Docker</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Remote Care Partners - Intern -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Mar 2024 — Aug 2024</div>
+                        <div class="timeline-card glass-card">
+                            <h3>AI & ML Intern</h3>
+                            <p class="timeline-company">Remote Care Partners</p>
+                            <ul>
+                                <li>End-to-end ML pipelines: designed and implemented complete machine learning workflows from data ingestion to model serving</li>
+                                <li>Weather-aware health recommendations: built predictive models correlating environmental data with patient health outcomes</li>
+                                <li>Achieved 45% latency reduction through model optimization and efficient inference pipeline architecture</li>
+                            </ul>
+                            <div class="timeline-tags">
+                                <span>Scikit-learn</span>
+                                <span>Pandas</span>
+                                <span>Python</span>
+                                <span>SQL</span>
+                                <span>REST APIs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <a class="button" href="./project-pages/3d_scene.html">
-              <span class="button-text">Read More</span>
-              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-            </a>
-          </div>
-          
-          <div class="project-card" id="8">
-            <img src="./assets/images/maze_navigation.jpg" class="project-image">
-            <div class="project-card-text-container">
-              <div class="subheader-text project-title">Maze Navigation with Wolf Agents</div>
-              <div class="body-text project-card-text">Implemented an Intelligent Agent System for maze navigation with a focus on user evasion from wolf agents. Designed and simulated a dynamic maze environment with four different terrain types: Water, Mud, Normal land, and Forest. Developed an algorithm for user movement considering the effects of terrain on speed, requiring the user to find a Hidden Swimsuit to traverse water.</div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">SKILLS</span>
+                    <h2 class="section-title">What I Work With</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="skill-tabs">
+                    <button class="skill-tab active" data-category="all">All</button>
+                    <button class="skill-tab" data-category="ai-ml">AI / ML</button>
+                    <button class="skill-tab" data-category="backend">Backend</button>
+                    <button class="skill-tab" data-category="devops">DevOps / Cloud</button>
+                    <button class="skill-tab" data-category="data">Data</button>
+                    <button class="skill-tab" data-category="languages">Languages</button>
+                </div>
+                <div class="skills-grid">
+                    <!-- AI / ML -->
+                    <div class="skill-card" data-category="ai-ml">
+                        <div class="skill-icon"><img src="assets/icons/pytorch.svg" alt="PyTorch"></div>
+                        <span class="skill-name">PyTorch</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="90"></div></div>
+                    </div>
+                    <div class="skill-card" data-category="ai-ml">
+                        <div class="skill-icon"><img src="assets/icons/tensorflow.svg" alt="TensorFlow"></div>
+                        <span class="skill-name">TensorFlow</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="85"></div></div>
+                    </div>
+                    <div class="skill-card" data-category="ai-ml">
+                        <div class="skill-icon"><img src="assets/icons/langchain.svg" alt="LangChain"></div>
+                        <span class="skill-name">LangChain</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="92"></div></div>
+                    </div>
+                    <div class="skill-card" data-category="ai-ml">
+                        <div class="skill-icon"><i data-lucide="search"></i></div>
+                        <span class="skill-name">RAG Systems</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="95"></div></div>
+                    </div>
+                    <div class="skill-card" data-category="ai-ml">
+                        <div class="skill-icon"><img src="assets/icons/scikit-learn.svg" alt="Scikit-learn"></div>
+                        <span class="skill-name">Scikit-learn</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="82"></div></div>
+                    </div>
+                    <div class="skill-card" data-category="ai-ml">
+                        <div class="skill-icon"><img src="assets/icons/opencv.svg" alt="OpenCV"></div>
+                        <span class="skill-name">OpenCV</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="80"></div></div>
+                    </div>
+                    <div class="skill-card" data-category="ai-ml">
+                        <div class="skill-icon"><img src="assets/icons/huggingface.svg" alt="Hugging Face"></div>
+                        <span class="skill-name">Hugging Face</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="90"></div></div>
+                    </div>
+                    <div class="skill-card" data-category="ai-ml">
+                        <div class="skill-icon"><i data-lucide="layers"></i></div>
+                        <span class="skill-name">Deep Learning</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="92"></div></div>
+                    </div>
+                    <div class="skill-card" data-category="ai-ml">
+                        <div class="skill-icon"><i data-lucide="message-square"></i></div>
+                        <span class="skill-name">NLP</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="85"></div></div>
+                    </div>
+                    <div class="skill-card" data-category="ai-ml">
+                        <div class="skill-icon"><i data-lucide="cpu"></i></div>
+                        <span class="skill-name">Agent Orchestration</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="93"></div></div>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="skill-card" data-category="backend">
+                        <div class="skill-icon"><img src="assets/icons/python.svg" alt="Python"></div>
+                        <span class="skill-name">Python</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="95"></div></div>
+                    </div>
+                    <div class="skill-card" data-category="backend">
+                        <div class="skill-icon"><img src="assets/icons/fastapi.svg" alt="FastAPI"></div>
+                        <span class="skill-name">FastAPI</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="90"></div></div>
+                    </div>
+                    <div class="skill-card" data-category="backend">
+                        <div class="skill-icon"><img src="assets/icons/javascript.svg" alt="JavaScript"></div>
+                        <span class="skill-name">JavaScript</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="75"></div></div>
+                    </div>
+                    <div class="skill-card" data-category="backend">
+                        <div class="skill-icon"><img src="assets/icons/sql.svg" alt="SQL"></div>
+                        <span class="skill-name">SQL</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="85"></div></div>
+                    </div>
+                    <div class="skill-card" data-category="backend">
+                        <div class="skill-icon"><img src="assets/icons/typescript.svg" alt="TypeScript"></div>
+                        <span class="skill-name">TypeScript</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="70"></div></div>
+                    </div>
+                    <div class="skill-card" data-category="backend">
+                        <div class="skill-icon"><img src="assets/icons/flask.svg" alt="Flask"></div>
+                        <span class="skill-name">Flask</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="80"></div></div>
+                    </div>
+
+                    <!-- DevOps / Cloud -->
+                    <div class="skill-card" data-category="devops">
+                        <div class="skill-icon"><img src="assets/icons/docker.svg" alt="Docker"></div>
+                        <span class="skill-name">Docker</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="88"></div></div>
+                    </div>
+                    <div class="skill-card" data-category="devops">
+                        <div class="skill-icon"><img src="assets/icons/kubernetes.svg" alt="Kubernetes"></div>
+                        <span class="skill-name">Kubernetes</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="75"></div></div>
+                    </div>
+                    <div class="skill-card" data-category="devops">
+                        <div class="skill-icon"><img src="assets/icons/aws.svg" alt="AWS"></div>
+                        <span class="skill-name">AWS</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="80"></div></div>
+                    </div>
+                    <div class="skill-card" data-category="devops">
+                        <div class="skill-icon"><img src="assets/icons/azure.svg" alt="Azure"></div>
+                        <span class="skill-name">Azure</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="78"></div></div>
+                    </div>
+                    <div class="skill-card" data-category="devops">
+                        <div class="skill-icon"><img src="assets/icons/git.svg" alt="Git"></div>
+                        <span class="skill-name">Git</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="92"></div></div>
+                    </div>
+                    <div class="skill-card" data-category="devops">
+                        <div class="skill-icon"><img src="assets/icons/linux.svg" alt="Linux"></div>
+                        <span class="skill-name">Linux</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="90"></div></div>
+                    </div>
+                    <div class="skill-card" data-category="devops">
+                        <div class="skill-icon"><i data-lucide="git-branch"></i></div>
+                        <span class="skill-name">CI/CD</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="82"></div></div>
+                    </div>
+
+                    <!-- Data -->
+                    <div class="skill-card" data-category="data">
+                        <div class="skill-icon"><img src="assets/icons/postgresql.svg" alt="PostgreSQL"></div>
+                        <span class="skill-name">PostgreSQL</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="88"></div></div>
+                    </div>
+                    <div class="skill-card" data-category="data">
+                        <div class="skill-icon"><img src="assets/icons/mongodb.svg" alt="MongoDB"></div>
+                        <span class="skill-name">MongoDB</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="78"></div></div>
+                    </div>
+                    <div class="skill-card" data-category="data">
+                        <div class="skill-icon"><img src="assets/icons/pandas.svg" alt="Pandas"></div>
+                        <span class="skill-name">Pandas</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="92"></div></div>
+                    </div>
+                    <div class="skill-card" data-category="data">
+                        <div class="skill-icon"><img src="assets/icons/numpy.svg" alt="NumPy"></div>
+                        <span class="skill-name">NumPy</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="90"></div></div>
+                    </div>
+                    <div class="skill-card" data-category="data">
+                        <div class="skill-icon"><i data-lucide="arrow-right-left"></i></div>
+                        <span class="skill-name">ETL/ELT</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="85"></div></div>
+                    </div>
+                    <div class="skill-card" data-category="data">
+                        <div class="skill-icon"><i data-lucide="boxes"></i></div>
+                        <span class="skill-name">Data Modeling</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="82"></div></div>
+                    </div>
+
+                    <!-- Languages (Human) -->
+                    <div class="skill-card" data-category="languages">
+                        <div class="skill-icon"><i data-lucide="globe"></i></div>
+                        <span class="skill-name">Spanish</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="100"></div></div>
+                        <span class="skill-level-label">Native</span>
+                    </div>
+                    <div class="skill-card" data-category="languages">
+                        <div class="skill-icon"><i data-lucide="globe"></i></div>
+                        <span class="skill-name">English</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="90"></div></div>
+                        <span class="skill-level-label">C1</span>
+                    </div>
+                    <div class="skill-card" data-category="languages">
+                        <div class="skill-icon"><i data-lucide="globe"></i></div>
+                        <span class="skill-name">German</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="25"></div></div>
+                        <span class="skill-level-label">Basic</span>
+                    </div>
+                    <div class="skill-card" data-category="languages">
+                        <div class="skill-icon"><i data-lucide="globe"></i></div>
+                        <span class="skill-name">Chinese</span>
+                        <div class="skill-bar"><div class="skill-fill" data-level="15"></div></div>
+                        <span class="skill-level-label">HSK1</span>
+                    </div>
+                </div>
             </div>
-            <a class="button" href="./project-pages/maze-navigation.html">
-              <span class="button-text">Read More</span>
-              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-            </a>
-          </div>
-          
-          <div class="project-card" id="9">
-            <img src="./assets/images/3d_monopoly.webp" class="project-image">
-            <div class="project-card-text-container">
-              <div class="subheader-text project-title">Monopoly Game Implementation</div>
-              <div class="body-text project-card-text">Developed a Monopoly game using Java with a focus on the Model‑View‑Controller (MVC) design pattern. Designed and implemented a 2D graphical user interface for the game, providing an interactive user experience. Utilized Object‑Oriented Programming principles to create modular and maintainable code for various game components. Implemented game logic, player actions, and turn management within the MVC architecture.</div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">PROJECTS</span>
+                    <h2 class="section-title">What I've Built</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="filter-buttons">
+                    <button class="active" data-filter="all">All</button>
+                    <button data-filter="ai-ml">AI/ML</button>
+                    <!-- <button data-filter="web">Web</button> -->
+                    <button data-filter="3d">3D/Graphics</button>
+                    <button data-filter="robotics">Robotics</button>
+                    <button data-filter="algorithms">Algorithms</button>
+                </div>
+                <div class="projects-grid">
+                    <!-- 1. GAIA Agent -->
+                    <div class="project-card" data-category="ai-ml">
+                        <div class="project-image">
+                            <img src="assets/images/maze_navigation.jpg" alt="GAIA Benchmark AI Agent" loading="lazy">
+                            <div class="project-overlay">
+                                <a href="https://huggingface.co/spaces/TeoLorente/Agent_GAIA" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <span class="project-category">AGENTIC AI</span>
+                            <h3>GAIA Benchmark AI Agent</h3>
+                            <p>Multi-step reasoning agent achieving 90% on the GAIA benchmark. Built with tool-augmented LLM orchestration for complex question answering across web search, code execution, and document analysis.</p>
+                            <div class="project-tags">
+                                <span>LangChain</span>
+                                <span>OpenAI</span>
+                                <span>RAG</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. AR System -->
+                    <div class="project-card" data-category="ai-ml">
+                        <div class="project-image">
+                            <img src="assets/images/ar_system.png" alt="Augmented Reality System" loading="lazy">
+                            <div class="project-overlay">
+                                <a href="project-pages/3d_scene.html" class="btn btn-sm btn-primary">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <span class="project-category">COMPUTER VISION</span>
+                            <h3>Low-Cost AR System</h3>
+                            <p>Augmented reality system combining computer vision, NLP, and multimodal interaction. Built as Bachelor's thesis with a 9.2/10 grade, featuring real-time object detection and voice-controlled scene manipulation.</p>
+                            <div class="project-tags">
+                                <span>OpenCV</span>
+                                <span>Python</span>
+                                <span>NLP</span>
+                                <span>AR</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Maze Navigation -->
+                    <div class="project-card" data-category="ai-ml">
+                        <div class="project-image">
+                            <img src="assets/images/maze_navigation.jpg" alt="AI Maze Navigation" loading="lazy">
+                            <div class="project-overlay">
+                                <a href="project-pages/maze-navigation.html" class="btn btn-sm btn-primary">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <span class="project-category">REINFORCEMENT LEARNING</span>
+                            <h3>Maze Navigation AI</h3>
+                            <p>Intelligent agent navigating complex 3D mazes using reinforcement learning and pathfinding algorithms. Features multi-level difficulty progression and real-time visualization of agent decision-making.</p>
+                            <div class="project-tags">
+                                <span>RL</span>
+                                <span>Python</span>
+                                <span>A*</span>
+                                <span>3D</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Community System
+                    <div class="project-card" data-category="web">
+                        <div class="project-image">
+                            <img src="assets/images/community_system.png" alt="Community Management System" loading="lazy">
+                            <div class="project-overlay">
+                                <a href="#projects" class="btn btn-sm btn-primary">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <span class="project-category">WEB APPLICATION</span>
+                            <h3>Community Management System</h3>
+                            <p>Full-stack web application for community management with user authentication, real-time notifications, and administrative dashboards. Built with modern web technologies and responsive design.</p>
+                            <div class="project-tags">
+                                <span>PHP</span>
+                                <span>MySQL</span>
+                                <span>JavaScript</span>
+                                <span>CSS</span>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- 5. Flutter Moto App
+                    <div class="project-card" data-category="web">
+                        <div class="project-image">
+                            <img src="assets/images/moto_builder.png" alt="Flutter Moto Builder App" loading="lazy">
+                            <div class="project-overlay">
+                                <a href="#projects" class="btn btn-sm btn-primary">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <span class="project-category">MOBILE APP</span>
+                            <h3>Flutter Moto Builder</h3>
+                            <p>Cross-platform mobile application for motorcycle customization and configuration. Features interactive 3D model viewing, parts catalog, and real-time price estimation with Flutter and Dart.</p>
+                            <div class="project-tags">
+                                <span>Flutter</span>
+                                <span>Dart</span>
+                                <span>Firebase</span>
+                                <span>REST API</span>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- 6. 3D Scene -->
+                    <div class="project-card" data-category="3d">
+                        <div class="project-image">
+                            <img src="assets/images/3d_scene.jpg" alt="3D Scene Rendering" loading="lazy">
+                            <div class="project-overlay">
+                                <a href="project-pages/3d_scene.html" class="btn btn-sm btn-primary">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <span class="project-category">3D GRAPHICS</span>
+                            <h3>3D Scene Renderer</h3>
+                            <p>Real-time 3D scene rendering engine built with OpenGL. Features dynamic lighting, shadow mapping, texture mapping, and interactive camera controls for immersive scene exploration.</p>
+                            <div class="project-tags">
+                                <span>OpenGL</span>
+                                <span>C++</span>
+                                <span>GLSL</span>
+                                <span>3D Math</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Multimedia Paint
+                    <div class="project-card" data-category="3d">
+                        <div class="project-image">
+                            <img src="assets/images/multimedia_paint.png" alt="Multimedia Paint Application" loading="lazy">
+                            <div class="project-overlay">
+                                <a href="#projects" class="btn btn-sm btn-primary">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <span class="project-category">MULTIMEDIA</span>
+                            <h3>Multimedia Paint</h3>
+                            <p>Feature-rich painting and multimedia application with layer support, custom brushes, image filters, and real-time audio visualization. Built using Java Swing with hardware-accelerated rendering.</p>
+                            <div class="project-tags">
+                                <span>Java</span>
+                                <span>Swing</span>
+                                <span>2D Graphics</span>
+                                <span>Audio</span>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- 8. Sumo Robot -->
+                    <div class="project-card" data-category="robotics">
+                        <div class="project-image">
+                            <img src="assets/images/sumo_robot.jpg" alt="Sumo Fighting Robot" loading="lazy">
+                            <div class="project-overlay">
+                                <a href="#projects" class="btn btn-sm btn-primary">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <span class="project-category">ROBOTICS</span>
+                            <h3>Sumo Fighting Robot</h3>
+                            <p>Autonomous sumo wrestling robot with infrared sensors, motor control, and strategic opponent detection. Finalist in university robotics competition, featuring custom PCB design and real-time control algorithms.</p>
+                            <div class="project-tags">
+                                <span>Arduino</span>
+                                <span>C++</span>
+                                <span>Sensors</span>
+                                <span>PCB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 9. Monopoly Game -->
+                    <div class="project-card" data-category="algorithms">
+                        <div class="project-image">
+                            <img src="assets/images/3d_monopoly.webp" alt="3D Monopoly Game" loading="lazy">
+                            <div class="project-overlay">
+                                <a href="project-pages/monopoly_game.html" class="btn btn-sm btn-primary">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <span class="project-category">GAME DEVELOPMENT</span>
+                            <h3>3D Monopoly Game</h3>
+                            <p>Full implementation of Monopoly with 3D graphics, AI opponents, and networked multiplayer. Features MVC architecture, animated dice rolls, and procedural board generation.</p>
+                            <div class="project-tags">
+                                <span>Java</span>
+                                <span>MVC</span>
+                                <span>3D</span>
+                                <span>AI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 10. N-Queens -->
+                    <div class="project-card" data-category="algorithms">
+                        <div class="project-image">
+                            <img src="assets/images/queen.png" alt="N-Queens Solution" loading="lazy">
+                            <div class="project-overlay">
+                                <a href="project-pages/n_queens_solution.html" class="btn btn-sm btn-primary">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <span class="project-category">ALGORITHMS</span>
+                            <h3>N-Queens Challenge</h3>
+                            <p>Award-winning optimized solution to the N-Queens problem using advanced backtracking with constraint propagation. Won university algorithm competition with fastest execution time.</p>
+                            <div class="project-tags">
+                                <span>C++</span>
+                                <span>Backtracking</span>
+                                <span>Optimization</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 11. Moore Machine -->
+                    <div class="project-card" data-category="algorithms">
+                        <div class="project-image">
+                            <img src="assets/images/moore_machine.png" alt="Moore Machine Simulator" loading="lazy">
+                            <div class="project-overlay">
+                                <a href="#projects" class="btn btn-sm btn-primary">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <span class="project-category">AUTOMATA THEORY</span>
+                            <h3>Moore Machine Simulator</h3>
+                            <p>Interactive simulator for Moore finite state machines with visual state diagram editor, transition animation, and step-by-step execution tracing for educational purposes.</p>
+                            <div class="project-tags">
+                                <span>JavaScript</span>
+                                <span>Automata</span>
+                                <span>Visualization</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <a class="button" href="./project-pages/monopoly_game.html">
-              <span class="button-text">Read More</span>
-              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-            </a>
-          </div>
-          
-          <div class="project-card" id="10">
-            <img src="./assets/images/queen.png" class="project-image">
-            <div class="project-card-text-container">
-              <div class="subheader-text project-title">Solution to the N-Queens Problem</div>
-              <div class="body-text project-card-text">Conceived and developed a sophisticated solution to the classical N‑Queens problem using C++, demonstrating proficiency in algorithmic problem‑solving. Implemented advanced Backtracking algorithms in C++ to efficiently generate and visualize all feasible solutions for a given board size (n). Designed and implemented the C++ Branch and Bound algorithm, leveraging a structured approach to achieve exhaustive enumeration of the solution space through the generation of a spanning tree.</div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">CERTIFICATIONS</span>
+                    <h2 class="section-title">Achievements & Recognition</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="cert-grid">
+                    <!-- AI Agents Course -->
+                    <div class="cert-card glass-card">
+                        <div class="cert-icon">
+                            <i data-lucide="award"></i>
+                        </div>
+                        <div class="cert-body">
+                            <h3>AI Agents Course</h3>
+                            <div class="cert-badges">
+                                <span class="badge badge-gold">Excellence</span>
+                                <span class="badge badge-cyan">Top Performer</span>
+                            </div>
+                            <p class="cert-issuer">Hugging Face, 2025</p>
+                            <p class="cert-detail">90% on GAIA Benchmark</p>
+                        </div>
+                    </div>
+
+                    <!-- Data Engineering Bootcamp -->
+                    <div class="cert-card glass-card">
+                        <div class="cert-icon">
+                            <i data-lucide="trophy"></i>
+                        </div>
+                        <div class="cert-body">
+                            <h3>Data Engineering Bootcamp</h3>
+                            <div class="cert-badges">
+                                <span class="badge badge-gold">Distinction</span>
+                            </div>
+                            <p class="cert-issuer">Dataexpert.io, 2024</p>
+                            <p class="cert-detail">Top 0.019% of 31,000 participants. Perfect Score.</p>
+                        </div>
+                    </div>
+
+                    <!-- Azure AI Fundamentals -->
+                    <div class="cert-card glass-card">
+                        <div class="cert-icon">
+                            <i data-lucide="cloud"></i>
+                        </div>
+                        <div class="cert-body">
+                            <h3>Azure AI Fundamentals (AI-900)</h3>
+                            <div class="cert-badges">
+                                <span class="badge badge-blue">Microsoft Certified</span>
+                            </div>
+                            <p class="cert-issuer">Microsoft Learn, 2024</p>
+                            <p class="cert-detail">Perfect Score</p>
+                        </div>
+                    </div>
+
+                    <!-- Fighting Robotics -->
+                    <div class="cert-card glass-card">
+                        <div class="cert-icon">
+                            <i data-lucide="bot"></i>
+                        </div>
+                        <div class="cert-body">
+                            <h3>Fighting Robotics Finalist</h3>
+                            <div class="cert-badges">
+                                <span class="badge badge-cyan">Finalist</span>
+                            </div>
+                            <p class="cert-issuer">University of Granada, 2022</p>
+                            <p class="cert-detail">Autonomous sumo robot competition</p>
+                        </div>
+                    </div>
+
+                    <!-- N-Queens -->
+                    <div class="cert-card glass-card">
+                        <div class="cert-icon">
+                            <i data-lucide="crown"></i>
+                        </div>
+                        <div class="cert-body">
+                            <h3>N-Queens Challenge Winner</h3>
+                            <div class="cert-badges">
+                                <span class="badge badge-gold">1st Place</span>
+                            </div>
+                            <p class="cert-issuer">University of Granada, 2020</p>
+                            <p class="cert-detail">Fastest optimized backtracking solution</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <a class="button" href="./project-pages/n_queens_solution.html">
-              <span class="button-text">Read More</span>
-              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-            </a>
-          </div>
-          
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">EDUCATION</span>
+                    <h2 class="section-title">Academic Background</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="edu-grid">
+                    <!-- MSc -->
+                    <div class="edu-card glass-card">
+                        <div class="edu-icon">
+                            <i data-lucide="graduation-cap"></i>
+                        </div>
+                        <div class="edu-body">
+                            <div class="edu-header-row">
+                                <h3>MSc AI & Data Engineering</h3>
+                                <span class="badge badge-cyan">In Progress</span>
+                            </div>
+                            <p class="edu-institution">ETSIIT — University of Granada</p>
+                            <p class="edu-gpa">GPA: <strong>9.5/10</strong></p>
+                            <p class="edu-detail">Specialization in large language models, agentic systems, and scalable data architectures.</p>
+                        </div>
+                    </div>
+
+                    <!-- BSc -->
+                    <div class="edu-card glass-card">
+                        <div class="edu-icon">
+                            <i data-lucide="graduation-cap"></i>
+                        </div>
+                        <div class="edu-body">
+                            <h3>BSc Computer Science & Computer Engineering</h3>
+                            <p class="edu-institution">ETSIIT — University of Granada</p>
+                            <p class="edu-ranking">Ranked 52nd Worldwide in AI (U.S. News 2025)</p>
+                            <p class="edu-detail">Thesis: "Low-cost AR system with CV, NLP, and multimodal interaction" — <strong>9.2/10</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">CONTACT</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <p>I'm always interested in hearing about new opportunities, collaborations, or just having a conversation about AI and technology. Feel free to reach out through any of the channels below.</p>
+                        <div class="contact-links">
+                            <a href="mailto:joseteolorentevallecillos@gmail.com" class="contact-link" aria-label="Send email to José">
+                                <i data-lucide="mail"></i>
+                                <span>joseteolorentevallecillos@gmail.com</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/joseteolorente/" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                                <span>linkedin.com/in/joseteolorente</span>
+                            </a>
+                            <a href="https://github.com/joseteo" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                                <span>github.com/joseteo</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-form-wrapper">
+                        <form action="https://formspree.io/f/placeholder" method="POST" class="contact-form">
+                            <div class="form-group">
+                                <label for="contact-name">Name</label>
+                                <input type="text" id="contact-name" name="name" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Email</label>
+                                <input type="email" id="contact-email" name="email" placeholder="your@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-message">Message</label>
+                                <textarea id="contact-message" name="message" rows="5" placeholder="Your message..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <i data-lucide="send"></i>
+                                <span>Send Message</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#hero" class="footer-logo" aria-label="Back to top">
+                        <img src="assets/icons/logo-jt.svg" alt="TL Logo" width="48" height="48" style="border-radius: 12px;">
+                    </a>
+                    <p class="footer-title">José Teodosio Lorente Vallecillos</p>
+                    <p class="footer-subtitle">Head of AI & Data Engineering</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#certifications">Certifications</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/joseteo" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/joseteolorente/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                        <a href="mailto:joseteolorentevallecillos@gmail.com" aria-label="Send email">
+                            <i data-lucide="mail"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 José Teodosio Lorente Vallecillos. All rights reserved.</p>
+            </div>
         </div>
-      </div>
-    </div>
-
-    <!-- FOOTER -->
-    <div id="footer">
-      <!-- 
-        TODO - Change href to your Instagram account (can also delete entire "a" element if no Instagram) 
-
-        This should be the same across all pages.
-      -->
-      <a class="icon-link" target="_blank" href="https://instagram.com/teo_lorente">
-        <image src="./assets/icons/instagram.svg" class="footer-icon"/>
-      </a>
-      <!-- 
-        TODO - Change href to your Twitter account (can also delete entire "a" element if no Twitter) 
-      
-        This should be the same across all pages.
-      -->
-      <a class="icon-link" target="_blank" href="https://twitter.com/teo_lorente">
-        <image src="./assets/icons/twitter.svg" class="footer-icon"/>
-      </a>
-
-      <a class="icon-link" target="_blank" href="https://www.linkedin.com/in/joseteodosiolorente">
-        <image src="./assets/icons/linkedin.svg" class="footer-icon"/>
-      </a>
-      <!-- 
-        TODO - Change the email after "mailto" to your contact email 
-      
-        This should be the same across all pages.
-      -->
-      <a class="icon-link" target="_blank" href="mailto:joseteolorentevallecillos@gmail.com">
-        <image src="./assets/icons/mail.svg" class="footer-icon"/>
-      </a>
-
-      <a class="icon-link" target="_blank" href="./assets/cv/Curriculum_Vitae_José_Teodosio_Lorente_Vallecillos.pdf" download="Curriculum_Vitae_José_Teodosio_Lorente_Vallecillos.pdf">
-        <image src="./assets/icons/curriculum-resume.svg" class="footer-icon"/>
-      </a>
-    </div>
-
-    <footer id="footer">
-      <p>© 2024 José Teo Lorente Vallecillos Portfolio. All rights reserved.</p>
     </footer>
 
-	</body>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="js/particles.js" defer></script>
+    <script src="js/typed-effect.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/filters.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+</body>
 </html>

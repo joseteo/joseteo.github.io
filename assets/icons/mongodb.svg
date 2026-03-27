@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Leaf shape -->
+  <path d="M24 4 C24 4 16 14 16 26 C16 34 19.5 40 24 44 C28.5 40 32 34 32 26 C32 14 24 4 24 4 Z" fill="#47A248"/>
+  <!-- Leaf center vein -->
+  <path d="M24 8 L24 42" stroke="#3D8B3D" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <!-- Highlight -->
+  <path d="M24 6 C24 6 20 14 19 24 C18.5 28 19 32 20 36 C22 40 24 42 24 42" fill="#5DBE6E" opacity="0.4"/>
+  <!-- Stem base -->
+  <rect x="23" y="40" width="2" height="5" rx="1" fill="#3D8B3D"/>
+</svg>
