@@ -916,7 +916,11 @@
                         </div>
                     </div>
                     <div class="contact-form-wrapper">
-                        <form action="https://formspree.io/f/placeholder" method="POST" class="contact-form">
+                        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                            <input type="hidden" name="access_key" value="cccee067-e911-497d-9a38-37bb1bde8fba">
+                            <input type="hidden" name="subject" value="New contact from joseteo.github.io">
+                            <input type="hidden" name="from_name" value="Portfolio Contact Form">
+                            <input type="checkbox" name="botcheck" class="hidden" style="display:none">
                             <div class="form-group">
                                 <label for="contact-name">Name</label>
                                 <input type="text" id="contact-name" name="name" placeholder="Your name" required>
@@ -929,10 +933,11 @@
                                 <label for="contact-message">Message</label>
                                 <textarea id="contact-message" name="message" rows="5" placeholder="Your message..." required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-full">
+                            <button type="submit" id="contact-submit" class="btn btn-primary btn-full">
                                 <i data-lucide="send"></i>
                                 <span>Send Message</span>
                             </button>
+                            <div id="form-status" class="form-status"></div>
                         </form>
                     </div>
                 </div>

@@ -157,6 +157,47 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ── Contact form (Web3Forms) ─────────────────────────────────────
+  const contactForm = document.getElementById('contact-form');
+  const contactSubmit = document.getElementById('contact-submit');
+  const formStatus = document.getElementById('form-status');
+
+  if (contactForm && contactSubmit && formStatus) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      contactSubmit.disabled = true;
+      contactSubmit.querySelector('span').textContent = 'Sending...';
+      formStatus.className = 'form-status';
+      formStatus.textContent = '';
+
+      try {
+        const res = await fetch(contactForm.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(contactForm))),
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+          formStatus.className = 'form-status form-status--success';
+          formStatus.textContent = 'Message sent successfully! I\'ll get back to you soon.';
+          contactForm.reset();
+        } else {
+          formStatus.className = 'form-status form-status--error';
+          formStatus.textContent = data.message || 'Something went wrong. Please try again.';
+        }
+      } catch {
+        formStatus.className = 'form-status form-status--error';
+        formStatus.textContent = 'Network error. Please try again or email me directly.';
+      } finally {
+        contactSubmit.disabled = false;
+        contactSubmit.querySelector('span').textContent = 'Send Message';
+      }
+    });
+  }
+
   // Fire once on load to set initial state
   handleScroll();
 
