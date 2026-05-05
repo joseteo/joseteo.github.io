@@ -66,16 +66,38 @@
         <!-- Hero Section -->
         <section id="hero" class="hero">
             <canvas id="particle-canvas"></canvas>
-            <div class="hero-content" data-parallax>
-                <p class="hero-greeting">Hello, I'm</p>
-                <h1 class="hero-name">Teo Lorente</h1>
-                <div class="hero-typed">
-                    <span class="typed-prefix">I </span><span id="typed-output"></span><span class="typed-cursor">|</span>
+            <div class="hero-layout">
+                <div class="hero-content" data-parallax>
+                    <p class="hero-greeting">Hello, I'm</p>
+                    <h1 class="hero-name">Teo Lorente</h1>
+                    <div class="hero-typed">
+                        <span class="typed-prefix">I </span><span id="typed-output"></span><span class="typed-cursor">|</span>
+                    </div>
+                    <p class="hero-tagline">Head of AI & Data Engineering — Building intelligent systems that matter</p>
+                    <div class="hero-ctas">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                    </div>
                 </div>
-                <p class="hero-tagline">Head of AI & Data Engineering — Building intelligent systems that matter</p>
-                <div class="hero-ctas">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                <div class="hero-cards">
+                    <div class="hero-card glass-card" style="animation-delay: 0.3s" data-card-anim="neural">
+                        <canvas class="hero-card-canvas"></canvas>
+                        <span class="hero-card-icon"><i data-lucide="cpu"></i></span>
+                        <h3>AI & ML Engineer</h3>
+                        <p>Deep learning & production ML systems</p>
+                    </div>
+                    <div class="hero-card glass-card" style="animation-delay: 0.5s" data-card-anim="agents">
+                        <canvas class="hero-card-canvas"></canvas>
+                        <span class="hero-card-icon"><i data-lucide="brain-circuit"></i></span>
+                        <h3>AI & LLM Agents</h3>
+                        <p>Agentic RAG & multi-step reasoning</p>
+                    </div>
+                    <div class="hero-card glass-card" style="animation-delay: 0.7s" data-card-anim="pipeline">
+                        <canvas class="hero-card-canvas"></canvas>
+                        <span class="hero-card-icon"><i data-lucide="database"></i></span>
+                        <h3>Data Engineering</h3>
+                        <p>Scalable pipelines & real-time analytics</p>
+                    </div>
                 </div>
             </div>
             <div class="scroll-indicator">
@@ -997,6 +1019,7 @@
     <script src="js/typed-effect.js" defer></script>
     <script src="js/animations.js" defer></script>
     <script src="js/filters.js" defer></script>
+    <script src="js/hero-cards.js" defer></script>
     <script src="js/main.js" defer></script>
 
 </body>
