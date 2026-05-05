@@ -36,11 +36,39 @@
 
 /* Hero */
 .hero-layout {
-  padding: 0 24px;
+  padding: 100px 20px 40px;
+  gap: 24px;
 }
 
 .hero-name {
   font-size: 2.5rem;
+}
+
+.hero-tagline {
+  margin: 12px 0 24px;
+}
+
+.hero-cards {
+  gap: 8px;
+}
+
+.hero-card {
+  max-width: 95px;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.hero-card-icon {
+  margin-bottom: 6px;
+}
+
+.hero-card-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.hero-card h3 {
+  font-size: 11px;
 }
 
 /* About */
@@ -170,6 +198,15 @@
     font-size: 32px;
   }
 
+  .hero-layout {
+    padding: 100px 32px 110px;
+    gap: 36px;
+  }
+
+  .hero-tagline {
+    margin: 16px 0 32px;
+  }
+
   .hero-cards {
     gap: 16px;
     width: auto;
@@ -181,6 +218,11 @@
     height: 140px;
     max-width: none;
     padding: 16px;
+    border-radius: 16px;
+  }
+
+  .hero-card-icon {
+    margin-bottom: 8px;
   }
 
   .hero-card-icon svg {
@@ -316,45 +358,47 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0 60px;
-    gap: 64px;
+    padding: 0 48px;
+    gap: 40px;
   }
 
   .hero-content {
     flex: 1;
+    min-width: 0;
   }
 
   .hero-cards {
-    gap: 24px;
+    flex-shrink: 0;
+    gap: 16px;
     width: auto;
   }
 
   .hero-card {
     flex: none;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     max-width: none;
-    border-radius: 20px;
-    padding: 20px;
+    border-radius: 18px;
+    padding: 16px;
   }
 
   .hero-card-icon {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .hero-card-icon svg {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
   }
 
   .hero-card h3 {
-    font-size: 16px;
-    margin: 0 0 8px;
+    font-size: 13px;
+    margin: 0 0 6px;
   }
 
   .hero-card p {
     display: block;
-    font-size: 12px;
+    font-size: 11px;
   }
 
   /* Full section padding */
@@ -387,11 +431,52 @@
   }
 
   .hero-layout {
-    padding: 0 120px;
+    padding: 0 80px;
+    gap: 56px;
   }
 
   .hero-content {
     max-width: 800px;
+  }
+
+  .hero-cards {
+    gap: 22px;
+  }
+
+  .hero-card {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    padding: 20px;
+  }
+
+  .hero-card-icon {
+    margin-bottom: 12px;
+  }
+
+  .hero-card-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero-card h3 {
+    font-size: 16px;
+    margin: 0 0 8px;
+  }
+
+  .hero-card p {
+    font-size: 12px;
+  }
+}
+
+
+/* ========================
+   XL DESKTOP — >= 1440px
+   ======================== */
+@media (min-width: 1440px) {
+  .hero-layout {
+    padding: 0 120px;
+    gap: 64px;
   }
 
   .hero-cards {
