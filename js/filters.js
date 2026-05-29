@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // No ScrollTrigger.refresh() needed — section heights are preserved
+  // No ScrollTrigger.refresh() needed - section heights are preserved
   // via min-height, so scroll positions remain stable.
 
   // ── Skill tabs filtering ─────────────────────────────────────────
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // No refresh needed — min-height keeps page height stable
+      // No refresh needed - min-height keeps page height stable
     });
   }
 
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // No refresh needed — min-height keeps page height stable
+      // No refresh needed - min-height keeps page height stable
     });
   }
 });

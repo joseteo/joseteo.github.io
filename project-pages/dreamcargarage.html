@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+     <link rel="icon" href="../assets/images/favicon.svg" />
+     <title>Dream Car Garage | Founder &amp; Solo Developer</title>
+    <meta name="description" content="Dream Car Garage: a car-collection web app conceived, designed, built, deployed, and maintained solo by José Teo Lorente.">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/typography.css">
+    <link rel="stylesheet" href="../css/utilities.css">
+		<script defer src="../js/script.js"></script>
+	</head>
+	<body>
+    <div class="navbar">
+      <a class="nav-title-link" href="../index.html#projects">
+        <image src="../assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+        <span class="nav-title">Teo Lorente / Projects</span>
+        <a class="button" href="mailto:joseteolorentevallecillos@gmail.com">
+          <span class="button-text">Contact Me</span>
+        </a>
+      </a>
+    </div>
+    <div id="main-content">
+      <div id="project-header">
+        <div class="main-title">Dream Car Garage: Founder, Designer &amp; Sole Engineer</div>
+        <div class="body-text">A production car-collection web app I conceived, designed, built, deployed, and now maintain entirely on my own. Car enthusiasts assemble their dream garage from 600+ vehicles, track how their collection evolves over time, compete on a global leaderboard, and explore a built-in automotive encyclopedia, across multiple languages and currencies. It's live, it's used by a real community, and I own every layer of it.</div>
+        <image class="project-header-image" src="../assets/images/dreamcargarage.png">
+      </div>
+
+      <div id="project-details">
+        <div class="subheader-text">The Problem &amp; The Vision</div>
+        <div class="project-details-content">
+          <div class="body-text">Car enthusiasts spend hours imagining the collection they'd own if money were no object, but that passion lives in scattered tabs, spreadsheets, and forum posts. There was no single, beautiful place to build, refine, and share a dream garage, and to feel it grow over time. Dream Car Garage exists to give the car community that home.</div>
+          <div class="body-text">The product is built around a simple, addictive loop: browse a curated catalog of the world's most desirable cars, add them to a limited set of garage bays that force real trade-offs, then snapshot your collection as it evolves and measure it against everyone else. It's part fantasy tool, part social game, part reference library.</div>
+        </div>
+      </div>
+
+      <div id="project-details">
+        <div class="subheader-text">Where It Is Today: A Live, Maintained Product</div>
+        <div class="project-details-content">
+          <div class="body-text">Dream Car Garage is live at dreamcargarage.app as a fully functional product, not a prototype. The current release includes:</div>
+          <div class="body-text"><strong>Garage builder.</strong> Users fill a limited set of bays from a catalog of 600+ vehicles across 11 categories (hypercars, supercars, GTs, hot hatches, SUVs, luxury and more), with adjustable garage size that creates real curation trade-offs.</div>
+          <div class="body-text"><strong>Browse &amp; discovery.</strong> A searchable, filterable, sortable collection with category tabs and brand filters spanning 70+ manufacturers, from Ferrari and Bugatti to Caterham and Gordon Murray.</div>
+          <div class="body-text"><strong>Evolution.</strong> Collections are snapshotted into stages, so users can see how their taste and garage change over time and track swaps between snapshots.</div>
+          <div class="body-text"><strong>Leaderboard &amp; scoring.</strong> A "Share &amp; Score" system and global leaderboard turn private collections into a social, competitive experience.</div>
+          <div class="body-text"><strong>Carpedia &amp; Brands.</strong> A built-in automotive reference for exploring cars and manufacturers in depth.</div>
+          <div class="body-text"><strong>Accounts &amp; saved garages.</strong> Users sign in to persist multiple named garages, duplicate them, and switch between profiles.</div>
+          <div class="body-text"><strong>Internationalization.</strong> Full multi-language support (English and Spanish) and multi-currency pricing (GBP, EUR, USD).</div>
+          <div class="body-text"><strong>Monetization.</strong> Sponsored placements integrated natively into the collection feed, plus an email subscription channel for retention.</div>
+          <div class="body-text"><strong>Compliance.</strong> A complete legal layer I produced myself: legal notice, privacy policy, cookie policy with a consent manager, and terms of use, including explicit trademark attribution for every manufacturer.</div>
+        </div>
+      </div>
+
+      <div id="project-details">
+        <div class="subheader-text">What "Solo Founder" Actually Means Here</div>
+        <div class="project-details-content">
+          <div class="body-text">There is no team. Every role a startup normally distributes across people, I hold at once:</div>
+          <div class="body-text"><strong>Product &amp; design.</strong> Ideation, UX, visual design, and the entire interaction model are mine, with deliberate attention to detail at every step.</div>
+          <div class="body-text"><strong>Full-stack engineering.</strong> The application is built on Next.js and React, with user authentication, persistent data, a 600+ vehicle catalog, search/filter/sort systems, the leaderboard and evolution mechanics, and an image pipeline for car assets.</div>
+          <div class="body-text"><strong>Deployment &amp; operations.</strong> I deploy, monitor, and keep the service online. The hard, unglamorous part of a startup isn't shipping the demo, it's maintaining a production system that a community relies on every day.</div>
+          <div class="body-text"><strong>Troubleshooting &amp; maintenance.</strong> When something breaks, there is no one else. Diagnosing issues in production, fixing them, and shipping the fix is entirely on me.</div>
+          <div class="body-text"><strong>Growth, SEO &amp; monetization.</strong> Discoverability, ad integration, and the retention loop are mine to design and tune.</div>
+          <div class="body-text"><strong>Legal &amp; governance.</strong> Privacy, cookies, terms, and trademark handling were all researched and implemented by me.</div>
+          <div class="body-text">Carrying a community on your back means the standard isn't "it works on my machine." It's "it works for everyone, all the time." That responsibility shapes every decision.</div>
+        </div>
+      </div>
+
+      <div id="project-details">
+        <div class="subheader-text">Engineering Highlights</div>
+        <div class="project-details-content">
+          <div class="body-text"><strong>Data at scale.</strong> Modeling and maintaining 600+ vehicles across 11 categories and 70+ brands, each with specs, imagery, pricing, and classification, kept consistent and fast to query.</div>
+          <div class="body-text"><strong>Performance.</strong> Server-rendered pages and an optimized image pipeline keep a media-heavy catalog responsive, loading a paginated subset of the full collection on demand.</div>
+          <div class="body-text"><strong>Stateful, persistent UX.</strong> Saved garages, evolution snapshots, and per-profile state require careful client/server data modeling and authentication.</div>
+          <div class="body-text"><strong>Internationalization done properly.</strong> Language and currency are first-class concerns across the entire UI, not an afterthought bolted on at the end.</div>
+        </div>
+      </div>
+
+      <div id="project-details">
+        <div class="subheader-text">Where It's Headed: The Roadmap</div>
+        <div class="project-details-content">
+          <div class="body-text">Today Dream Car Garage is a polished collection-building product. The ambition is larger: to become an operating system for the car community, the default home where enthusiasts build, share, discover, and connect around the cars they love.</div>
+          <div class="body-text">Directions I'm building toward include deeper social and community features, a richer Carpedia, expanded brand and model coverage, and tighter feedback loops between collectors. The vision is a platform; the live product is the credible first step proving I can ship and run it.</div>
+        </div>
+      </div>
+
+      <div id="project-details" style="margin-bottom: 48px;">
+        <div class="subheader-text">Try It Live</div>
+        <div class="project-details-content">
+          <div class="body-text">Dream Car Garage is live and open to everyone. Build your own dream garage and see the product in action.</div>
+          <div class="body-text"><a href="https://dreamcargarage.app" target="_blank" rel="noopener noreferrer" style="color: #06b6d4; text-decoration: underline;">Visit dreamcargarage.app &rarr;</a></div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <a class="icon-link" target="_blank" href="https://www.linkedin.com/in/joseteodosiolorente">
+        <image src="../assets/icons/linkedin.svg" class="footer-icon"/>
+      </a>
+      <a class="icon-link" href="mailto:joseteolorentevallecillos@gmail.com">
+        <image src="../assets/icons/mail.svg" class="footer-icon"/>
+      </a>
+    </div>
+    <footer id="footer">
+      <p>&copy; 2026 Jos&eacute; Teodosio Lorente Vallecillos. All rights reserved.</p>
+    </footer>
+	</body>
+</html>

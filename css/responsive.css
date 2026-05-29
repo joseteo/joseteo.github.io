@@ -1,9 +1,9 @@
 /* ============================================
-   responsive.css — Mobile-First Breakpoints
+   responsive.css - Mobile-First Breakpoints
    ============================================ */
 
 /* ========================
-   BASE (MOBILE) — < 640px
+   BASE (MOBILE) - < 640px
    ======================== */
 
 /* Navbar */
@@ -179,7 +179,7 @@
 
 
 /* ========================
-   SMALL TABLETS — >= 640px
+   SMALL TABLETS - >= 640px
    ======================== */
 @media (min-width: 640px) {
   .projects-grid {
@@ -237,7 +237,7 @@
 
 
 /* ========================
-   TABLETS — >= 768px
+   TABLETS - >= 768px
    ======================== */
 @media (min-width: 768px) {
   .about-grid {
@@ -281,7 +281,7 @@
 
 
 /* ========================
-   DESKTOP — >= 1024px
+   DESKTOP - >= 1024px
    ======================== */
 @media (min-width: 1024px) {
   /* Navbar desktop layout */
@@ -353,7 +353,7 @@
     justify-content: flex-end;
   }
 
-  /* Hero layout — side by side on desktop */
+  /* Hero layout - side by side on desktop */
   .hero-layout {
     flex-direction: row;
     align-items: center;
@@ -423,7 +423,7 @@
 
 
 /* ========================
-   LARGE DESKTOP — >= 1280px
+   LARGE DESKTOP - >= 1280px
    ======================== */
 @media (min-width: 1280px) {
   .container {
@@ -471,7 +471,7 @@
 
 
 /* ========================
-   XL DESKTOP — >= 1440px
+   XL DESKTOP - >= 1440px
    ======================== */
 @media (min-width: 1440px) {
   .hero-layout {

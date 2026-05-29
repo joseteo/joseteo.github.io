@@ -1,5 +1,5 @@
 /* ============================================
-   animations.css — Keyframes & Reveal Classes
+   animations.css - Keyframes & Reveal Classes
    ============================================ */
 
 /* ========================
@@ -89,7 +89,7 @@
    KEYFRAMES
    ======================== */
 
-/* Cursor Blink — for typed text cursor */
+/* Cursor Blink - for typed text cursor */
 @keyframes cursor-blink {
   0%, 100% {
     opacity: 1;
@@ -99,7 +99,7 @@
   }
 }
 
-/* Scroll Bounce — for scroll indicator */
+/* Scroll Bounce - for scroll indicator */
 @keyframes scroll-bounce {
   0%, 100% {
     transform: translateY(0);
@@ -111,7 +111,7 @@
   }
 }
 
-/* Float — for decorative floating elements */
+/* Float - for decorative floating elements */
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
@@ -121,7 +121,7 @@
   }
 }
 
-/* Pulse Glow — for accent highlights */
+/* Pulse Glow - for accent highlights */
 @keyframes pulse-glow {
   0%, 100% {
     box-shadow: 0 0 5px rgba(6, 182, 212, 0.2);
@@ -131,7 +131,7 @@
   }
 }
 
-/* Gradient Shift — for animated gradient backgrounds */
+/* Gradient Shift - for animated gradient backgrounds */
 @keyframes gradient-shift {
   0% {
     background-position: 0% 50%;
