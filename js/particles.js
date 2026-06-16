@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const CONNECT_DISTANCE = 150;
   const LINE_MAX_OPACITY = 0.15;
-  const PARTICLE_COLOR = '34, 211, 238'; // #22d3ee in RGB
+  const PARTICLE_COLOR = '186, 214, 247'; // #bad6f7 in RGB
 
   // ── Resize canvas to fill parent ─────────────────────────────────
   const resizeCanvas = () => {

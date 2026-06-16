@@ -23,7 +23,7 @@
     if (!c) return;
     const nodes = [];
     const layers = [4, 6, 6, 3];
-    const color = { r: 6, g: 182, b: 212 };
+    const color = { r: 186, g: 214, b: 247 };
 
     function setup() {
       nodes.length = 0;
@@ -100,7 +100,7 @@
   function agentsAnim(card) {
     const c = initCanvas(card);
     if (!c) return;
-    const color = { r: 99, g: 160, b: 255 };
+    const color = { r: 209, g: 228, b: 250 };
     const nodes = [];
     const particles = [];
 

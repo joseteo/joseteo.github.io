@@ -184,6 +184,7 @@
 @media (min-width: 640px) {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 
   .cert-grid {
@@ -304,9 +305,10 @@
     font-size: 14px;
   }
 
-  /* Projects 3 columns */
+  /* Projects 2 columns (logo-centric cards) */
   .projects-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
   /* Timeline alternating layout */
