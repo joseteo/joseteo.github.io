@@ -17,3 +17,6 @@ desktop.ini
 # Environment
 .env
 .env.local
+node_modules/
+.claude/
+.playwright-mcp/
