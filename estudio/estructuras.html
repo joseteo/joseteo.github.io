@@ -8,6 +8,7 @@
 <meta name="theme-color" content="#f6efe5">
 <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/estudio.css">
+<link rel="stylesheet" href="assets/escena3d.css">
 </head>
 <body style="--accent:#96681f;--accent-ink:#6f4b12;--accent-soft:rgba(150,104,31,.10);--accent-line:rgba(150,104,31,.32)">
 
@@ -80,16 +81,17 @@
     <ol>
       <li><a href="#mapa"><span>01</span>Mapa del tema</a></li>
       <li><a href="#conceptos"><span>02</span>Conceptos clave</a></li>
-      <li><a href="#formulario"><span>03</span>Formulario</a></li>
-      <li><a href="#diagrama"><span>04</span>Viga en vivo</a></li>
-      <li><a href="#ejemplo"><span>05</span>Ejemplo resuelto</a></li>
-      <li><a href="#practica"><span>06</span>Práctica</a></li>
-      <li><a href="#tablas"><span>07</span>Tablas</a></li>
-      <li><a href="#trampas"><span>08</span>Errores típicos</a></li>
-      <li><a href="#tarjetas"><span>09</span>Tarjetas</a></li>
-      <li><a href="#test"><span>10</span>Test</a></li>
-      <li><a href="#glosario"><span>11</span>Glosario</a></li>
-      <li><a href="#plan"><span>12</span>Plan de repaso</a></li>
+      <li><a href="#tresd"><span>03</span>En 3D</a></li>
+      <li><a href="#formulario"><span>04</span>Formulario</a></li>
+      <li><a href="#diagrama"><span>05</span>Viga en vivo</a></li>
+      <li><a href="#ejemplo"><span>06</span>Ejemplo resuelto</a></li>
+      <li><a href="#practica"><span>07</span>Práctica</a></li>
+      <li><a href="#tablas"><span>08</span>Tablas</a></li>
+      <li><a href="#trampas"><span>09</span>Errores típicos</a></li>
+      <li><a href="#tarjetas"><span>10</span>Tarjetas</a></li>
+      <li><a href="#test"><span>11</span>Test</a></li>
+      <li><a href="#glosario"><span>12</span>Glosario</a></li>
+      <li><a href="#plan"><span>13</span>Plan de repaso</a></li>
     </ol>
     <div class="toc__foot">
       <p>el 90 % de los errores son de unidades, no de mecánica</p>
@@ -161,8 +163,31 @@
       <p>El <strong>estado límite último</strong> (ELU) comprueba que la estructura no colapsa. El <strong>estado límite de servicio</strong> (ELS) comprueba que no se agrieta, no vibra ni se deforma en exceso. Los coeficientes parciales majoran las acciones (1,35 para las permanentes y 1,5 para las variables) y minoran la resistencia del material. El coeficiente de seguridad global es el cociente entre lo que aguanta y lo que le pides.</p>
     </section>
 
+    <section class="topic" id="tresd">
+      <div class="topic__head"><span class="topic__num">03</span><h2>El pórtico, la carga y la flecha, en 3D</h2></div>
+      <p class="topic__sub">Sube la carga, cambia el perfil y mira cómo se deforma el dintel. La línea de puntos es la posición sin carga: la separación entre las dos es la flecha.</p>
+
+      <p class="lede">Un pórtico de nave agrícola se comprueba con tres criterios que casi nunca coinciden: resistencia, flecha y pandeo. En 3D se ve por qué. La viga se dobla de forma visible mucho antes de que el acero esté cerca de romperse, y por eso en luces grandes lo que dimensiona la sección es la deformación, no la tensión.</p>
+
+      <div class="e3d" id="e3d-estructuras"></div>
+
+      <h3>Qué mirar mientras mueves los controles</h3>
+      <ul>
+        <li><strong>La flecha va con la cuarta potencia de la luz.</strong> Duplicar la luz multiplica la flecha por dieciséis con la misma carga y el mismo perfil, mientras que la tensión solo se multiplica por cuatro. Por eso una nave de 20 m no es una de 12 m con el perfil doblado.</li>
+        <li><strong>El momento máximo está en el centro y vale qL²/8.</strong> Con carga repartida el cortante es máximo en los apoyos y nulo en el centro; el momento, al revés. Si la carga es puntual, el momento pasa a <i>P</i>·<i>a</i>·<i>b</i>/<i>L</i> y su posición se desplaza hacia el punto de aplicación.</li>
+        <li><strong>El límite L/250 no es estético.</strong> Evita que la cubierta fisure, que el agua se acumule en las limahoyas y que las correas trabajen fuera de su posición de cálculo. Se compara siempre con la norma, nunca con la impresión visual.</li>
+      </ul>
+
+      <div class="callout callout--tip">
+        <span class="callout__icon">i</span><span class="callout__title">Del modelo a la fórmula</span>
+        <p>Con 2 kN/m sobre 12 m de luz, un IPE 300 trabaja a 65 MPa y flecta 31 mm, por debajo del límite L/250 de 48 mm. Cambia a IPE 200 y la tensión sube a 186 MPa, que aún aguanta, pero la flecha se va a 132 mm: casi el triple del límite. Ese es el caso típico en el que la deformación decide la sección y la resistencia no.</p>
+      </div>
+
+      <p>Repite el cálculo a mano en la <a href="#practica">práctica</a>, con la calculadora de viga y la de pandeo, y comprueba que el perfil que sale por flecha es mayor que el que sale por tensión.</p>
+    </section>
+
     <section class="topic" id="formulario">
-      <div class="topic__head"><span class="topic__num">03</span><h2>Formulario</h2></div>
+      <div class="topic__head"><span class="topic__num">04</span><h2>Formulario</h2></div>
       <p class="topic__sub">Las diez expresiones que resuelven casi cualquier problema de la asignatura.</p>
 
       <div class="formulas">
@@ -297,7 +322,7 @@
     </section>
 
     <section class="topic" id="diagrama">
-      <div class="topic__head"><span class="topic__num">04</span><h2>Viga en vivo</h2></div>
+      <div class="topic__head"><span class="topic__num">05</span><h2>Viga en vivo</h2></div>
       <p class="topic__sub">Mueve la carga a lo largo de la viga y mira cómo cambian el momento y la deformada.</p>
       <p>En una viga biapoyada, el momento máximo aparece siempre bajo la carga y vale <strong>P·a·b/L</strong>. El máximo absoluto se alcanza con la carga en el centro, pero el caso descentrado es el que se da en la realidad: una correa que recibe el peso de un panel o de un depósito. La deformada se dibuja amplificada para que se vea.</p>
 
@@ -355,7 +380,7 @@
     </section>
 
     <section class="topic" id="ejemplo">
-      <div class="topic__head"><span class="topic__num">05</span><h2>Ejemplo resuelto</h2></div>
+      <div class="topic__head"><span class="topic__num">06</span><h2>Ejemplo resuelto</h2></div>
       <p class="topic__sub">Correa de cubierta de una nave ganadera: 6 m de luz, separación 1,20 m, IPE 160 en S275.</p>
 
       <ol class="steps">
@@ -413,7 +438,7 @@
     </section>
 
     <section class="topic" id="practica">
-      <div class="topic__head"><span class="topic__num">06</span><h2>Práctica</h2></div>
+      <div class="topic__head"><span class="topic__num">07</span><h2>Práctica</h2></div>
       <p class="topic__sub">Calcula a mano y comprueba. Tolerancia del 2 % para absorber redondeos.</p>
 
       <div class="drill" data-drill="d1" data-answer="12" data-tol="0.3" data-solution="σ = 120 000 N / 10 000 mm² = 12 MPa">
@@ -531,7 +556,7 @@
     </section>
 
     <section class="topic" id="tablas">
-      <div class="topic__head"><span class="topic__num">07</span><h2>Tablas de referencia</h2></div>
+      <div class="topic__head"><span class="topic__num">08</span><h2>Tablas de referencia</h2></div>
       <p class="topic__sub">Valores de manual. La norma y el fabricante mandan sobre la tabla.</p>
 
       <div class="table-wrap">
@@ -593,7 +618,7 @@
     </section>
 
     <section class="topic" id="trampas">
-      <div class="topic__head"><span class="topic__num">08</span><h2>Errores típicos</h2></div>
+      <div class="topic__head"><span class="topic__num">09</span><h2>Errores típicos</h2></div>
       <p class="topic__sub">Los que se cobran puntos en el examen y sustos en la obra.</p>
 
       <div class="callout callout--danger">
@@ -634,7 +659,7 @@
     </section>
 
     <section class="topic" id="tarjetas">
-      <div class="topic__head"><span class="topic__num">09</span><h2>Tarjetas</h2></div>
+      <div class="topic__head"><span class="topic__num">10</span><h2>Tarjetas</h2></div>
       <p class="topic__sub">Tapa la respuesta, dilo en voz alta y gira. Baraja para no memorizar el orden.</p>
 
       <div class="flash" data-flash>
@@ -786,7 +811,7 @@
     </section>
 
     <section class="topic" id="test">
-      <div class="topic__head"><span class="topic__num">10</span><h2>Test</h2></div>
+      <div class="topic__head"><span class="topic__num">11</span><h2>Test</h2></div>
       <p class="topic__sub">Diez preguntas con explicación. No hay nota guardada: al cerrar la página, se borra.</p>
 
       <div class="quiz" data-quiz="quiz-estructuras">
@@ -817,7 +842,7 @@
     </section>
 
     <section class="topic" id="glosario">
-      <div class="topic__head"><span class="topic__num">11</span><h2>Glosario</h2></div>
+      <div class="topic__head"><span class="topic__num">12</span><h2>Glosario</h2></div>
       <p class="topic__sub">Vocabulario mínimo para leer un enunciado sin dudar.</p>
       <dl class="glossary">
         <div><dt>Axil</dt><dd>Esfuerzo normal a la sección, de tracción o compresión. Genera tensión uniforme σ = N/A.</dd></div>
@@ -838,7 +863,7 @@
     </section>
 
     <section class="topic" id="plan">
-      <div class="topic__head"><span class="topic__num">12</span><h2>Plan de repaso</h2></div>
+      <div class="topic__head"><span class="topic__num">13</span><h2>Plan de repaso</h2></div>
       <p class="topic__sub">Tres pasadas cortas rinden más que una maratón la víspera.</p>
       <div class="grid grid--3">
         <div class="card card--tint">
@@ -952,6 +977,8 @@
 </script>
 
 <script src="assets/estudio.js" defer></script>
+<script src="assets/escena3d.js" defer></script>
+<script src="assets/escena-estructuras.js" defer></script>
 <script src="assets/estructuras.js" defer></script>
 </body>
 </html>

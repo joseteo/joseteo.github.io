@@ -8,6 +8,7 @@
 <meta name="theme-color" content="#f6efe5">
 <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/estudio.css">
+<link rel="stylesheet" href="assets/escena3d.css">
 </head>
 <body style="--accent:#b34f37;--accent-ink:#8d3a26;--accent-soft:rgba(179,79,55,.10);--accent-line:rgba(179,79,55,.32)">
 
@@ -81,16 +82,17 @@
     <ol>
       <li><a href="#mapa"><span>01</span>Mapa del tema</a></li>
       <li><a href="#conceptos"><span>02</span>Conceptos clave</a></li>
-      <li><a href="#formulario"><span>03</span>Formulario</a></li>
-      <li><a href="#diagrama"><span>04</span>Curvas en vivo</a></li>
-      <li><a href="#ejemplo"><span>05</span>Ejemplo resuelto</a></li>
-      <li><a href="#practica"><span>06</span>Práctica</a></li>
-      <li><a href="#tablas"><span>07</span>Tablas</a></li>
-      <li><a href="#trampas"><span>08</span>Errores típicos</a></li>
-      <li><a href="#tarjetas"><span>09</span>Tarjetas</a></li>
-      <li><a href="#test"><span>10</span>Test</a></li>
-      <li><a href="#glosario"><span>11</span>Glosario</a></li>
-      <li><a href="#plan"><span>12</span>Plan de repaso</a></li>
+      <li><a href="#tresd"><span>03</span>En 3D</a></li>
+      <li><a href="#formulario"><span>04</span>Formulario</a></li>
+      <li><a href="#diagrama"><span>05</span>Curvas en vivo</a></li>
+      <li><a href="#ejemplo"><span>06</span>Ejemplo resuelto</a></li>
+      <li><a href="#practica"><span>07</span>Práctica</a></li>
+      <li><a href="#tablas"><span>08</span>Tablas</a></li>
+      <li><a href="#trampas"><span>09</span>Errores típicos</a></li>
+      <li><a href="#tarjetas"><span>10</span>Tarjetas</a></li>
+      <li><a href="#test"><span>11</span>Test</a></li>
+      <li><a href="#glosario"><span>12</span>Glosario</a></li>
+      <li><a href="#plan"><span>13</span>Plan de repaso</a></li>
     </ol>
     <div class="toc__foot">
       <p>la potencia se mide en el banco, el trabajo se hace en el suelo</p>
@@ -162,8 +164,31 @@
       <p>El gasóleo es solo una parte. El coste real suma amortización, mantenimiento, mano de obra y combustible. Para comparar aperos, lo útil es el <strong>consumo por hectárea</strong>: litros por hora divididos por hectáreas por hora. Un apero más ancho gasta más por hora y menos por hectárea, hasta que el tractor no puede con él.</p>
     </section>
 
+    <section class="topic" id="tresd">
+      <div class="topic__head"><span class="topic__num">03</span><h2>El tractor, el apero y el patinaje, en 3D</h2></div>
+      <p class="topic__sub">Añade lastre, sube la resistencia del apero y cambia el suelo. El modelo calcula la carga sobre el eje trasero, la tracción disponible y el patinaje.</p>
+
+      <p class="lede">La potencia del motor no es lo que tira del apero. Lo que tira es el rozamiento entre el neumático y el suelo, y ese rozamiento depende del peso que hay encima del eje motriz. En 3D se ve el reparto: el lastre se coloca sobre las ruedas traseras porque es ahí donde la masa se convierte en fuerza de tiro.</p>
+
+      <div class="e3d" id="e3d-maquinaria"></div>
+
+      <h3>Qué mirar mientras mueves los controles</h3>
+      <ul>
+        <li><strong>La tracción disponible es μ · <i>N</i>.</strong> Con μ = 0,75 en seco y 0,35 en fangoso, el mismo tractor tira menos de la mitad en barro. No es una avería ni falta de potencia: es el coeficiente de rozamiento del suelo.</li>
+        <li><strong>El lastre tiene un óptimo, no un máximo.</strong> Añadir peso sube la tracción, pero también compacta el suelo, aumenta la resistencia a la rodadura y sube el consumo. Pasado cierto punto el patinaje baja y la potencia útil no sube.</li>
+        <li><strong>La potencia de tiro es <i>P</i> = <i>F</i> · <i>v</i> / 3,6.</strong> Con la fuerza en kN y la velocidad en km/h, el resultado sale en kW. A eso hay que sumarle la rodadura, la transmisión y la toma de fuerza, que es lo que separa la potencia al motor de la potencia en la barra.</li>
+      </ul>
+
+      <div class="callout callout--tip">
+        <span class="callout__icon">i</span><span class="callout__title">Del modelo a la fórmula</span>
+        <p>El modelo reparte el 62 % del peso del tractor sobre el eje trasero y le suma todo el lastre. Con 4 000 kg de tractor y 400 kg de lastre, la carga trasera es de 28,3 kN; en suelo seco la tracción disponible es de 21,2 kN. Si el apero pide 9 kN a 8 km/h, el patinaje se queda en el 7 % y la potencia de tiro en 20 kW. Cambia el suelo a fangoso y la tracción disponible cae a 9,9 kN: el apero ya no se puede tirar.</p>
+      </div>
+
+      <p>Repite el reparto de cargas en la <a href="#practica">práctica</a>, con la calculadora de tracción y la de motor, y compara el patinaje que sale con el que marca el modelo.</p>
+    </section>
+
     <section class="topic" id="formulario">
-      <div class="topic__head"><span class="topic__num">03</span><h2>Formulario</h2></div>
+      <div class="topic__head"><span class="topic__num">04</span><h2>Formulario</h2></div>
       <p class="topic__sub">Las diez expresiones que resuelven casi cualquier problema de la asignatura.</p>
 
       <div class="formulas">
@@ -299,7 +324,7 @@
     </section>
 
     <section class="topic" id="diagrama">
-      <div class="topic__head"><span class="topic__num">04</span><h2>Curvas en vivo</h2></div>
+      <div class="topic__head"><span class="topic__num">05</span><h2>Curvas en vivo</h2></div>
       <p class="topic__sub">Mueve el par máximo y los regímenes y mira cómo se desplazan las dos curvas.</p>
       <p>La curva de par sube desde el ralentí hasta un máximo situado a régimen medio y después cae. La de potencia sigue subiendo porque el régimen crece más deprisa de lo que cae el par, hasta que se cruzan. El <strong>punto de par máximo</strong> es donde el motor aguanta más sin calarse; el de <strong>potencia máxima</strong>, donde hace más trabajo por hora.</p>
 
@@ -356,7 +381,7 @@
     </section>
 
     <section class="topic" id="ejemplo">
-      <div class="topic__head"><span class="topic__num">05</span><h2>Ejemplo resuelto</h2></div>
+      <div class="topic__head"><span class="topic__num">06</span><h2>Ejemplo resuelto</h2></div>
       <p class="topic__sub">Elegir tractor para un arado de vertedera de 4 cuerpos: 1,60 m de ancho, 30 cm de profundidad, 7 km/h.</p>
 
       <ol class="steps">
@@ -420,7 +445,7 @@
     </section>
 
     <section class="topic" id="practica">
-      <div class="topic__head"><span class="topic__num">06</span><h2>Práctica</h2></div>
+      <div class="topic__head"><span class="topic__num">07</span><h2>Práctica</h2></div>
       <p class="topic__sub">Calcula a mano y comprueba. Tolerancia del 2 % para absorber redondeos.</p>
 
       <div class="drill" data-drill="d1" data-answer="113.1" data-tol="2.3" data-solution="P = 600 · 1800 / 9549 = 113,1 kW">
@@ -533,7 +558,7 @@
     </section>
 
     <section class="topic" id="tablas">
-      <div class="topic__head"><span class="topic__num">07</span><h2>Tablas de referencia</h2></div>
+      <div class="topic__head"><span class="topic__num">08</span><h2>Tablas de referencia</h2></div>
       <p class="topic__sub">Órdenes de magnitud de taller. El manual del apero manda sobre la tabla.</p>
 
       <div class="table-wrap">
@@ -593,7 +618,7 @@
     </section>
 
     <section class="topic" id="trampas">
-      <div class="topic__head"><span class="topic__num">08</span><h2>Errores típicos</h2></div>
+      <div class="topic__head"><span class="topic__num">09</span><h2>Errores típicos</h2></div>
       <p class="topic__sub">Los que se cobran puntos en el examen y averías en el taller.</p>
 
       <div class="callout callout--danger">
@@ -634,7 +659,7 @@
     </section>
 
     <section class="topic" id="tarjetas">
-      <div class="topic__head"><span class="topic__num">09</span><h2>Tarjetas</h2></div>
+      <div class="topic__head"><span class="topic__num">10</span><h2>Tarjetas</h2></div>
       <p class="topic__sub">Tapa la respuesta, dilo en voz alta y gira. Baraja para no memorizar el orden.</p>
 
       <div class="flash" data-flash>
@@ -786,7 +811,7 @@
     </section>
 
     <section class="topic" id="test">
-      <div class="topic__head"><span class="topic__num">10</span><h2>Test</h2></div>
+      <div class="topic__head"><span class="topic__num">11</span><h2>Test</h2></div>
       <p class="topic__sub">Diez preguntas con explicación. No hay nota guardada: al cerrar la página, se borra.</p>
 
       <div class="quiz" data-quiz="quiz-maquinaria">
@@ -817,7 +842,7 @@
     </section>
 
     <section class="topic" id="glosario">
-      <div class="topic__head"><span class="topic__num">11</span><h2>Glosario</h2></div>
+      <div class="topic__head"><span class="topic__num">12</span><h2>Glosario</h2></div>
       <p class="topic__sub">Vocabulario mínimo para leer un enunciado sin dudar.</p>
       <dl class="glossary">
         <div><dt>Adherencia</dt><dd>Coeficiente entre la fuerza que puede transmitir el neumático y el peso que soporta. Depende del suelo y del dibujo.</dd></div>
@@ -838,7 +863,7 @@
     </section>
 
     <section class="topic" id="plan">
-      <div class="topic__head"><span class="topic__num">12</span><h2>Plan de repaso</h2></div>
+      <div class="topic__head"><span class="topic__num">13</span><h2>Plan de repaso</h2></div>
       <p class="topic__sub">Tres pasadas cortas rinden más que una maratón la víspera.</p>
       <div class="grid grid--3">
         <div class="card card--tint">
@@ -952,6 +977,8 @@
 </script>
 
 <script src="assets/estudio.js" defer></script>
+<script src="assets/escena3d.js" defer></script>
+<script src="assets/escena-maquinaria.js" defer></script>
 <script src="assets/maquinaria.js" defer></script>
 </body>
 </html>

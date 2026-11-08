@@ -8,6 +8,7 @@
 <meta name="theme-color" content="#f6efe5">
 <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/estudio.css">
+<link rel="stylesheet" href="assets/escena3d.css">
 </head>
 <body style="--accent:#4e7f5f;--accent-ink:#2f5a41;--accent-soft:rgba(78,127,95,.10);--accent-line:rgba(78,127,95,.32)">
 
@@ -86,16 +87,17 @@
     <ol>
       <li><a href="#mapa"><span>01</span>Mapa del tema</a></li>
       <li><a href="#conceptos"><span>02</span>Conceptos clave</a></li>
-      <li><a href="#formulario"><span>03</span>Formulario</a></li>
-      <li><a href="#diagrama"><span>04</span>Dilución en vivo</a></li>
-      <li><a href="#ejemplo"><span>05</span>Ejemplo resuelto</a></li>
-      <li><a href="#practica"><span>06</span>Práctica</a></li>
-      <li><a href="#tablas"><span>07</span>Tablas</a></li>
-      <li><a href="#trampas"><span>08</span>Errores típicos</a></li>
-      <li><a href="#tarjetas"><span>09</span>Tarjetas</a></li>
-      <li><a href="#test"><span>10</span>Test</a></li>
-      <li><a href="#glosario"><span>11</span>Glosario</a></li>
-      <li><a href="#plan"><span>12</span>Plan de repaso</a></li>
+      <li><a href="#tresd"><span>03</span>En 3D</a></li>
+      <li><a href="#formulario"><span>04</span>Formulario</a></li>
+      <li><a href="#diagrama"><span>05</span>Dilución en vivo</a></li>
+      <li><a href="#ejemplo"><span>06</span>Ejemplo resuelto</a></li>
+      <li><a href="#practica"><span>07</span>Práctica</a></li>
+      <li><a href="#tablas"><span>08</span>Tablas</a></li>
+      <li><a href="#trampas"><span>09</span>Errores típicos</a></li>
+      <li><a href="#tarjetas"><span>10</span>Tarjetas</a></li>
+      <li><a href="#test"><span>11</span>Test</a></li>
+      <li><a href="#glosario"><span>12</span>Glosario</a></li>
+      <li><a href="#plan"><span>13</span>Plan de repaso</a></li>
     </ol>
     <div class="toc__foot">
       <p>mejor 25 minutos concentrado que dos horas con el móvil al lado</p>
@@ -176,8 +178,31 @@
       <p>Es el calendario: cuántos riegos, de qué duración y con qué concentración. Se construye con ETc, eficiencia, fracción de lavado y extracción del cultivo. En goteo se fracciona en pulsos para mantener el bulbo aireado y la concentración estable.</p>
     </section>
 
+    <section class="topic" id="tresd">
+      <div class="topic__head"><span class="topic__num">03</span><h2>El cabezal y el bulbo, en 3D</h2></div>
+      <p class="topic__sub">Mueve el caudal del gotero, el tiempo de riego y la textura del suelo. El modelo recalcula el bulbo húmedo y te dice si el riego es correcto, corto o lixivia.</p>
+
+      <p class="lede">El fertirriego se estudia en dos escalas que aquí ves a la vez. En el cabezal, el agua se mezcla con la solución madre, se inyecta, se filtra y se mide. En el suelo, esa misma agua abre un bulbo húmedo alrededor del gotero, y su tamaño decide si la raíz tiene agua, nutrientes y aire.</p>
+
+      <div class="e3d" id="e3d-fertirriego"></div>
+
+      <h3>Qué mirar mientras mueves los controles</h3>
+      <ul>
+        <li><strong>El bulbo no crece en vertical.</strong> El agua baja por gravedad pero se reparte en horizontal por capilaridad. En suelo arenoso el bulbo es estrecho y profundo; en arcilloso, ancho y somero. Por eso el mismo caudal y el mismo tiempo no sirven para dos texturas.</li>
+        <li><strong>El radio manda sobre la separación entre goteros.</strong> Si el bulbo no se solapa con el del gotero vecino, entre los dos queda una franja seca que la raíz no coloniza y que se calienta.</li>
+        <li><strong>El tiempo profundiza, el caudal ensancha.</strong> Duplicar el caudal duplica el volumen, pero repartido en una semiesfera más ancha, no más honda. Lo que baja el frente húmedo es regar durante más tiempo.</li>
+      </ul>
+
+      <div class="callout callout--tip">
+        <span class="callout__icon">i</span><span class="callout__title">Del modelo a la fórmula</span>
+        <p>El volumen infiltrado es <i>V</i> = <i>q</i> · <i>t</i>, con el caudal en L/h y el tiempo en horas. El modelo reparte ese volumen en un bulbo semiesférico de radio <i>r</i> = (3<i>V</i> / 2π)<sup>1/3</sup>, corregido por la textura: 1,0 en franco, 0,78 en arenoso y 1,26 en arcilloso. Con 4 L/h durante 2 h salen 8 L y un radio de 34 cm en franco. Baja a 1 L/h y el radio cae a 21 cm, por debajo de la separación típica de 50 cm entre goteros.</p>
+      </div>
+
+      <p>Resuelve los mismos números a mano en la <a href="#practica">práctica</a>, con la calculadora de volumen de riego y dosis, y compara el resultado con el bulbo que acabas de ver.</p>
+    </section>
+
     <section class="topic" id="formulario">
-      <div class="topic__head"><span class="topic__num">03</span><h2>Formulario</h2></div>
+      <div class="topic__head"><span class="topic__num">04</span><h2>Formulario</h2></div>
       <p class="topic__sub">Las diez expresiones que resuelven casi cualquier problema de la asignatura.</p>
 
       <div class="formulas">
@@ -310,7 +335,7 @@
     </section>
 
     <section class="topic" id="diagrama">
-      <div class="topic__head"><span class="topic__num">04</span><h2>Dilución en vivo</h2></div>
+      <div class="topic__head"><span class="topic__num">05</span><h2>Dilución en vivo</h2></div>
       <p class="topic__sub">Mueve la concentración de la solución madre y mira dónde corta la curva al objetivo.</p>
       <p>Una solución madre concentrada se diluye en la red según <strong>C<sub>final</sub> = C<sub>madre</sub> / (R + 1)</strong>, donde R es la relación de dilución (1 parte de madre por R de agua). Para un objetivo dado existe una única R de trabajo: la que hace que la curva corte la línea horizontal.</p>
 
@@ -357,7 +382,7 @@
     </section>
 
     <section class="topic" id="ejemplo">
-      <div class="topic__head"><span class="topic__num">05</span><h2>Ejemplo resuelto</h2></div>
+      <div class="topic__head"><span class="topic__num">06</span><h2>Ejemplo resuelto</h2></div>
       <p class="topic__sub">Preparar 1 000 L de solución madre 100× para aportar 200 ppm de K₂O con nitrato potásico.</p>
 
       <ol class="steps">
@@ -411,7 +436,7 @@
     </section>
 
     <section class="topic" id="practica">
-      <div class="topic__head"><span class="topic__num">06</span><h2>Práctica</h2></div>
+      <div class="topic__head"><span class="topic__num">07</span><h2>Práctica</h2></div>
       <p class="topic__sub">Calcula a mano y comprueba. Tolerancia del 2 % para absorber redondeos.</p>
 
       <div class="drill" data-drill="d1" data-answer="5.28" data-tol="0.11" data-solution="ETc = 1,1 · 4,8 = 5,28 mm/día">
@@ -517,7 +542,7 @@
     </section>
 
     <section class="topic" id="tablas">
-      <div class="topic__head"><span class="topic__num">07</span><h2>Tablas de referencia</h2></div>
+      <div class="topic__head"><span class="topic__num">08</span><h2>Tablas de referencia</h2></div>
       <p class="topic__sub">Valores orientativos de trabajo, no verdades absolutas: cada agua y cada suelo mueven el rango.</p>
 
       <div class="table-wrap">
@@ -568,7 +593,7 @@
     </section>
 
     <section class="topic" id="trampas">
-      <div class="topic__head"><span class="topic__num">08</span><h2>Errores típicos</h2></div>
+      <div class="topic__head"><span class="topic__num">09</span><h2>Errores típicos</h2></div>
       <p class="topic__sub">Los que se cobran puntos en el examen y goteros en la parcela.</p>
 
       <div class="callout callout--danger">
@@ -615,7 +640,7 @@
     </section>
 
     <section class="topic" id="tarjetas">
-      <div class="topic__head"><span class="topic__num">09</span><h2>Tarjetas</h2></div>
+      <div class="topic__head"><span class="topic__num">10</span><h2>Tarjetas</h2></div>
       <p class="topic__sub">Tapa la respuesta, dilo en voz alta y gira. Baraja para no memorizar el orden.</p>
 
       <div class="flash" data-flash>
@@ -767,7 +792,7 @@
     </section>
 
     <section class="topic" id="test">
-      <div class="topic__head"><span class="topic__num">10</span><h2>Test</h2></div>
+      <div class="topic__head"><span class="topic__num">11</span><h2>Test</h2></div>
       <p class="topic__sub">Diez preguntas con explicación. No hay nota guardada: al cerrar la página, se borra.</p>
 
       <div class="quiz" data-quiz="quiz-fertirriego">
@@ -798,7 +823,7 @@
     </section>
 
     <section class="topic" id="glosario">
-      <div class="topic__head"><span class="topic__num">11</span><h2>Glosario</h2></div>
+      <div class="topic__head"><span class="topic__num">12</span><h2>Glosario</h2></div>
       <p class="topic__sub">Vocabulario mínimo para leer un enunciado sin dudar.</p>
       <dl class="glossary">
         <div><dt>Bulbo húmedo</dt><dd>Volumen de suelo mojado alrededor de un gotero. Define la zona radicular activa y el punto donde se concentran las sales.</dd></div>
@@ -819,7 +844,7 @@
     </section>
 
     <section class="topic" id="plan">
-      <div class="topic__head"><span class="topic__num">12</span><h2>Plan de repaso</h2></div>
+      <div class="topic__head"><span class="topic__num">13</span><h2>Plan de repaso</h2></div>
       <p class="topic__sub">Tres pasadas cortas rinden más que una maratón la víspera.</p>
       <div class="grid grid--3">
         <div class="card card--tint">
@@ -933,6 +958,8 @@
 </script>
 
 <script src="assets/estudio.js" defer></script>
+<script src="assets/escena3d.js" defer></script>
+<script src="assets/escena-fertirriego.js" defer></script>
 <script src="assets/fertirriego.js" defer></script>
 </body>
 </html>

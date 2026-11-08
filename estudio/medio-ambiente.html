@@ -8,6 +8,7 @@
 <meta name="theme-color" content="#f6efe5">
 <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/estudio.css">
+<link rel="stylesheet" href="assets/escena3d.css">
 </head>
 <body style="--accent:#3f7391;--accent-ink:#2c556e;--accent-soft:rgba(63,115,145,.10);--accent-line:rgba(63,115,145,.32)">
 
@@ -81,16 +82,17 @@
     <ol>
       <li><a href="#mapa"><span>01</span>Mapa del tema</a></li>
       <li><a href="#conceptos"><span>02</span>Conceptos clave</a></li>
-      <li><a href="#formulario"><span>03</span>Formulario</a></li>
-      <li><a href="#diagrama"><span>04</span>Oxígeno en vivo</a></li>
-      <li><a href="#ejemplo"><span>05</span>Ejemplo resuelto</a></li>
-      <li><a href="#practica"><span>06</span>Práctica</a></li>
-      <li><a href="#tablas"><span>07</span>Tablas</a></li>
-      <li><a href="#trampas"><span>08</span>Errores típicos</a></li>
-      <li><a href="#tarjetas"><span>09</span>Tarjetas</a></li>
-      <li><a href="#test"><span>10</span>Test</a></li>
-      <li><a href="#glosario"><span>11</span>Glosario</a></li>
-      <li><a href="#plan"><span>12</span>Plan de repaso</a></li>
+      <li><a href="#tresd"><span>03</span>En 3D</a></li>
+      <li><a href="#formulario"><span>04</span>Formulario</a></li>
+      <li><a href="#diagrama"><span>05</span>Oxígeno en vivo</a></li>
+      <li><a href="#ejemplo"><span>06</span>Ejemplo resuelto</a></li>
+      <li><a href="#practica"><span>07</span>Práctica</a></li>
+      <li><a href="#tablas"><span>08</span>Tablas</a></li>
+      <li><a href="#trampas"><span>09</span>Errores típicos</a></li>
+      <li><a href="#tarjetas"><span>10</span>Tarjetas</a></li>
+      <li><a href="#test"><span>11</span>Test</a></li>
+      <li><a href="#glosario"><span>12</span>Glosario</a></li>
+      <li><a href="#plan"><span>13</span>Plan de repaso</a></li>
     </ol>
     <div class="toc__foot">
       <p>la unidad que suspende exámenes es el kg/día, no el mg/L</p>
@@ -162,8 +164,31 @@
       <p>Es el procedimiento administrativo que decide si un proyecto puede ejecutarse y con qué condiciones. No es un estudio de contaminación: es un análisis de alternativas, identificación de impactos, valoración y medidas correctoras. Termina en una <strong>Declaración de Impacto Ambiental</strong> que fija condiciones de obligado cumplimiento. En regadíos, granjas y plantas de biogás es el trámite que más retrasa la obra.</p>
     </section>
 
+    <section class="topic" id="tresd">
+      <div class="topic__head"><span class="topic__num">03</span><h2>El tren de depuración, en 3D</h2></div>
+      <p class="topic__sub">Cambia el caudal y la DBO₅ de entrada. El modelo recalcula la carga, el tiempo de retención y la DBO de salida, y tiñe el agua según lo limpia que va.</p>
+
+      <p class="lede">Una depuradora es una cadena de operaciones en serie: cada etapa retira una parte concreta de la contaminación y entrega el agua a la siguiente. En 3D se ve lo que un esquema en planta esconde: el agua ocupa volumen, el reactor biológico es el único depósito grande, y el fango sale por abajo.</p>
+
+      <div class="e3d" id="e3d-medio-ambiente"></div>
+
+      <h3>Qué mirar mientras mueves los controles</h3>
+      <ul>
+        <li><strong>El reactor es el que trabaja; los decantadores solo separan.</strong> La materia orgánica la consumen las bacterias del reactor biológico. El decantador primario y el secundario no eliminan DBO: trasladan sólidos del agua al fango.</li>
+        <li><strong>El tiempo de retención hidráulica manda.</strong> TRH = <i>V</i> / <i>Q</i>. Si el caudal se duplica, el agua cruza el reactor en la mitad de tiempo y las bacterias no llegan a comerse la carga. Ahí es donde una planta bien dimensionada empieza a incumplir sin que se haya averiado nada.</li>
+        <li><strong>La carga no es la concentración.</strong> Carga (kg/d) = <i>Q</i> · <i>c</i> / 1000. Un agua diluida con mucho caudal puede cargar el reactor más que un vertido concentrado y pequeño. Los habitantes equivalentes se calculan con la carga, no con los mg/L.</li>
+      </ul>
+
+      <div class="callout callout--tip">
+        <span class="callout__icon">i</span><span class="callout__title">Del modelo a la fórmula</span>
+        <p>Con 200 m³/d y 350 mg/L de DBO₅ la carga es de 70 kg/d, unos 1 167 habitantes equivalentes. Con 250 m³ de reactor el agua permanece 30 h dentro y la DBO de salida baja a 17 mg/L, por debajo del límite de 25. Sube el caudal a 500 m³/d y la retención cae a 12 h: la salida se va a 89 mg/L y la planta incumple. El límite no lo fija el tamaño del reactor, lo fija la relación entre reactor y caudal.</p>
+      </div>
+
+      <p>Comprueba la carga y los habitantes equivalentes en la <a href="#practica">práctica</a>, con la calculadora de carga contaminante, y contrasta el resultado con el que da el modelo.</p>
+    </section>
+
     <section class="topic" id="formulario">
-      <div class="topic__head"><span class="topic__num">03</span><h2>Formulario</h2></div>
+      <div class="topic__head"><span class="topic__num">04</span><h2>Formulario</h2></div>
       <p class="topic__sub">Las diez expresiones que resuelven casi cualquier problema de la asignatura.</p>
 
       <div class="formulas">
@@ -302,7 +327,7 @@
     </section>
 
     <section class="topic" id="diagrama">
-      <div class="topic__head"><span class="topic__num">04</span><h2>Oxígeno en vivo</h2></div>
+      <div class="topic__head"><span class="topic__num">05</span><h2>Oxígeno en vivo</h2></div>
       <p class="topic__sub">Mueve la carga y las constantes del río y mira dónde queda el mínimo de oxígeno.</p>
       <p>Al vertido le sigue una curva de oxígeno disuelto que baja por consumo bacteriano y se recupera por reaireación. La forma depende de la relación entre <strong>k₁</strong> y <strong>k₂</strong>: si la reaireación gana, el saco es poco profundo; si pierde, el río tarda días en recuperarse. El punto más bajo es el que decide si el vertido es admisible.</p>
 
@@ -365,7 +390,7 @@
     </section>
 
     <section class="topic" id="ejemplo">
-      <div class="topic__head"><span class="topic__num">05</span><h2>Ejemplo resuelto</h2></div>
+      <div class="topic__head"><span class="topic__num">06</span><h2>Ejemplo resuelto</h2></div>
       <p class="topic__sub">Depuradora para un núcleo de 4 800 habitantes que vierte a un río de 350 L/s.</p>
 
       <ol class="steps">
@@ -428,7 +453,7 @@
     </section>
 
     <section class="topic" id="practica">
-      <div class="topic__head"><span class="topic__num">06</span><h2>Práctica</h2></div>
+      <div class="topic__head"><span class="topic__num">07</span><h2>Práctica</h2></div>
       <p class="topic__sub">Calcula a mano y comprueba. Tolerancia del 2 % para absorber redondeos.</p>
 
       <div class="drill" data-drill="d1" data-answer="420" data-tol="8" data-solution="Carga = 1 200 · 350 / 1000 = 420 kg DBO₅/d">
@@ -536,7 +561,7 @@
     </section>
 
     <section class="topic" id="tablas">
-      <div class="topic__head"><span class="topic__num">07</span><h2>Tablas de referencia</h2></div>
+      <div class="topic__head"><span class="topic__num">08</span><h2>Tablas de referencia</h2></div>
       <p class="topic__sub">Órdenes de magnitud para orientarse. La norma aplicable manda sobre cualquier tabla.</p>
 
       <div class="table-wrap">
@@ -600,7 +625,7 @@
     </section>
 
     <section class="topic" id="trampas">
-      <div class="topic__head"><span class="topic__num">08</span><h2>Errores típicos</h2></div>
+      <div class="topic__head"><span class="topic__num">09</span><h2>Errores típicos</h2></div>
       <p class="topic__sub">Los que se cobran puntos en el examen y sustos en el proyecto.</p>
 
       <div class="callout callout--danger">
@@ -641,7 +666,7 @@
     </section>
 
     <section class="topic" id="tarjetas">
-      <div class="topic__head"><span class="topic__num">09</span><h2>Tarjetas</h2></div>
+      <div class="topic__head"><span class="topic__num">10</span><h2>Tarjetas</h2></div>
       <p class="topic__sub">Tapa la respuesta, dilo en voz alta y gira. Baraja para no memorizar el orden.</p>
 
       <div class="flash" data-flash>
@@ -793,7 +818,7 @@
     </section>
 
     <section class="topic" id="test">
-      <div class="topic__head"><span class="topic__num">10</span><h2>Test</h2></div>
+      <div class="topic__head"><span class="topic__num">11</span><h2>Test</h2></div>
       <p class="topic__sub">Diez preguntas con explicación. No hay nota guardada: al cerrar la página, se borra.</p>
 
       <div class="quiz" data-quiz="quiz-medio-ambiente">
@@ -824,7 +849,7 @@
     </section>
 
     <section class="topic" id="glosario">
-      <div class="topic__head"><span class="topic__num">11</span><h2>Glosario</h2></div>
+      <div class="topic__head"><span class="topic__num">12</span><h2>Glosario</h2></div>
       <p class="topic__sub">Vocabulario mínimo para leer un enunciado sin dudar.</p>
       <dl class="glossary">
         <div><dt>Autodepuración</dt><dd>Capacidad de un cauce de recuperar su calidad tras recibir un vertido, por acción bacteriana y reaireación.</dd></div>
@@ -845,7 +870,7 @@
     </section>
 
     <section class="topic" id="plan">
-      <div class="topic__head"><span class="topic__num">12</span><h2>Plan de repaso</h2></div>
+      <div class="topic__head"><span class="topic__num">13</span><h2>Plan de repaso</h2></div>
       <p class="topic__sub">Tres pasadas cortas rinden más que una maratón la víspera.</p>
       <div class="grid grid--3">
         <div class="card card--tint">
@@ -959,6 +984,8 @@
 </script>
 
 <script src="assets/estudio.js" defer></script>
+<script src="assets/escena3d.js" defer></script>
+<script src="assets/escena-medio-ambiente.js" defer></script>
 <script src="assets/medio-ambiente.js" defer></script>
 </body>
 </html>
