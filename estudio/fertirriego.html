@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fertirriego · Taller de Estudio</title>
+<meta name="description" content="Fertirriego para Ingeniería Agrícola: solución nutritiva, CE y pH, soluciones madre, inyección, fracción de lavado y programa de riego. Con formulario, ejemplo resuelto, calculadoras y test.">
+<meta name="theme-color" content="#f6efe5">
+<link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/estudio.css">
+</head>
+<body style="--accent:#4e7f5f;--accent-ink:#2f5a41;--accent-soft:rgba(78,127,95,.10);--accent-line:rgba(78,127,95,.32)">
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="bar">
+  <a class="bar__brand" href="index.html">
+    <span class="bar__mark">TE</span>
+    <span class="bar__name">Taller de Estudio<em>Ingeniería Agrícola</em></span>
+  </a>
+  <nav class="bar__nav" aria-label="Asignaturas">
+    <a href="fertirriego.html" aria-current="page">Fertirriego</a>
+    <a href="medio-ambiente.html">Medio ambiente</a>
+    <a href="estructuras.html">Estructuras</a>
+    <a href="maquinaria.html">Maquinaria</a>
+    <a href="../motores/index.html">Atlas 3D</a>
+  </nav>
+  <div class="bar__actions">
+    <button class="bar__link" type="button" data-print>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+      <span>Imprimir</span>
+    </button>
+    <a class="bar__link" href="../index.html#estudio">Portfolio</a>
+  </div>
+</header>
+<div class="progress" aria-hidden="true"></div>
+
+<section class="hero">
+  <div class="hero__inner">
+    <div>
+      <p class="hero__kicker">Asignatura 01 · Riego y nutrición vegetal</p>
+      <h1>Fertirriego:<br>regar la <em>concentración</em>,<br>no solo el volumen</h1>
+      <p class="hero__lead">Aplicar agua y nutrientes en el mismo evento exige pensar en dos monedas a la vez: milímetros de agua y miliequivalentes de sal. Esta página ordena lo que se pregunta en examen y lo que se decide en campo.</p>
+      <ul class="hero__meta">
+        <li><b>10</b> fórmulas</li>
+        <li><b>3</b> calculadoras</li>
+        <li><b>12</b> tarjetas</li>
+        <li><b>10</b> preguntas</li>
+      </ul>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#mapa">Empezar por el mapa</a>
+        <a class="btn btn--ghost" href="#formulario">Ir al formulario</a>
+      </div>
+    </div>
+    <div class="hero__art" aria-hidden="true">
+      <svg viewBox="0 0 200 200">
+        <path class="art-line" d="M16 54h168"/>
+        <path class="art-line" d="M16 54v-7M16 54v7M184 54v-7M184 54v7"/>
+        <circle class="art-fill" cx="62" cy="54" r="4.5"/>
+        <circle class="art-fill" cx="100" cy="54" r="4.5"/>
+        <circle class="art-fill" cx="138" cy="54" r="4.5"/>
+        <path class="art-line" d="M62 66v10M100 66v14M138 66v8"/>
+        <path class="art-line" d="M62 80c0 3-2.5 4.5-2.5 7a2.5 2.5 0 0 0 5 0c0-2.5-2.5-4-2.5-7z"/>
+        <path class="art-line" d="M100 84c0 3-2.5 4.5-2.5 7a2.5 2.5 0 0 0 5 0c0-2.5-2.5-4-2.5-7z"/>
+        <path class="art-line" d="M138 78c0 3-2.5 4.5-2.5 7a2.5 2.5 0 0 0 5 0c0-2.5-2.5-4-2.5-7z"/>
+        <path class="art-line" d="M100 172v-42"/>
+        <path class="art-line" d="M100 140c-13-3-20-12-20-23 11 0 20 9 20 23z"/>
+        <path class="art-line" d="M100 128c13-3 20-12 20-23-11 0-20 9-20 23z"/>
+        <path class="art-line" d="M100 172c-7 7-7 12-13 16M100 172c7 7 7 12 13 16M100 172v18"/>
+        <ellipse class="art-dash" cx="100" cy="160" rx="48" ry="17"/>
+        <text class="art-label" x="100" y="196" text-anchor="middle">BULBO HÚMEDO</text>
+        <text class="art-hand" x="146" y="44">CE 2,2</text>
+        <text class="art-hand" x="22" y="44">pH 5,8</text>
+        <circle class="art-line" cx="76" cy="106" r="6"/>
+        <text class="art-label" x="76" y="109" text-anchor="middle">N</text>
+        <circle class="art-line" cx="124" cy="112" r="6"/>
+        <text class="art-label" x="124" y="115" text-anchor="middle">K</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="shell" id="contenido">
+  <nav class="toc" aria-label="Índice del tema">
+    <p class="toc__label">En esta página</p>
+    <ol>
+      <li><a href="#mapa"><span>01</span>Mapa del tema</a></li>
+      <li><a href="#conceptos"><span>02</span>Conceptos clave</a></li>
+      <li><a href="#formulario"><span>03</span>Formulario</a></li>
+      <li><a href="#diagrama"><span>04</span>Dilución en vivo</a></li>
+      <li><a href="#ejemplo"><span>05</span>Ejemplo resuelto</a></li>
+      <li><a href="#practica"><span>06</span>Práctica</a></li>
+      <li><a href="#tablas"><span>07</span>Tablas</a></li>
+      <li><a href="#trampas"><span>08</span>Errores típicos</a></li>
+      <li><a href="#tarjetas"><span>09</span>Tarjetas</a></li>
+      <li><a href="#test"><span>10</span>Test</a></li>
+      <li><a href="#glosario"><span>11</span>Glosario</a></li>
+      <li><a href="#plan"><span>12</span>Plan de repaso</a></li>
+    </ol>
+    <div class="toc__foot">
+      <p>mejor 25 minutos concentrado que dos horas con el móvil al lado</p>
+      <a href="#test">Ir directo al test</a>
+    </div>
+  </nav>
+
+  <main class="content">
+
+    <section class="topic" id="mapa">
+      <div class="topic__head"><span class="topic__num">01</span><h2>Mapa del tema</h2></div>
+      <p class="topic__sub">Qué se decide, en qué orden y con qué números.</p>
+      <p class="lede">El fertirriego sustituye el abonado de fondo por un goteo continuo de sales: en cada riego se repone el agua que evapotranspira el cultivo y los nutrientes que extrae. La dificultad no está en disolver un saco, está en <strong>cuadrar tres balances</strong>: agua, sales y nutrientes.</p>
+
+      <div class="grid grid--2">
+        <div class="card">
+          <span class="card__tag">Balance de agua</span>
+          <h4>Reponer lo que se pierde</h4>
+          <p>La ETc marca el volumen. La eficiencia del sistema y la fracción de lavado corrigen ese volumen hacia arriba. Sin esa corrección se riega de menos y se acumulan sales.</p>
+        </div>
+        <div class="card">
+          <span class="card__tag">Balance de sales</span>
+          <h4>No salinizar el bulbo</h4>
+          <p>Cada riego aporta sales y cada ETc las concentra. La fracción de lavado es el porcentaje de agua extra que arrastra esas sales por debajo de la zona radicular.</p>
+        </div>
+        <div class="card">
+          <span class="card__tag">Balance de nutrientes</span>
+          <h4>Aportar lo que se extrae</h4>
+          <p>La dosis se calcula por diferencia entre extracción del cultivo y lo que ya trae el agua de riego. El resultado se convierte a fertilizante comercial con la riqueza de la etiqueta.</p>
+        </div>
+        <div class="card">
+          <span class="card__tag">Control</span>
+          <h4>Medir CE y pH</h4>
+          <p>La CE dice cuánta sal hay; el pH dice en qué forma química están los iones y si el hierro sigue disponible. Son los dos diales del cabezal.</p>
+        </div>
+      </div>
+
+      <div class="note">
+        <p>Si solo te llevas una idea: en fertirriego no se riega «un rato», se riega una concentración objetivo durante un volumen calculado.</p>
+      </div>
+    </section>
+
+    <section class="topic" id="conceptos">
+      <div class="topic__head"><span class="topic__num">02</span><h2>Conceptos clave</h2></div>
+      <p class="topic__sub">Los ocho términos con los que se construye todo lo demás.</p>
+
+      <h3>Solución nutritiva</h3>
+      <p>Es el agua de riego más las sales disueltas. Se describe por la concentración de cada ion, no por los gramos de producto. La unidad de trabajo en nutrición vegetal es el <strong>meq/L</strong> porque permite sumar cationes y aniones y comprobar que el balance cierra.</p>
+      <ul>
+        <li><strong>mg/L (ppm)</strong> es masa de elemento por litro. Es la unidad de la etiqueta y del laboratorio.</li>
+        <li><strong>mmol/L</strong> es número de moles. Se usa para cálculo de potencial osmótico y de proporciones.</li>
+        <li><strong>meq/L</strong> es carga eléctrica. Es la unidad natural del balance iónico.</li>
+      </ul>
+
+      <h3>CE y potencial osmótico</h3>
+      <p>La conductividad eléctrica (CE, en dS/m o mS/cm) es proporcional a la cantidad total de iones. A más CE, más cuesta a la raíz absorber agua, aunque el suelo esté húmedo. La relación práctica es <strong>Ψs ≈ −0,036 · CE</strong> en MPa, con la CE en dS/m a 25 °C: una solución de 2 dS/m ejerce unos −0,072 MPa, es decir, el cultivo gasta energía en vencer esa presión antes de empezar a transpirar.</p>
+
+      <h3>pH de la solución</h3>
+      <p>El rango de trabajo en goteo es <strong>5,5 a 6,5</strong>. Por debajo se acidifica la rizosfera y se dañan pelos radicales; por encima, el hierro precipita y el fósforo se bloquea. El pH no se corrige «por estética»: los bicarbonatos del agua lo suben y consumen ácido, así que la dosis de ácido se calcula contra los meq/L de HCO₃⁻.</p>
+
+      <h3>Solución madre</h3>
+      <p>Se prepara concentrada, típicamente <strong>100 o 200 veces</strong>, para no transportar agua. Se guarda en depósitos separados por incompatibilidad: el calcio con fosfatos o sulfatos forma precipitados que obstruyen el gotero y restan nutrientes. La regla es <em>dos tanques como mínimo</em>: uno con calcio y otro con fosfatos, sulfatos y microelementos.</p>
+
+      <h3>Cabezal de fertirriego</h3>
+      <p>Es el conjunto que dosifica: bomba, filtros, inyectores, depósitos, programador y sensores de CE y pH. El orden importa. El inyector va <strong>después de los filtros</strong> y con válvula antirretorno, para que ningún fertilizante contamine la red de agua limpia ni obstruya los filtros.</p>
+
+      <h3>Sistemas de inyección</h3>
+      <ul>
+        <li><strong>Venturi:</strong> barato y sin electricidad, succiona por depresión. Poco preciso y con pérdida de carga del 30 al 40 %.</li>
+        <li><strong>Bomba dosificadora:</strong> pistón o membrana, caudal proporcional y repetible. Es la opción cuando se controla CE de verdad.</li>
+        <li><strong>Tanque de abonado:</strong> la solución se diluye a medida que baja el nivel, así que la concentración no es constante. Sirve para superficies pequeñas.</li>
+      </ul>
+
+      <h3>Fracción de lavado</h3>
+      <p>Es la parte del agua aplicada que se destina a arrastrar sales fuera del bulbo. Se estima con la CE del agua y la CE que tolera el cultivo. Sin lavado, la CE del extracto de saturación sube riego tras riego hasta que el cultivo deja de crecer.</p>
+
+      <h3>Programa de riego</h3>
+      <p>Es el calendario: cuántos riegos, de qué duración y con qué concentración. Se construye con ETc, eficiencia, fracción de lavado y extracción del cultivo. En goteo se fracciona en pulsos para mantener el bulbo aireado y la concentración estable.</p>
+    </section>
+
+    <section class="topic" id="formulario">
+      <div class="topic__head"><span class="topic__num">03</span><h2>Formulario</h2></div>
+      <p class="topic__sub">Las diez expresiones que resuelven casi cualquier problema de la asignatura.</p>
+
+      <div class="formulas">
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Evapotranspiración del cultivo</span>
+            <span class="formula__expr"><i>ETc</i> = <i>Kc</i> · <i>ETo</i></span>
+          </div>
+          <ul class="formula__where">
+            <li><b>ETc</b> mm/día <em>demanda del cultivo</em></li>
+            <li><b>Kc</b> adimensional <em>coeficiente de cultivo y fase</em></li>
+            <li><b>ETo</b> mm/día <em>demanda de referencia</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Volumen bruto de riego</span>
+            <span class="formula__expr"><i>V</i> = <i>ETc</i> / (<i>Ea</i> · (1 − <i>LF</i>))</span>
+          </div>
+          <ul class="formula__where">
+            <li><b>V</b> mm/día <em>agua a aplicar</em></li>
+            <li><b>Ea</b> 0,85–0,95 <em>eficiencia de aplicación</em></li>
+            <li><b>LF</b> 0,10–0,20 <em>fracción de lavado</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Fracción de lavado (estimación FAO)</span>
+            <span class="formula__expr"><i>LF</i> = <i>CEw</i> / (2 · <i>CEe</i>)</span>
+          </div>
+          <ul class="formula__where">
+            <li><b>CEw</b> dS/m <em>CE del agua de riego</em></li>
+            <li><b>CEe</b> dS/m <em>CE del extracto que tolera el cultivo</em></li>
+            <li><em>Es una aproximación de equilibrio; en suelos pesados se queda corta.</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Conversión de concentraciones</span>
+            <span class="formula__expr"><i>mmol</i>/L = ppm / <i>PM</i> &nbsp;·&nbsp; <i>meq</i>/L = <i>mmol</i>/L · <i>z</i></span>
+          </div>
+          <ul class="formula__where">
+            <li><b>PM</b> g/mol <em>masa molar del elemento o ion</em></li>
+            <li><b>z</b> 1 o 2 <em>valencia: K⁺ 1, Ca²⁺ 2, NO₃⁻ 1</em></li>
+            <li><em>1 % en peso equivale a 10 000 ppm.</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Dilución de la solución madre</span>
+            <span class="formula__expr"><i>C</i><sub>1</sub> · <i>V</i><sub>1</sub> = <i>C</i><sub>2</sub> · <i>V</i><sub>2</sub></span>
+          </div>
+          <ul class="formula__where">
+            <li><b>C₁</b> ppm <em>concentración de la solución madre</em></li>
+            <li><b>V₁</b> L <em>volumen inyectado</em></li>
+            <li><b>C₂</b> ppm <em>concentración objetivo en la red</em></li>
+            <li><b>V₂</b> L <em>volumen total de riego</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Caudal de inyección</span>
+            <span class="formula__expr"><i>Q</i><sub>iny</sub> = <i>Q</i><sub>riego</sub> / <i>R</i></span>
+          </div>
+          <ul class="formula__where">
+            <li><b>Q<sub>riego</sub></b> m³/h <em>caudal de la red</em></li>
+            <li><b>R</b> 50–200 <em>factor de concentración de la madre</em></li>
+            <li><em>Si la madre está 100×, se inyecta 1/100 del caudal.</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Dosis aportada por riego</span>
+            <span class="formula__expr"><i>kg</i>/ha = ppm · <i>V</i>(m³/ha) / 1000</span>
+          </div>
+          <ul class="formula__where">
+            <li><b>ppm</b> mg/L <em>concentración del elemento</em></li>
+            <li><b>V</b> m³/ha <em>volumen de agua aplicado</em></li>
+            <li><em>1 mm sobre 1 ha son 10 m³.</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Potencial osmótico de la solución</span>
+            <span class="formula__expr"><i>Ψ</i><sub>s</sub> ≈ −0,036 · <i>CE</i></span>
+          </div>
+          <ul class="formula__where">
+            <li><b>Ψ<sub>s</sub></b> MPa <em>presión que la raíz debe vencer</em></li>
+            <li><b>CE</b> dS/m <em>a 25 °C</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Conversión elemento a óxido</span>
+            <span class="formula__expr"><i>P</i><sub>2</sub><i>O</i><sub>5</sub> = P · 2,291 &nbsp;·&nbsp; <i>K</i><sub>2</sub><i>O</i> = K · 1,205</span>
+          </div>
+          <ul class="formula__where">
+            <li><b>CaO</b> = Ca · 1,399</li>
+            <li><b>MgO</b> = Mg · 1,658</li>
+            <li><em>Las etiquetas de fertilizante usan óxidos; los cálculos de extracción usan elemento.</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Neutralización de bicarbonatos</span>
+            <span class="formula__expr"><i>V</i><sub>ácido</sub> ≈ 0,07 · <i>HCO</i><sub>3</sub><sup>−</sup></span>
+          </div>
+          <ul class="formula__where">
+            <li><b>V<sub>ácido</sub></b> mL/L <em>de nítrico al 65 %</em></li>
+            <li><b>HCO₃⁻</b> meq/L <em>alcalinidad del agua</em></li>
+            <li><em>Valor orientativo: la dosis real se ajusta midiendo pH.</em></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout callout--tip">
+        <span class="callout__icon">i</span>
+        <span class="callout__title">Truco de examen</span>
+        <p>Si el enunciado da la riqueza del fertilizante en N-P₂O₅-K₂O, convierte primero a elemento (P y K) y después a meq/L. Casi todos los errores de estas preguntas vienen de mezclar óxido con elemento.</p>
+      </div>
+    </section>
+
+    <section class="topic" id="diagrama">
+      <div class="topic__head"><span class="topic__num">04</span><h2>Dilución en vivo</h2></div>
+      <p class="topic__sub">Mueve la concentración de la solución madre y mira dónde corta la curva al objetivo.</p>
+      <p>Una solución madre concentrada se diluye en la red según <strong>C<sub>final</sub> = C<sub>madre</sub> / (R + 1)</strong>, donde R es la relación de dilución (1 parte de madre por R de agua). Para un objetivo dado existe una única R de trabajo: la que hace que la curva corte la línea horizontal.</p>
+
+      <figure class="figure" data-figure="fert-dilution">
+        <svg viewBox="0 0 560 270" role="img" aria-label="Curva de dilución de la solución madre frente al objetivo">
+          <g>
+            <line class="dg-thin" x1="62" y1="30" x2="62" y2="212"/>
+            <line class="dg-thin" x1="62" y1="212" x2="524" y2="212"/>
+            <line class="dg-thin" x1="62" y1="212" x2="62" y2="30" stroke-dasharray="2 4"/>
+            <text class="dg-small" x="56" y="215" text-anchor="end">0</text>
+            <text class="dg-small" x="56" y="169" text-anchor="end">150</text>
+            <text class="dg-small" x="56" y="124" text-anchor="end">300</text>
+            <text class="dg-small" x="56" y="78" text-anchor="end">450</text>
+            <text class="dg-small" x="56" y="33" text-anchor="end">600</text>
+            <text class="dg-small" x="62" y="226" text-anchor="middle">0</text>
+            <text class="dg-small" x="178" y="226" text-anchor="middle">50</text>
+            <text class="dg-small" x="294" y="226" text-anchor="middle">100</text>
+            <text class="dg-small" x="410" y="226" text-anchor="middle">150</text>
+            <text class="dg-small" x="524" y="226" text-anchor="middle">200</text>
+            <text class="dg-text" x="293" y="244" text-anchor="middle">RELACIÓN DE DILUCIÓN 1 : R</text>
+            <text class="dg-text" x="18" y="120" transform="rotate(-90 18 120)" text-anchor="middle">PPM EN LA RED</text>
+
+            <line class="dg-dash" x1="62" y1="0" x2="524" y2="0" data-fig="target-line"/>
+            <text class="dg-hand" x="470" y="0" data-fig="target-label" text-anchor="end">objetivo</text>
+
+            <path class="dg-accent" d="" data-fig="curve"/>
+            <circle class="dg-fill" cx="0" cy="0" r="5" data-fig="marker"/>
+            <line class="dg-dash" x1="0" y1="0" x2="0" y2="212" data-fig="drop"/>
+            <text class="dg-math" x="0" y="0" data-fig="marker-label" text-anchor="middle">R*</text>
+          </g>
+        </svg>
+        <div class="fig-ctrl">
+          <label>
+            <span>Concentración madre <output data-out="stock">20000</output> ppm</span>
+            <input type="range" data-in="stock" min="2000" max="50000" step="1000" value="20000">
+          </label>
+          <label>
+            <span>Objetivo en la red <output data-out="target">150</output> ppm</span>
+            <input type="range" data-in="target" min="40" max="400" step="10" value="150">
+          </label>
+        </div>
+        <figcaption><b>Lectura:</b> con una madre de 20 000 ppm y un objetivo de 150 ppm, la relación necesaria es 1 : 132. Es decir, por cada litro de madre se inyectan 132 litros de agua. Cuanto más concentrada esté la madre, menos volumen hay que mover y más pequeña puede ser la bomba dosificadora.</figcaption>
+      </figure>
+    </section>
+
+    <section class="topic" id="ejemplo">
+      <div class="topic__head"><span class="topic__num">05</span><h2>Ejemplo resuelto</h2></div>
+      <p class="topic__sub">Preparar 1 000 L de solución madre 100× para aportar 200 ppm de K₂O con nitrato potásico.</p>
+
+      <ol class="steps">
+        <li>
+          <h4>Pasar el objetivo a elemento</h4>
+          <p>La etiqueta del nitrato potásico es 13-0-46: 46 % de K₂O. El objetivo está en óxido, así que se queda en óxido para dosificar, pero hay que saber cuánto potasio elemento representa.</p>
+          <span class="calc">200 ppm K<sub>2</sub>O ÷ 1,205 = <b>166 ppm K</b></span>
+        </li>
+        <li>
+          <h4>Concentrar la madre 100 veces</h4>
+          <p>Si en la red hacen falta 200 ppm de K₂O, en la solución madre debe haber 100 veces más.</p>
+          <span class="calc">200 · 100 = <b>20 000 ppm K<sub>2</sub>O</b> = 20 g/L</span>
+        </li>
+        <li>
+          <h4>Convertir a fertilizante comercial</h4>
+          <p>El producto tiene un 46 % de K₂O, así que se divide la cantidad necesaria entre la riqueza.</p>
+          <span class="calc">20 g/L ÷ 0,46 = <b>43,5 g/L de KNO<sub>3</sub></b></span>
+          <p>Para 1 000 L: 43,5 kg. La solubilidad del nitrato potásico a 20 °C ronda los 316 g/L, así que 43,5 g/L entra sin problema.</p>
+        </li>
+        <li>
+          <h4>Comprobar el nitrógeno que entra de regalo</h4>
+          <p>El nitrato potásico aporta un 13 % de N. No es un residuo: cuenta en el balance.</p>
+          <span class="calc">43,5 g/L · 0,13 = 5,66 g/L N → <b>56,6 ppm N en la red</b></span>
+        </li>
+        <li>
+          <h4>Calcular el caudal de inyección</h4>
+          <p>Con un sector de goteo de 18 m³/h y una madre 100×, el inyector debe mover una centésima parte del caudal.</p>
+          <span class="calc">Q<sub>iny</sub> = 18 / 100 = <b>0,18 m³/h = 180 L/h</b></span>
+        </li>
+        <li>
+          <h4>Calcular cuánto dura la inyección</h4>
+          <p>Los 1 000 L de madre se agotan en el tiempo que tarda el inyector en moverlos.</p>
+          <span class="calc">t = 1 000 L ÷ 180 L/h = <b>5,6 h de riego</b></span>
+          <p>Si el sector riega menos horas al día, hay que repartir la madre en varios días o bajar el volumen del depósito. Nunca se inyecta más rápido de lo que la red puede diluir.</p>
+        </li>
+      </ol>
+
+      <details class="reveal">
+        <summary>Comprobación final: ¿cierra el balance?</summary>
+        <div class="reveal__body">
+          <p>En la red deben quedar 200 ppm de K₂O y 56,6 ppm de N. Al diluir 100 veces, la concentración de la madre cae justo a la centésima parte: 20 000 / 100 = 200 ppm de K₂O y 5 660 / 100 = 56,6 ppm de N. Cierra.</p>
+          <p>La comprobación que suspende a mucha gente es la de unidades: 20 g/L no son 20 000 ppm por casualidad, son 20 000 mg/L. Si en algún paso aparece un factor 1 000 sin justificar, el error está ahí.</p>
+        </div>
+      </details>
+
+      <div class="callout callout--warn">
+        <span class="callout__icon">!</span>
+        <span class="callout__title">Orden de mezcla</span>
+        <p>Primero se llena el depósito con agua hasta dos tercios, después se disuelve la sal, y solo al final se enrasa. Si se echa el producto con el depósito lleno, se forman grumos y la concentración real no es la calculada.</p>
+      </div>
+    </section>
+
+    <section class="topic" id="practica">
+      <div class="topic__head"><span class="topic__num">06</span><h2>Práctica</h2></div>
+      <p class="topic__sub">Calcula a mano y comprueba. Tolerancia del 2 % para absorber redondeos.</p>
+
+      <div class="drill" data-drill="d1" data-answer="5.28" data-tol="0.11" data-solution="ETc = 1,1 · 4,8 = 5,28 mm/día">
+        <p class="drill__q"><b>1.</b> Un tomate en plena producción tiene Kc = 1,1 y la ETo del día es 4,8 mm. ¿Cuál es la ETc?</p>
+        <div class="drill__row">
+          <input class="drill__input" type="number" inputmode="decimal" step="0.01" aria-label="Tu respuesta para la ETc">
+          <span class="drill__unit">mm/día</span>
+          <button class="btn-mini" type="button" data-check>Comprobar</button>
+          <button class="btn-mini" type="button" data-show>Ver solución</button>
+        </div>
+        <p class="drill__fb" data-fb></p>
+      </div>
+
+      <div class="drill" data-drill="d2" data-answer="69" data-tol="1.4" data-solution="V = 5,28 / (0,90 · 0,85) = 6,90 mm/día = 69 m³/ha/día">
+        <p class="drill__q"><b>2.</b> Con ETc = 5,28 mm/día, eficiencia de aplicación 0,90 y fracción de lavado 0,15, ¿cuántos m³/ha al día hay que aplicar? (1 mm sobre 1 ha = 10 m³)</p>
+        <div class="drill__row">
+          <input class="drill__input" type="number" inputmode="decimal" step="1" aria-label="Tu respuesta para el volumen bruto">
+          <span class="drill__unit">m³/ha/día</span>
+          <button class="btn-mini" type="button" data-check>Comprobar</button>
+          <button class="btn-mini" type="button" data-show>Ver solución</button>
+        </div>
+        <p class="drill__fb" data-fb></p>
+      </div>
+
+      <div class="drill" data-drill="d3" data-answer="10.35" data-tol="0.21" data-solution="kg/ha = 150 · 69 / 1000 = 10,35 kg N/ha">
+        <p class="drill__q"><b>3.</b> Si la solución lleva 150 ppm de N y se aplican 69 m³/ha, ¿cuántos kg de N por hectárea se aportan?</p>
+        <div class="drill__row">
+          <input class="drill__input" type="number" inputmode="decimal" step="0.01" aria-label="Tu respuesta para los kg de nitrógeno">
+          <span class="drill__unit">kg N/ha</span>
+          <button class="btn-mini" type="button" data-check>Comprobar</button>
+          <button class="btn-mini" type="button" data-show>Ver solución</button>
+        </div>
+        <p class="drill__fb" data-fb></p>
+      </div>
+
+      <div class="drill" data-drill="d4" data-answer="5.12" data-tol="0.1" data-solution="200 / 39,1 = 5,12 mmol/L; como K⁺ tiene z = 1, también son 5,12 meq/L">
+        <p class="drill__q"><b>4.</b> Convierte 200 ppm de potasio a meq/L. Masa molar del K = 39,1 g/mol.</p>
+        <div class="drill__row">
+          <input class="drill__input" type="number" inputmode="decimal" step="0.01" aria-label="Tu respuesta para los meq por litro">
+          <span class="drill__unit">meq/L</span>
+          <button class="btn-mini" type="button" data-check>Comprobar</button>
+          <button class="btn-mini" type="button" data-show>Ver solución</button>
+        </div>
+        <p class="drill__fb" data-fb></p>
+      </div>
+
+      <div class="calc" data-calc="fert-volume">
+        <div class="calc__head">
+          <div class="calc__title"><span class="calc__tag">Calculadora</span><h4>Volumen de riego y dosis</h4></div>
+          <p class="calc__hint">Cambia cualquier dato y se recalcula.</p>
+        </div>
+        <div class="calc__fields">
+          <label class="field"><span>ETo <em>(mm/d)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="eto" value="4,8" step="0.1" min="0"><span class="unit">mm/d</span></span></label>
+          <label class="field"><span>Kc</span><span class="field__input"><input type="text" inputmode="decimal" data-in="kc" value="1,1" step="0.05" min="0"><span class="unit">—</span></span></label>
+          <label class="field"><span>Eficiencia <em>(Ea)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="ea" value="0,9" step="0.01" min="0.3" max="1"><span class="unit">—</span></span></label>
+          <label class="field"><span>Lavado <em>(LF)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="lf" value="0,15" step="0.01" min="0" max="0.6"><span class="unit">—</span></span></label>
+          <label class="field"><span>N objetivo <em>(ppm)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="n" value="150" step="10" min="0"><span class="unit">mg/L</span></span></label>
+          <label class="field"><span>Superficie</span><span class="field__input"><input type="text" inputmode="decimal" data-in="area" value="1" step="0.1" min="0"><span class="unit">ha</span></span></label>
+        </div>
+        <div class="calc__out" data-out></div>
+        <p class="calc__note"><b>Ojo:</b> el volumen bruto ya incluye la fracción de lavado. Si el resultado supera la capacidad del sector, reduce la superficie por turno o aumenta la frecuencia.</p>
+      </div>
+
+      <div class="calc" data-calc="fert-injection">
+        <div class="calc__head">
+          <div class="calc__title"><span class="calc__tag">Calculadora</span><h4>Inyección y duración del abonado</h4></div>
+          <p class="calc__hint">Para una solución madre de volumen conocido.</p>
+        </div>
+        <div class="calc__fields">
+          <label class="field"><span>Caudal de riego <em>(Q)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="q" value="18" step="0.5" min="0"><span class="unit">m³/h</span></span></label>
+          <label class="field"><span>Madre <em>(R)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="r" value="100" step="10" min="2"><span class="unit">×</span></span></label>
+          <label class="field"><span>Volumen madre</span><span class="field__input"><input type="text" inputmode="decimal" data-in="vol" value="1000" step="50" min="0"><span class="unit">L</span></span></label>
+          <label class="field"><span>Objetivo en red</span><span class="field__input"><input type="text" inputmode="decimal" data-in="target" value="200" step="10" min="0"><span class="unit">ppm</span></span></label>
+        </div>
+        <div class="calc__out" data-out></div>
+        <p class="calc__note">El tiempo es el que tarda el inyector en vaciar el depósito a caudal constante. En la práctica se añade un 10 % de agua limpia al final para lavar la línea.</p>
+      </div>
+
+      <div class="calc" data-calc="fert-units">
+        <div class="calc__head">
+          <div class="calc__title"><span class="calc__tag">Calculadora</span><h4>Conversor ppm · mmol · meq</h4></div>
+          <p class="calc__hint">Elige el ion y escribe la concentración en ppm.</p>
+        </div>
+        <div class="calc__fields">
+          <label class="field"><span>Ion</span><span class="field__input">
+            <select data-in="ion">
+              <option value="N">N (14,0 · z 1)</option>
+              <option value="P">P (31,0 · z 1)</option>
+              <option value="K">K (39,1 · z 1)</option>
+              <option value="Ca">Ca (40,1 · z 2)</option>
+              <option value="Mg">Mg (24,3 · z 2)</option>
+              <option value="Na">Na (23,0 · z 1)</option>
+              <option value="Cl">Cl (35,5 · z 1)</option>
+              <option value="S">S (32,1 · z 2)</option>
+              <option value="Fe">Fe (55,8 · z 3)</option>
+            </select>
+          </span></label>
+          <label class="field"><span>Concentración</span><span class="field__input"><input type="text" inputmode="decimal" data-in="ppm" value="200" step="10" min="0"><span class="unit">ppm</span></span></label>
+        </div>
+        <div class="calc__out" data-out></div>
+        <p class="calc__note">El paso a meq/L depende de la valencia, no de la masa. Por eso 200 ppm de Ca son la mitad de meq/L que 200 ppm de K.</p>
+      </div>
+    </section>
+
+    <section class="topic" id="tablas">
+      <div class="topic__head"><span class="topic__num">07</span><h2>Tablas de referencia</h2></div>
+      <p class="topic__sub">Valores orientativos de trabajo, no verdades absolutas: cada agua y cada suelo mueven el rango.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>CE de la solución nutritiva por cultivo (dS/m)</caption>
+          <thead><tr><th>Cultivo</th><th class="num">CE óptima</th><th class="num">CE máxima</th><th>Observación</th></tr></thead>
+          <tbody>
+            <tr><td>Tomate</td><td class="num">2,0 – 3,5</td><td class="num">4,5</td><td>Sube CE en maduración para concentrar fruto</td></tr>
+            <tr><td>Pimiento</td><td class="num">1,8 – 2,8</td><td class="num">3,5</td><td>Sensible a salinidad en nascencia</td></tr>
+            <tr><td>Pepino</td><td class="num">2,0 – 3,0</td><td class="num">3,8</td><td>Raíz superficial, bulbo pequeño</td></tr>
+            <tr><td>Lechuga</td><td class="num">1,2 – 1,8</td><td class="num">2,4</td><td>Baja demanda, ciclos cortos</td></tr>
+            <tr><td>Fresa</td><td class="num">1,2 – 1,8</td><td class="num">2,2</td><td>Muy sensible al cloruro</td></tr>
+            <tr><td>Olivar</td><td class="num">2,5 – 4,0</td><td class="num">6,0</td><td>Tolera salinidad, pero pierde vigor</td></tr>
+            <tr><td>Cítricos</td><td class="num">1,5 – 2,5</td><td class="num">3,5</td><td>El cloruro afecta a la hoja</td></tr>
+            <tr><td>Vid</td><td class="num">2,0 – 3,0</td><td class="num">4,0</td><td>El exceso reduce calidad de mosto</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Incompatibilidades en solución madre</caption>
+          <thead><tr><th>No mezclar</th><th>Con</th><th>Qué pasa</th></tr></thead>
+          <tbody>
+            <tr><td>Nitrato cálcico</td><td>Fosfato monoamónico o monopotásico</td><td>Precipita fosfato cálcico, se pierde P y se obstruye el gotero</td></tr>
+            <tr><td>Nitrato cálcico</td><td>Sulfato de magnesio o potásico</td><td>Precipita yeso, que es poco soluble</td></tr>
+            <tr><td>Calcio o magnesio</td><td>Fertilizantes con carbonatos</td><td>Precipitación y subida de pH</td></tr>
+            <tr><td>Hierro no quelatado</td><td>pH mayor de 6,5</td><td>Oxida a hidróxido férrico y deja de estar disponible</td></tr>
+            <tr><td>Ácido fosfórico</td><td>Depósito con calcio</td><td>Precipitado inmediato al bajar el pH</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Microelementos: dosis habituales en solución nutritiva</caption>
+          <thead><tr><th>Elemento</th><th class="num">ppm</th><th>Forma comercial</th><th>Nota</th></tr></thead>
+          <tbody>
+            <tr><td>Hierro (Fe)</td><td class="num">2,0 – 3,0</td><td>EDDHA en agua caliza, EDTA en agua ácida</td><td>El más crítico en goteo</td></tr>
+            <tr><td>Manganeso (Mn)</td><td class="num">0,5 – 1,0</td><td>Sulfato o quelato</td><td>Compite con el hierro</td></tr>
+            <tr><td>Zinc (Zn)</td><td class="num">0,3 – 0,5</td><td>Sulfato o quelato</td><td>Deficiente en suelos calizos</td></tr>
+            <tr><td>Cobre (Cu)</td><td class="num">0,1 – 0,2</td><td>Sulfato o quelato</td><td>Tóxico por encima de 0,5</td></tr>
+            <tr><td>Boro (B)</td><td class="num">0,2 – 0,5</td><td>Ácido bórico o borato</td><td>Margen estrecho entre carencia y toxicidad</td></tr>
+            <tr><td>Molibdeno (Mo)</td><td class="num">0,03 – 0,08</td><td>Molibdato sódico o amónico</td><td>Dosis muy pequeñas</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="topic" id="trampas">
+      <div class="topic__head"><span class="topic__num">08</span><h2>Errores típicos</h2></div>
+      <p class="topic__sub">Los que se cobran puntos en el examen y goteros en la parcela.</p>
+
+      <div class="callout callout--danger">
+        <span class="callout__icon">×</span>
+        <span class="callout__title">Mezclar calcio con fosfatos o sulfatos</span>
+        <p>Es el error clásico de examen y de campo. Si el enunciado pide «una sola solución madre» con nitrato cálcico y fosfato monoamónico, la respuesta correcta es que no se puede: hay que separar en dos depósitos.</p>
+      </div>
+
+      <div class="callout callout--danger">
+        <span class="callout__icon">×</span>
+        <span class="callout__title">Confundir ppm con porcentaje</span>
+        <p>Un 1 % es 10 000 ppm, no 100. Y un 0,1 % es 1 000 ppm. Este factor 100 aparece en casi todos los ejercicios de riqueza de fertilizante.</p>
+      </div>
+
+      <div class="callout callout--warn">
+        <span class="callout__icon">!</span>
+        <span class="callout__title">Olvidar la fracción de lavado</span>
+        <p>Calcular el volumen solo con ETc y eficiencia deja fuera las sales. El resultado es un riego que parece correcto y que saliniza el bulbo en pocas semanas.</p>
+      </div>
+
+      <div class="callout callout--warn">
+        <span class="callout__icon">!</span>
+        <span class="callout__title">Usar la CE del agua como CE de la solución</span>
+        <p>La CE del agua de riego es la línea base. La CE de la solución incluye esa base más los fertilizantes. Se mide en la red, no en el pozo.</p>
+      </div>
+
+      <div class="callout callout--warn">
+        <span class="callout__icon">!</span>
+        <span class="callout__title">Quelato equivocado</span>
+        <p>El EDTA se degrada por encima de pH 6,5 y libera hierro que precipita. En aguas calizas se usa EDDHA, que aguanta hasta pH 9. Elegir mal el quelato es pagar hierro para no aportarlo.</p>
+      </div>
+
+      <div class="callout callout--warn">
+        <span class="callout__icon">!</span>
+        <span class="callout__title">Inyectar antes del filtro</span>
+        <p>El fertilizante concentrado atraviesa la malla, cristaliza y la obstruye. Además, sin válvula antirretorno puede contaminar la red de agua limpia. El inyector va después de los filtros.</p>
+      </div>
+
+      <div class="callout callout--tip">
+        <span class="callout__icon">i</span>
+        <span class="callout__title">Un detalle que suma</span>
+        <p>El pH de la solución no es el pH del suelo. Bajar la solución a 5,8 acidifica la rizosfera y mejora la disponibilidad de hierro y fósforo, pero no corrige un suelo ya calizo. Para eso se actúa sobre el agua y la materia orgánica.</p>
+      </div>
+    </section>
+
+    <section class="topic" id="tarjetas">
+      <div class="topic__head"><span class="topic__num">09</span><h2>Tarjetas</h2></div>
+      <p class="topic__sub">Tapa la respuesta, dilo en voz alta y gira. Baraja para no memorizar el orden.</p>
+
+      <div class="flash" data-flash>
+        <div class="flash__bar">
+          <span class="flash__count" data-count>1 / 12</span>
+          <span class="spacer"></span>
+          <button class="btn-mini" type="button" data-shuffle>Barajar</button>
+        </div>
+        <div class="flash__stage">
+          <button class="flashcard" type="button" aria-expanded="false">
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Definición</span>
+              <span class="flashcard__q">¿Qué es el fertirriego?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">Aplicación conjunta de agua y fertilizantes disueltos a través del sistema de riego, dosificando la concentración para que la planta reciba ambos en la proporción que necesita.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Unidades</span>
+              <span class="flashcard__q">¿Por qué se trabaja en meq/L y no solo en ppm?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">Porque el meq/L mide carga eléctrica y permite sumar cationes y aniones para comprobar que el balance iónico cierra. Con ppm no se pueden sumar especies distintas.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Fórmula</span>
+              <span class="flashcard__q">Escribe la ETc y di qué es cada término.</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">ETc = Kc · ETo. ETo es la demanda de referencia (mm/día), Kc el coeficiente del cultivo y su fase, y ETc la demanda real del cultivo.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Concepto</span>
+              <span class="flashcard__q">¿Para qué sirve la fracción de lavado?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">Para arrastrar las sales que se acumulan en el bulbo húmedo por debajo de la zona radicular. Es un porcentaje extra de agua, no un fertilizante.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Incompatibilidad</span>
+              <span class="flashcard__q">¿Por qué no se mezclan calcio y fosfatos en la misma solución madre?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">Porque precipita fosfato cálcico: se pierde fósforo y el precipitado obstruye goteros y filtros. Se separan en dos depósitos.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Equipos</span>
+              <span class="flashcard__q">Venturi frente a bomba dosificadora: una ventaja y un inconveniente de cada uno.</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">Venturi: barato y sin electricidad, pero impreciso y con pérdida de carga del 30 al 40 %. Bomba dosificadora: caudal repetible y proporcional, pero cuesta más y necesita energía.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Control</span>
+              <span class="flashcard__q">¿Qué rango de pH se busca en la solución y por qué?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">Entre 5,5 y 6,5. Por debajo se dañan los pelos radicales; por encima el hierro precipita y el fósforo se bloquea.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Quelatos</span>
+              <span class="flashcard__q">¿Cuándo se elige EDDHA en lugar de EDTA?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">Cuando el pH es alto o el agua es caliza. El EDDHA mantiene el hierro disponible hasta pH 9; el EDTA se degrada por encima de 6,5.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Conversión</span>
+              <span class="flashcard__q">Convierte 200 ppm de calcio a meq/L (PM 40,1).</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">200 / 40,1 = 4,99 mmol/L. Como el Ca²⁺ tiene valencia 2, son 9,98 meq/L. Con potasio serían la mitad de meq/L para la misma masa.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Medida</span>
+              <span class="flashcard__q">¿Qué mide exactamente la CE y qué no mide?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">Mide la concentración total de sales disueltas, proporcional a la presión osmótica. No dice qué iones hay ni si el balance nutricional es correcto.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Suelo</span>
+              <span class="flashcard__q">¿Qué es el bulbo húmedo y por qué manda en el diseño?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">El volumen de suelo mojado por un gotero. Su tamaño y forma determinan dónde están las raíces, cuánta agua útil hay y dónde se acumulan las sales.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Práctica</span>
+              <span class="flashcard__q">¿Qué significa una solución madre 100×?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">Que está cien veces más concentrada que la solución que se quiere aplicar. Se inyecta una parte de madre por cada 99 de agua, o una por cada 100 si se aproxima.</span>
+            </span>
+          </button>
+        </div>
+        <div class="flash__nav">
+          <button class="btn-mini" type="button" data-prev>Anterior</button>
+          <div class="flash__dots" data-dots></div>
+          <button class="btn-mini" type="button" data-next>Siguiente</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="topic" id="test">
+      <div class="topic__head"><span class="topic__num">10</span><h2>Test</h2></div>
+      <p class="topic__sub">Diez preguntas con explicación. No hay nota guardada: al cerrar la página, se borra.</p>
+
+      <div class="quiz" data-quiz="quiz-fertirriego">
+        <div data-body>
+          <div class="quiz__top">
+            <span class="quiz__step" data-step>Pregunta 1 de 10</span>
+            <span class="quiz__score" data-score>Aciertos 0 / 10</span>
+          </div>
+          <div class="quiz__bar"><span data-bar></span></div>
+          <p class="quiz__q" data-q></p>
+          <ul class="quiz__opts" data-opts></ul>
+          <div class="quiz__feedback" data-feedback hidden></div>
+          <div class="quiz__foot">
+            <span class="spacer"></span>
+            <button class="btn btn--primary" type="button" data-next disabled>Siguiente</button>
+          </div>
+        </div>
+        <div class="quiz__result" data-result hidden>
+          <div class="score" data-final>0<span> / 10</span></div>
+          <p data-msg></p>
+          <ul class="quiz__review" data-review></ul>
+          <div class="quiz__foot" style="justify-content:center">
+            <button class="btn btn--primary" type="button" data-retry>Repetir todo</button>
+            <button class="btn btn--ghost" type="button" data-again>Repasar solo las falladas</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="topic" id="glosario">
+      <div class="topic__head"><span class="topic__num">11</span><h2>Glosario</h2></div>
+      <p class="topic__sub">Vocabulario mínimo para leer un enunciado sin dudar.</p>
+      <dl class="glossary">
+        <div><dt>Bulbo húmedo</dt><dd>Volumen de suelo mojado alrededor de un gotero. Define la zona radicular activa y el punto donde se concentran las sales.</dd></div>
+        <div><dt>CE</dt><dd>Conductividad eléctrica. Medida indirecta de la concentración total de sales, en dS/m o mS/cm.</dd></div>
+        <div><dt>CEe</dt><dd>CE del extracto de saturación del suelo. Es el valor que se compara con la tolerancia del cultivo.</dd></div>
+        <div><dt>ETo</dt><dd>Evapotranspiración de referencia, calculada con datos meteorológicos sobre un cultivo hipotético.</dd></div>
+        <div><dt>Kc</dt><dd>Coeficiente de cultivo. Corrige la ETo según especie, fase fenológica y fracción de suelo cubierta.</dd></div>
+        <div><dt>ETc</dt><dd>Evapotranspiración real del cultivo. Producto de Kc por ETo.</dd></div>
+        <div><dt>Fracción de lavado</dt><dd>Proporción del agua aplicada que se destina a arrastrar sales fuera de la zona radicular.</dd></div>
+        <div><dt>Solución madre</dt><dd>Disolución concentrada de fertilizantes que se inyecta y diluye en la red de riego.</dd></div>
+        <div><dt>Solución nutritiva</dt><dd>Agua de riego con la concentración final de nutrientes que recibe el cultivo.</dd></div>
+        <div><dt>meq/L</dt><dd>Miliequivalentes por litro. Concentración expresada en carga eléctrica; permite sumar cationes y aniones.</dd></div>
+        <div><dt>Quelato</dt><dd>Molécula que envuelve un catión metálico y lo mantiene soluble y disponible. EDTA, DTPA y EDDHA son los habituales.</dd></div>
+        <div><dt>Venturi</dt><dd>Inyector que succiona por depresión creada en un estrechamiento. Sencillo, barato y poco preciso.</dd></div>
+        <div><dt>Potencial osmótico</dt><dd>Presión negativa que ejerce la solución y que la raíz debe vencer para absorber agua.</dd></div>
+        <div><dt>Zona vulnerable a nitratos</dt><dd>Territorio declarado por la administración donde se limita el aporte de nitrógeno de origen agrario.</dd></div>
+      </dl>
+    </section>
+
+    <section class="topic" id="plan">
+      <div class="topic__head"><span class="topic__num">12</span><h2>Plan de repaso</h2></div>
+      <p class="topic__sub">Tres pasadas cortas rinden más que una maratón la víspera.</p>
+      <div class="grid grid--3">
+        <div class="card card--tint">
+          <span class="card__tag">Pasada 1 · 20 min</span>
+          <h4>Entender</h4>
+          <p>Lee el mapa y los conceptos clave. Cierra la página y explica en voz alta la diferencia entre CE y potencial osmótico. Si no sale, vuelve al apartado 02.</p>
+        </div>
+        <div class="card card--tint">
+          <span class="card__tag">Pasada 2 · 30 min</span>
+          <h4>Calcular</h4>
+          <p>Resuelve el ejemplo sin mirar los pasos. Después haz los cuatro ejercicios de práctica y cambia los datos en las calculadoras hasta predecir el resultado antes de mover el campo.</p>
+        </div>
+        <div class="card card--tint">
+          <span class="card__tag">Pasada 3 · 15 min</span>
+          <h4>Comprobar</h4>
+          <p>Haz el test. Cada fallo se convierte en una tarjeta que repites al día siguiente. Si aciertas nueve de diez, el tema está listo.</p>
+        </div>
+      </div>
+      <div class="callout callout--tip">
+        <span class="callout__icon">i</span>
+        <span class="callout__title">Para conectar con la parcela</span>
+        <p>Cuando veas un cabezal de riego, localiza en este orden: filtros, inyector, antirretorno, sensores. Si el inyector está antes del filtro o no hay antirretorno, ya sabes qué preguntar.</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="foot__inner">
+    <div>
+      <h2>Sigue con otra asignatura</h2>
+      <p>Cuatro cuadernos y un atlas 3D de motores. Material de repaso: fórmulas, ejemplos resueltos, calculadoras y test cortos.</p>
+    </div>
+    <nav class="foot__links" aria-label="Otras asignaturas">
+      <a href="medio-ambiente.html">Ciencia y tecnología del medio ambiente <span>02</span></a>
+      <a href="estructuras.html">Resistencia de materiales y estructuras agrícolas <span>03</span></a>
+      <a href="maquinaria.html">Motores y maquinaria agrícola <span>04</span></a>
+      <a href="../motores/index.html">Atlas 3D de motores agrícolas <span>3D</span></a>
+    </nav>
+  </div>
+  <div class="foot__base">
+    <span>Taller de Estudio · Ingeniería Agrícola</span>
+    <a href="../index.html#estudio">Volver al portfolio</a>
+  </div>
+</footer>
+
+<script type="application/json" id="quiz-fertirriego">
+[
+  {
+    "q": "La conductividad eléctrica de la solución nutritiva mide sobre todo…",
+    "opts": ["El pH real de la rizosfera", "La concentración total de sales disueltas", "El contenido de clorofila de la hoja", "La humedad volumétrica del suelo"],
+    "answer": 1,
+    "why": "La CE es proporcional a la suma de iones en disolución. Sirve para estimar la presión osmótica, pero no dice qué iones hay."
+  },
+  {
+    "q": "¿Qué pareja de fertilizantes no debe compartir depósito de solución madre?",
+    "opts": ["Nitrato cálcico y nitrato potásico", "Nitrato cálcico y fosfato monoamónico", "Sulfato magnésico y nitrato potásico", "Urea y nitrato amónico"],
+    "answer": 1,
+    "why": "El calcio con el fosfato precipita fosfato cálcico. Se pierde fósforo y el precipitado obstruye goteros."
+  },
+  {
+    "q": "La fracción de lavado sirve para…",
+    "opts": ["Diluir el fertilizante antes de inyectarlo", "Arrastrar las sales acumuladas fuera del bulbo húmedo", "Acidificar la solución nutritiva", "Aumentar la CE de la solución"],
+    "answer": 1,
+    "why": "Es el porcentaje de agua extra que lava las sales hacia debajo de la zona radicular. Sin ella, la CE del suelo sube riego tras riego."
+  },
+  {
+    "q": "Si duplicas la concentración de la solución madre manteniendo el mismo caudal de inyección…",
+    "opts": ["La dosis aplicada no cambia", "La dosis se reduce a la mitad", "La dosis se duplica", "Cambia el pH pero no la dosis"],
+    "answer": 2,
+    "why": "La dosis inyectada es caudal por concentración. Si la concentración se duplica y el caudal no cambia, se aporta el doble."
+  },
+  {
+    "q": "Se elige un quelato EDDHA en lugar de EDTA cuando…",
+    "opts": ["El agua es muy ácida", "El pH es alto o el agua es caliza", "Se riega por aspersión", "Hay mucho fósforo en la solución"],
+    "answer": 1,
+    "why": "El EDDHA mantiene el hierro disponible hasta pH 9. El EDTA se degrada por encima de 6,5 y libera hierro que precipita."
+  },
+  {
+    "q": "150 ppm de nitrógeno equivalen a…",
+    "opts": ["1,5 g/L", "150 mg/L", "15 mg/L", "0,15 % en peso"],
+    "answer": 1,
+    "why": "1 ppm es 1 mg/L por definición. Un 0,15 % serían 1 500 ppm, un error de factor 10 muy habitual."
+  },
+  {
+    "q": "Para el calcio, que tiene valencia 2, la relación entre mmol/L y meq/L es…",
+    "opts": ["Son la misma cifra", "meq/L = mmol/L × 2", "meq/L = mmol/L / 2", "No existe relación"],
+    "answer": 1,
+    "why": "El equivalente se obtiene multiplicando los moles por la valencia. Para iones monovalentes coinciden; para el calcio se duplican."
+  },
+  {
+    "q": "El orden correcto en el cabezal de fertirriego es…",
+    "opts": ["Inyector antes del filtro", "Inyector después del filtro y antes de la red, con antirretorno", "Inyector dentro del depósito de agua limpia", "Es indiferente mientras haya presión"],
+    "answer": 1,
+    "why": "Si el fertilizante pasa por el filtro, cristaliza y lo obstruye. El antirretorno evita contaminar la red de agua limpia."
+  },
+  {
+    "q": "Una solución con pH 4,5 aplicada por goteo…",
+    "opts": ["Es ideal porque libera todo el hierro", "Puede dañar los pelos radicales al acidificar la rizosfera", "No tiene ningún efecto sobre la planta", "Aumenta la CE de forma proporcional"],
+    "answer": 1,
+    "why": "El rango de trabajo es 5,5 a 6,5. Por debajo se acidifica la rizosfera y se dañan los pelos radicales."
+  },
+  {
+    "q": "La evapotranspiración del cultivo se calcula como…",
+    "opts": ["ETo / Kc", "Kc × ETo", "ETo − Kc", "ETo × eficiencia de aplicación"],
+    "answer": 1,
+    "why": "ETc = Kc · ETo. La eficiencia de aplicación entra después, al calcular el volumen bruto de riego."
+  }
+]
+</script>
+
+<script src="assets/estudio.js" defer></script>
+<script src="assets/fertirriego.js" defer></script>
+</body>
+</html>

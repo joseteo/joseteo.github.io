@@ -646,6 +646,24 @@
   content: '\2192';
 }
 
+/* Study section cards */
+.project-card--wide {
+  grid-column: 1 / -1;
+}
+
+.project-body .project-course {
+  font-size: 11px;
+  line-height: 1.45;
+  letter-spacing: 0.2px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.estudio-hub-link {
+  text-align: center;
+  margin: 28px 0 0;
+}
+
 /* Tags row */
 .project-tags {
   display: flex;

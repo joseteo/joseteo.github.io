@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ciencia y tecnología del medio ambiente · Taller de Estudio</title>
+<meta name="description" content="Medio ambiente para Ingeniería Agrícola: carga contaminante, habitantes equivalentes, depuración de aguas, oxígeno disuelto, ruido, emisiones y evaluación de impacto. Con formulario, ejemplo resuelto, calculadoras y test.">
+<meta name="theme-color" content="#f6efe5">
+<link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/estudio.css">
+</head>
+<body style="--accent:#3f7391;--accent-ink:#2c556e;--accent-soft:rgba(63,115,145,.10);--accent-line:rgba(63,115,145,.32)">
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="bar">
+  <a class="bar__brand" href="index.html">
+    <span class="bar__mark">TE</span>
+    <span class="bar__name">Taller de Estudio<em>Ingeniería Agrícola</em></span>
+  </a>
+  <nav class="bar__nav" aria-label="Asignaturas">
+    <a href="fertirriego.html">Fertirriego</a>
+    <a href="medio-ambiente.html" aria-current="page">Medio ambiente</a>
+    <a href="estructuras.html">Estructuras</a>
+    <a href="maquinaria.html">Maquinaria</a>
+    <a href="../motores/index.html">Atlas 3D</a>
+  </nav>
+  <div class="bar__actions">
+    <button class="bar__link" type="button" data-print>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+      <span>Imprimir</span>
+    </button>
+    <a class="bar__link" href="../index.html#estudio">Portfolio</a>
+  </div>
+</header>
+<div class="progress" aria-hidden="true"></div>
+
+<section class="hero">
+  <div class="hero__inner">
+    <div>
+      <p class="hero__kicker">Asignatura 02 · Contaminación y gestión ambiental</p>
+      <h1>Medio ambiente:<br>medir la <em>carga</em>,<br>no solo la muestra</h1>
+      <p class="hero__lead">Una analítica dice cuánto contamina un litro. La ingeniería decide cuánto contamina un día entero. Esta página separa las dos cosas, pone números a la depuración y aterriza el ruido, las emisiones y el impacto ambiental en cálculos de examen.</p>
+      <ul class="hero__meta">
+        <li><b>10</b> fórmulas</li>
+        <li><b>4</b> calculadoras</li>
+        <li><b>12</b> tarjetas</li>
+        <li><b>10</b> preguntas</li>
+      </ul>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#mapa">Empezar por el mapa</a>
+        <a class="btn btn--ghost" href="#diagrama">Ver el oxígeno del río</a>
+      </div>
+    </div>
+    <div class="hero__art" aria-hidden="true">
+      <svg viewBox="0 0 200 200">
+        <path class="art-line" d="M14 96c18-7 30 7 48 0s30-7 48 0 26 7 42 0"/>
+        <path class="art-line" d="M14 118c18-7 30 7 48 0s30-7 48 0 26 7 42 0"/>
+        <path class="art-line" d="M14 168h172"/>
+        <path class="art-dash" d="M14 168c22-6 34 6 56 0s34-6 56 0 26 6 40 0"/>
+        <path class="art-line" d="M150 56h30v24h-30"/>
+        <path class="art-line" d="M150 62h-6M150 74h-6"/>
+        <circle class="art-fill" cx="146" cy="88" r="2.4"/>
+        <circle class="art-fill" cx="141" cy="98" r="1.8"/>
+        <path class="art-line" d="M56 140c10-9 26-9 36 0-10 9-26 9-36 0z"/>
+        <path class="art-line" d="M56 140l-9-6v12z"/>
+        <circle class="art-line" cx="84" cy="138" r="1.2"/>
+        <path class="art-line" d="M96 132c6-8 6-14 0-20M104 130c6-8 6-14 0-20"/>
+        <text class="art-label" x="14" y="186">CAUCE</text>
+        <text class="art-label" x="152" y="48">VERTIDO</text>
+        <text class="art-hand" x="20" y="112">DBO₅ 25</text>
+        <text class="art-hand" x="112" y="152">O₂ 6,4</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="shell" id="contenido">
+  <nav class="toc" aria-label="Índice del tema">
+    <p class="toc__label">En esta página</p>
+    <ol>
+      <li><a href="#mapa"><span>01</span>Mapa del tema</a></li>
+      <li><a href="#conceptos"><span>02</span>Conceptos clave</a></li>
+      <li><a href="#formulario"><span>03</span>Formulario</a></li>
+      <li><a href="#diagrama"><span>04</span>Oxígeno en vivo</a></li>
+      <li><a href="#ejemplo"><span>05</span>Ejemplo resuelto</a></li>
+      <li><a href="#practica"><span>06</span>Práctica</a></li>
+      <li><a href="#tablas"><span>07</span>Tablas</a></li>
+      <li><a href="#trampas"><span>08</span>Errores típicos</a></li>
+      <li><a href="#tarjetas"><span>09</span>Tarjetas</a></li>
+      <li><a href="#test"><span>10</span>Test</a></li>
+      <li><a href="#glosario"><span>11</span>Glosario</a></li>
+      <li><a href="#plan"><span>12</span>Plan de repaso</a></li>
+    </ol>
+    <div class="toc__foot">
+      <p>la unidad que suspende exámenes es el kg/día, no el mg/L</p>
+      <a href="#test">Ir directo al test</a>
+    </div>
+  </nav>
+
+  <main class="content">
+
+    <section class="topic" id="mapa">
+      <div class="topic__head"><span class="topic__num">01</span><h2>Mapa del tema</h2></div>
+      <p class="topic__sub">Cuatro compartimentos, una misma pregunta: cuánto entra y cuánto sale.</p>
+      <p class="lede">La asignatura parece un catálogo de normativa y de analíticas, pero casi todos los problemas se resuelven con el mismo esquema: <strong>identificar el foco, cuantificar la carga, comparar con un límite y proponer una medida</strong>. Cambia el compartimento (agua, suelo, aire, residuos), no el método.</p>
+
+      <div class="grid grid--2">
+        <div class="card">
+          <span class="card__tag">Agua</span>
+          <h4>Focos puntuales y difusos</h4>
+          <p>Una EDAR es un foco puntual: sale por un tubo y se mide. La agricultura es un foco difuso: el nitrato llega al acuífero por toda la superficie y no se puede medir en un punto. Se gestiona con dosis, cubiertas y zonas vulnerables.</p>
+        </div>
+        <div class="card">
+          <span class="card__tag">Suelo</span>
+          <h4>El sumidero que se agota</h4>
+          <p>El suelo recibe purines, lodos, fitosanitarios y metales. Tiene capacidad de amortiguación, pero es finita: se calcula con la dosis agronómica de nitrógeno y con los límites de metales pesados.</p>
+        </div>
+        <div class="card">
+          <span class="card__tag">Aire</span>
+          <h4>Emisiones y olores</h4>
+          <p>Amoniaco de las dehesas de purín, partículas de la labranza, gases de escape y CO₂ del gasóleo. Se cuantifican con factores de emisión y se comparan con valores límite o con la huella de la explotación.</p>
+        </div>
+        <div class="card">
+          <span class="card__tag">Residuos</span>
+          <h4>Del envase al lodo</h4>
+          <p>Envases fitosanitarios por SIGFITO, plásticos de acolchado, restos de poda y lodos de depuradora. La jerarquía es siempre la misma: reducir, reutilizar, valorizar y, al final, eliminar.</p>
+        </div>
+      </div>
+
+      <div class="note">
+        <p>El examen mezcla tres lenguajes: el de la norma (límites en mg/L), el del laboratorio (mg/L de la muestra) y el del diseño (kg/día y m³/día). Traducir entre ellos es el 80 % del trabajo.</p>
+      </div>
+    </section>
+
+    <section class="topic" id="conceptos">
+      <div class="topic__head"><span class="topic__num">02</span><h2>Conceptos clave</h2></div>
+      <p class="topic__sub">Los ocho términos que sostienen todos los ejercicios.</p>
+
+      <h3>Contaminante, residuo y vertido</h3>
+      <p>Un <strong>residuo</strong> es algo que su poseedor descarta. Un <strong>contaminante</strong> es una sustancia que, por su cantidad o su forma, altera un medio. La misma materia puede ser recurso o contaminante según la dosis: el purín es fertilizante a 30 m³/ha y residuo contaminante a 200 m³/ha. Un <strong>vertido</strong> es la descarga de agua residual a un medio receptor, con o sin tratamiento previo.</p>
+
+      <h3>Concentración frente a carga</h3>
+      <p>Es la distinción que más puntos vale. La concentración (mg/L) describe la muestra. La carga (kg/día) describe el problema: <strong>carga = caudal × concentración</strong>. Un vertido de 10 mg/L con 50 000 m³/día contamina más que uno de 500 mg/L con 5 m³/día. La norma limita concentraciones, pero el río responde a cargas.</p>
+
+      <h3>DBO₅, DQO y sólidos en suspensión</h3>
+      <p>La <strong>DBO₅</strong> es el oxígeno que consumen los microorganismos al degradar la materia orgánica en cinco días a 20 °C. La <strong>DQO</strong> es el oxígeno necesario para oxidarla por vía química, e incluye lo que no es biodegradable. La relación <strong>DQO/DBO₅</strong> indica biodegradabilidad: por debajo de 2 el agua es fácil de tratar; por encima de 2,5 hay compuestos recalcitrantes. Los <strong>sólidos en suspensión</strong> (SS) son la fracción filtrable y son los que forman el lodo.</p>
+
+      <h3>Habitante equivalente</h3>
+      <p>Es la unidad de carga que usa la normativa europea: <strong>1 h-e = 60 g de DBO₅ al día</strong>. Sirve para dimensionar una depuradora sin saber cuántos vecinos hay de verdad, y para comparar un vertido industrial con la población que lo generaría. Una quesería que vierte 300 kg de DBO₅ al día equivale a 5 000 habitantes.</p>
+
+      <h3>Autodepuración y déficit de oxígeno</h3>
+      <p>Cuando un vertido entra en un río, las bacterias consumen oxígeno (k₁) y la atmósfera lo repone por reaireación (k₂). El resultado es una curva en forma de saco: el oxígeno baja, toca un mínimo y se recupera aguas abajo. Si el mínimo cae por debajo de 4 mg/L, la vida piscícola se compromete. Ese mínimo es el que se calcula con el modelo de Streeter-Phelps.</p>
+
+      <h3>Eutrofización</h3>
+      <p>Es el enriquecimiento en nutrientes que dispara el crecimiento de algas. En agua dulce el nutriente limitante suele ser el <strong>fósforo</strong>; en el mar, el <strong>nitrógeno</strong>. El daño no es el alga, es lo que viene después: al morir se descompone, consume oxígeno y deja el agua sin vida. Por eso las zonas sensibles exigen eliminación de nutrientes, no solo de materia orgánica.</p>
+
+      <h3>Ruido: una escala logarítmica</h3>
+      <p>El decibelio es logarítmico: 3 dB más es el doble de energía sonora, y 10 dB más suena «el doble de fuerte». Dos fuentes iguales suman 3 dB, no el doble de cifra. Se mide con ponderación A (dB(A)) porque imita la sensibilidad del oído, y se promedia con <strong>LAeq</strong> en un periodo. Una explotación ganadera se evalúa de noche igual que de día, con límites distintos.</p>
+
+      <h3>Evaluación de impacto ambiental</h3>
+      <p>Es el procedimiento administrativo que decide si un proyecto puede ejecutarse y con qué condiciones. No es un estudio de contaminación: es un análisis de alternativas, identificación de impactos, valoración y medidas correctoras. Termina en una <strong>Declaración de Impacto Ambiental</strong> que fija condiciones de obligado cumplimiento. En regadíos, granjas y plantas de biogás es el trámite que más retrasa la obra.</p>
+    </section>
+
+    <section class="topic" id="formulario">
+      <div class="topic__head"><span class="topic__num">03</span><h2>Formulario</h2></div>
+      <p class="topic__sub">Las diez expresiones que resuelven casi cualquier problema de la asignatura.</p>
+
+      <div class="formulas">
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Carga másica diaria</span>
+            <span class="formula__expr"><i>Carga</i> = <i>Q</i> · <i>c</i> / 1000</span>
+          </div>
+          <ul class="formula__where">
+            <li><b>Carga</b> kg/d <em>masa que entra o sale al día</em></li>
+            <li><b>Q</b> m³/d <em>caudal medio</em></li>
+            <li><b>c</b> mg/L <em>concentración del parámetro</em></li>
+            <li><em>El 1000 convierte gramos en kilogramos.</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Habitantes equivalentes</span>
+            <span class="formula__expr"><i>h-e</i> = <i>Carga</i><sub>DBO₅</sub> / 0,060</span>
+          </div>
+          <ul class="formula__where">
+            <li><b>h-e</b> habitantes equivalentes</li>
+            <li><b>Carga</b> kg/d <em>de DBO₅</em></li>
+            <li><b>0,060</b> kg/d <em>de DBO₅ por habitante y día</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Caudal de diseño</span>
+            <span class="formula__expr"><i>Q</i><sub>med</sub> = <i>Pob</i> · <i>d</i> / 1000 &nbsp;·&nbsp; <i>Q</i><sub>p</sub> = <i>Q</i><sub>med</sub> · <i>C</i><sub>p</sub></span>
+          </div>
+          <ul class="formula__where">
+            <li><b>Pob</b> habitantes <em>o h-e</em></li>
+            <li><b>d</b> L/hab/d <em>dotación, 200 a 250 en uso urbano</em></li>
+            <li><b>C<sub>p</sub></b> 2 a 4 <em>coeficiente punta</em></li>
+            <li><em>La depuradora se dimensiona con el caudal punta, no con el medio.</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Eficiencia de depuración</span>
+            <span class="formula__expr"><i>η</i> = (<i>c</i><sub>e</sub> − <i>c</i><sub>s</sub>) / <i>c</i><sub>e</sub> · 100</span>
+          </div>
+          <ul class="formula__where">
+            <li><b>c<sub>e</sub></b> mg/L <em>concentración de entrada</em></li>
+            <li><b>c<sub>s</sub></b> mg/L <em>concentración de salida</em></li>
+            <li><em>Se calcula parámetro a parámetro: DBO₅, DQO, SS, N, P.</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Mezcla en el cauce</span>
+            <span class="formula__expr"><i>c</i><sub>m</sub> = (<i>Q</i><sub>r</sub> · <i>c</i><sub>r</sub> + <i>Q</i><sub>v</sub> · <i>c</i><sub>v</sub>) / (<i>Q</i><sub>r</sub> + <i>Q</i><sub>v</sub>)</span>
+          </div>
+          <ul class="formula__where">
+            <li><b>Q<sub>r</sub></b> m³/s <em>caudal del río aguas arriba</em></li>
+            <li><b>Q<sub>v</sub></b> m³/s <em>caudal del vertido</em></li>
+            <li><em>Las unidades de caudal deben coincidir; la concentración resultante sale en las mismas unidades de entrada.</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Déficit de oxígeno (Streeter-Phelps)</span>
+            <span class="formula__expr"><i>D</i> = <i>k</i><sub>1</sub><i>L</i><sub>0</sub>/(<i>k</i><sub>2</sub>−<i>k</i><sub>1</sub>) · (e<sup>−k₁t</sup> − e<sup>−k₂t</sup>) + <i>D</i><sub>0</sub>e<sup>−k₂t</sup></span>
+          </div>
+          <ul class="formula__where">
+            <li><b>D</b> mg/L <em>déficit: D = Cs − DO</em></li>
+            <li><b>L₀</b> mg/L <em>DBO última del vertido ya mezclado</em></li>
+            <li><b>k₁</b> d⁻¹ <em>desoxigenación, 0,1 a 0,5</em></li>
+            <li><b>k₂</b> d⁻¹ <em>reaireación, 0,2 a 1,0</em></li>
+            <li><b>t</b> d <em>tiempo de recorrido desde el vertido</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Suma de niveles sonoros</span>
+            <span class="formula__expr"><i>L</i><sub>total</sub> = 10 · log<sub>10</sub> (Σ 10<sup>Lᵢ/10</sup>)</span>
+          </div>
+          <ul class="formula__where">
+            <li><b>Lᵢ</b> dB(A) <em>nivel de cada fuente</em></li>
+            <li><em>Dos fuentes iguales suman 3 dB; diez iguales suman 10 dB.</em></li>
+            <li><em>La fuente más débil apenas cuenta: 10 dB por debajo aporta 0,4 dB.</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Concentración en aire: ppm a mg/m³</span>
+            <span class="formula__expr"><i>mg</i>/m³ = <i>ppm</i> · <i>PM</i> / 24,45</span>
+          </div>
+          <ul class="formula__where">
+            <li><b>PM</b> g/mol <em>masa molar del gas</em></li>
+            <li><b>24,45</b> L/mol <em>volumen molar a 25 °C y 1013 hPa</em></li>
+            <li><em>A 0 °C el volumen molar es 22,4 L/mol. Cambia el resultado un 9 %.</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Huella de carbono</span>
+            <span class="formula__expr"><i>kg</i> CO₂e = <i>actividad</i> · <i>factor</i></span>
+          </div>
+          <ul class="formula__where">
+            <li><b>actividad</b> L, kWh, kg <em>consumo o producción</em></li>
+            <li><b>factor</b> kg CO₂e/unidad <em>gasóleo 2,68 por litro; electricidad 0,19 por kWh</em></li>
+            <li><em>Los factores cambian por país y por año: cítalos siempre.</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Atenuación del ruido con la distancia</span>
+            <span class="formula__expr"><i>L</i><sub>p</sub> = <i>L</i><sub>w</sub> − 20 log<sub>10</sub>(<i>r</i>) − 11</span>
+          </div>
+          <ul class="formula__where">
+            <li><b>L<sub>p</sub></b> dB(A) <em>nivel en el receptor</em></li>
+            <li><b>L<sub>w</sub></b> dB(A) <em>potencia de la fuente</em></li>
+            <li><b>r</b> m <em>distancia, en campo libre y sobre plano reflectante</em></li>
+            <li><em>Al duplicar la distancia se pierden 6 dB.</em></li>
+            <li><em>Si el dato es el nivel medido a 1 m, se usa L<sub>p</sub> = L<sub>1m</sub> − 20 log₁₀(r).</em></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout callout--tip">
+        <span class="callout__icon">i</span>
+        <span class="callout__title">Truco de examen</span>
+        <p>Antes de calcular, escribe al lado de cada dato su unidad y pregúntate si es caudal, concentración o carga. La mitad de los errores de esta asignatura son de factor 1 000 entre mg/L y kg/d, o de segundos y días.</p>
+      </div>
+    </section>
+
+    <section class="topic" id="diagrama">
+      <div class="topic__head"><span class="topic__num">04</span><h2>Oxígeno en vivo</h2></div>
+      <p class="topic__sub">Mueve la carga y las constantes del río y mira dónde queda el mínimo de oxígeno.</p>
+      <p>Al vertido le sigue una curva de oxígeno disuelto que baja por consumo bacteriano y se recupera por reaireación. La forma depende de la relación entre <strong>k₁</strong> y <strong>k₂</strong>: si la reaireación gana, el saco es poco profundo; si pierde, el río tarda días en recuperarse. El punto más bajo es el que decide si el vertido es admisible.</p>
+
+      <figure class="figure" data-figure="ma-sag">
+        <svg viewBox="0 0 560 280" role="img" aria-label="Curva de oxígeno disuelto aguas abajo de un vertido">
+          <g>
+            <line class="dg-thin" x1="62" y1="26" x2="62" y2="216"/>
+            <line class="dg-thin" x1="62" y1="216" x2="524" y2="216"/>
+            <line class="dg-grid" x1="62" y1="178" x2="524" y2="178"/>
+            <line class="dg-grid" x1="62" y1="140" x2="524" y2="140"/>
+            <line class="dg-grid" x1="62" y1="102" x2="524" y2="102"/>
+            <line class="dg-grid" x1="62" y1="64" x2="524" y2="64"/>
+            <text class="dg-small" x="56" y="219" text-anchor="end">0</text>
+            <text class="dg-small" x="56" y="181" text-anchor="end">2</text>
+            <text class="dg-small" x="56" y="143" text-anchor="end">4</text>
+            <text class="dg-small" x="56" y="105" text-anchor="end">6</text>
+            <text class="dg-small" x="56" y="67" text-anchor="end">8</text>
+            <text class="dg-small" x="56" y="31" text-anchor="end">10</text>
+            <text class="dg-small" x="62" y="230" text-anchor="middle">0</text>
+            <text class="dg-small" x="154" y="230" text-anchor="middle">2</text>
+            <text class="dg-small" x="246" y="230" text-anchor="middle">4</text>
+            <text class="dg-small" x="339" y="230" text-anchor="middle">6</text>
+            <text class="dg-small" x="431" y="230" text-anchor="middle">8</text>
+            <text class="dg-small" x="524" y="230" text-anchor="middle">10</text>
+            <text class="dg-text" x="293" y="250" text-anchor="middle">DÍAS AGUAS ABAJO DEL VERTIDO</text>
+            <text class="dg-text" x="18" y="120" transform="rotate(-90 18 120)" text-anchor="middle">OXÍGENO DISUELTO mg/L</text>
+
+            <line class="dg-dash" x1="62" y1="0" x2="524" y2="0" data-fig="sat"/>
+            <text class="dg-hand" x="520" y="0" data-fig="sat-label" text-anchor="end">saturación</text>
+            <line class="dg-coral-dash" x1="62" y1="0" x2="524" y2="0" data-fig="life"/>
+            <text class="dg-hand" x="66" y="0" data-fig="life-label">4 mg/L · límite piscícola</text>
+
+            <path class="dg-accent" d="" data-fig="curve"/>
+            <circle class="dg-fill" cx="0" cy="0" r="4.5" data-fig="marker"/>
+            <line class="dg-dash" x1="0" y1="0" x2="0" y2="216" data-fig="drop"/>
+            <text class="dg-math" x="0" y="0" data-fig="marker-label" text-anchor="middle">mín</text>
+          </g>
+        </svg>
+        <div class="fig-ctrl">
+          <label>
+            <span>Carga del vertido <output data-out="l0">18</output> mg/L</span>
+            <input type="range" data-in="l0" min="2" max="40" step="1" value="18">
+          </label>
+          <label>
+            <span>Desoxigenación k₁ <output data-out="k1">0,30</output> d⁻¹</span>
+            <input type="range" data-in="k1" min="5" max="60" step="1" value="30">
+          </label>
+          <label>
+            <span>Reaireación k₂ <output data-out="k2">0,45</output> d⁻¹</span>
+            <input type="range" data-in="k2" min="10" max="120" step="5" value="45">
+          </label>
+          <label>
+            <span>Déficit inicial <output data-out="d0">1,5</output> mg/L</span>
+            <input type="range" data-in="d0" min="0" max="6" step="0.5" value="1.5">
+          </label>
+        </div>
+        <p class="fig-read" data-fig="read"></p>
+        <figcaption><b>Lectura:</b> la curva arranca en el punto de mezcla y desciende hasta un mínimo. Cuanto mayor es k₁ respecto a k₂, más profundo y más lejano queda ese mínimo. Si toca la línea roja de 4 mg/L, el vertido necesita más depuración o más dilución antes de ser aceptable.</figcaption>
+      </figure>
+    </section>
+
+    <section class="topic" id="ejemplo">
+      <div class="topic__head"><span class="topic__num">05</span><h2>Ejemplo resuelto</h2></div>
+      <p class="topic__sub">Depuradora para un núcleo de 4 800 habitantes que vierte a un río de 350 L/s.</p>
+
+      <ol class="steps">
+        <li>
+          <h4>Caudal medio de diseño</h4>
+          <p>Con una dotación de 220 L por habitante y día, el caudal medio sale directo. En un núcleo pequeño conviene añadir la infiltración de la red, pero para el ejercicio se desprecia.</p>
+          <span class="calc">Q = 4 800 · 220 / 1000 = <b>1 056 m³/d</b> = 12,2 L/s</span>
+        </li>
+        <li>
+          <h4>Carga de DBO₅ que llega</h4>
+          <p>Cada habitante aporta 60 g de DBO₅ al día. La carga es independiente del caudal: si hay más agua, la concentración baja pero la masa es la misma.</p>
+          <span class="calc">Carga = 4 800 · 0,060 = <b>288 kg DBO₅/d</b></span>
+          <p>La concentración de entrada se obtiene dividiendo la carga entre el caudal: 288 000 g / 1 056 m³ = <strong>273 mg/L</strong>. Es un agua residual doméstica típica, ni muy diluida ni muy concentrada.</p>
+        </li>
+        <li>
+          <h4>Caudal punta y carga punta</h4>
+          <p>La planta se dimensiona para el momento de máxima llegada, que en un núcleo pequeño ocurre a media mañana. Con un coeficiente punta de 3, el caudal se triplica.</p>
+          <span class="calc">Q<sub>p</sub> = 1 056 · 3 = <b>3 168 m³/d</b> = 36,7 L/s</span>
+          <p>La carga punta no se multiplica por 3: la masa de contaminante no aumenta porque se use más agua. Solo se multiplica el caudal hidráulico.</p>
+        </li>
+        <li>
+          <h4>Eficiencia exigida para cumplir 25 mg/L</h4>
+          <p>El límite habitual de vertido para poblaciones de este tamaño es de 25 mg/L de DBO₅. La eficiencia mínima sale de comparar entrada y salida.</p>
+          <span class="calc">η = (273 − 25) / 273 · 100 = <b>90,8 %</b></span>
+          <p>Es una exigencia alta para un tratamiento solo primario, que se queda en el 30 al 40 %. Hace falta tratamiento secundario biológico, y probablemente eliminación de nutrientes si el río está declarado sensible.</p>
+        </li>
+        <li>
+          <h4>Carga que llega al río</h4>
+          <p>La planta no elimina el problema, lo reduce. Lo que sale sigue siendo una carga que el cauce debe absorber.</p>
+          <span class="calc">Carga salida = 1 056 · 25 / 1000 = <b>26,4 kg DBO₅/d</b></span>
+          <p>Se han eliminado 261,6 kg al día, el 90,8 % de lo que entraba. Ese residuo no desaparece: se convierte en fango.</p>
+        </li>
+        <li>
+          <h4>Concentración tras la mezcla</h4>
+          <p>El río lleva 350 L/s con 2 mg/L de DBO₅. Hay que pasar todo a las mismas unidades antes de mezclar: 350 L/s son 30 240 m³/d.</p>
+          <span class="calc">c<sub>m</sub> = (30 240 · 2 + 1 056 · 25) / 31 296 = <b>2,78 mg/L</b></span>
+          <p>El río multiplica por 14 el caudal del vertido, así que la concentración apenas sube. Con un río de 30 L/s en estiaje, la misma planta dejaría el cauce en 25 mg/L y el problema sería real.</p>
+        </li>
+        <li>
+          <h4>Fango producido</h4>
+          <p>Como orientación, un fango activo produce entre 0,7 y 1,0 kg de sólidos por kg de DBO₅ eliminada. Se toma 0,8.</p>
+          <span class="calc">SS = 0,8 · 261,6 = <b>209 kg SS/d</b></span>
+          <p>Deshidratado al 20 % de materia seca son unas 1,0 t/día de fango. Ese es el número que decide el coste de gestión, no el del agua.</p>
+        </li>
+      </ol>
+
+      <details class="reveal">
+        <summary>Comprobación final: ¿por qué se dimensiona con la punta y se cobra por la carga?</summary>
+        <div class="reveal__body">
+          <p>Porque son dos problemas distintos. El caudal punta dimensiona los decantadores, los canales y las bombas: si no caben 36,7 L/s, el agua se desborda sin tratar. La carga dimensiona el reactor biológico y el consumo de oxígeno: si no hay biomasa suficiente para 288 kg de DBO₅ al día, la salida no cumple aunque el caudal sea pequeño.</p>
+          <p>El canon de vertido se cobra por carga contaminante, no por volumen, precisamente porque la carga es lo que cuesta tratar.</p>
+        </div>
+      </details>
+
+      <div class="callout callout--warn">
+        <span class="callout__icon">!</span>
+        <span class="callout__title">Cuidado con el estiaje</span>
+        <p>El caudal de un río en verano puede ser una décima parte del de invierno. Un vertido que cumple en enero puede incumplir en agosto sin haber cambiado nada en la depuradora. Los proyectos se comprueban con el caudal de estiaje y con el percentil de sequía.</p>
+      </div>
+    </section>
+
+    <section class="topic" id="practica">
+      <div class="topic__head"><span class="topic__num">06</span><h2>Práctica</h2></div>
+      <p class="topic__sub">Calcula a mano y comprueba. Tolerancia del 2 % para absorber redondeos.</p>
+
+      <div class="drill" data-drill="d1" data-answer="420" data-tol="8" data-solution="Carga = 1 200 · 350 / 1000 = 420 kg DBO₅/d">
+        <p class="drill__q"><b>1.</b> Un vertido de 1 200 m³/día lleva 350 mg/L de DBO₅. ¿Cuál es la carga diaria?</p>
+        <div class="drill__row">
+          <input class="drill__input" type="number" inputmode="decimal" step="1" aria-label="Tu respuesta para la carga de DBO5">
+          <span class="drill__unit">kg/d</span>
+          <button class="btn-mini" type="button" data-check>Comprobar</button>
+          <button class="btn-mini" type="button" data-show>Ver solución</button>
+        </div>
+        <p class="drill__fb" data-fb></p>
+      </div>
+
+      <div class="drill" data-drill="d2" data-answer="7000" data-tol="140" data-solution="h-e = 420 / 0,060 = 7 000 habitantes equivalentes">
+        <p class="drill__q"><b>2.</b> Con esa carga de 420 kg/día, ¿a cuántos habitantes equivalentes equivale?</p>
+        <div class="drill__row">
+          <input class="drill__input" type="number" inputmode="decimal" step="10" aria-label="Tu respuesta en habitantes equivalentes">
+          <span class="drill__unit">h-e</span>
+          <button class="btn-mini" type="button" data-check>Comprobar</button>
+          <button class="btn-mini" type="button" data-show>Ver solución</button>
+        </div>
+        <p class="drill__fb" data-fb></p>
+      </div>
+
+      <div class="drill" data-drill="d3" data-answer="94.3" data-tol="1" data-solution="η = (350 − 20) / 350 · 100 = 94,3 %">
+        <p class="drill__q"><b>3.</b> Si la depuradora deja la DBO₅ en 20 mg/L partiendo de 350 mg/L, ¿qué eficiencia tiene?</p>
+        <div class="drill__row">
+          <input class="drill__input" type="number" inputmode="decimal" step="0.1" aria-label="Tu respuesta para la eficiencia">
+          <span class="drill__unit">%</span>
+          <button class="btn-mini" type="button" data-check>Comprobar</button>
+          <button class="btn-mini" type="button" data-show>Ver solución</button>
+        </div>
+        <p class="drill__fb" data-fb></p>
+      </div>
+
+      <div class="drill" data-drill="d4" data-answer="74.8" data-tol="0.6" data-solution="L = 10 · log(3 · 10^7) = 74,8 dB(A)">
+        <p class="drill__q"><b>4.</b> Tres ventiladores idénticos emiten 70 dB(A) cada uno. ¿Cuál es el nivel total?</p>
+        <div class="drill__row">
+          <input class="drill__input" type="number" inputmode="decimal" step="0.1" aria-label="Tu respuesta para el nivel sonoro total">
+          <span class="drill__unit">dB(A)</span>
+          <button class="btn-mini" type="button" data-check>Comprobar</button>
+          <button class="btn-mini" type="button" data-show>Ver solución</button>
+        </div>
+        <p class="drill__fb" data-fb></p>
+      </div>
+
+      <div class="calc" data-calc="ma-carga">
+        <div class="calc__head">
+          <div class="calc__title"><span class="calc__tag">Calculadora</span><h4>Carga contaminante y habitantes equivalentes</h4></div>
+          <p class="calc__hint">Convierte una analítica en masa diaria.</p>
+        </div>
+        <div class="calc__fields">
+          <label class="field"><span>Caudal <em>(Q)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="q" value="1200" step="10" min="0"><span class="unit">m³/d</span></span></label>
+          <label class="field"><span>DBO₅</span><span class="field__input"><input type="text" inputmode="decimal" data-in="dbo" value="350" step="10" min="0"><span class="unit">mg/L</span></span></label>
+          <label class="field"><span>Sólidos en suspensión</span><span class="field__input"><input type="text" inputmode="decimal" data-in="ss" value="300" step="10" min="0"><span class="unit">mg/L</span></span></label>
+          <label class="field"><span>Población servida</span><span class="field__input"><input type="text" inputmode="decimal" data-in="pob" value="4800" step="100" min="0"><span class="unit">hab</span></span></label>
+        </div>
+        <div class="calc__out" data-out></div>
+        <p class="calc__note"><b>Ojo:</b> los habitantes equivalentes se calculan solo con la DBO₅. Si comparas con la población real, la diferencia te dice cuánta carga industrial o ganadera hay escondida en la red.</p>
+      </div>
+
+      <div class="calc" data-calc="ma-depuracion">
+        <div class="calc__head">
+          <div class="calc__title"><span class="calc__tag">Calculadora</span><h4>Rendimiento de una depuradora</h4></div>
+          <p class="calc__hint">Entrada, salida y caudal del mismo parámetro.</p>
+        </div>
+        <div class="calc__fields">
+          <label class="field"><span>Entrada <em>(c<sub>e</sub>)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="ce" value="350" step="10" min="0"><span class="unit">mg/L</span></span></label>
+          <label class="field"><span>Salida <em>(c<sub>s</sub>)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="cs" value="20" step="1" min="0"><span class="unit">mg/L</span></span></label>
+          <label class="field"><span>Caudal</span><span class="field__input"><input type="text" inputmode="decimal" data-in="q" value="1200" step="10" min="0"><span class="unit">m³/d</span></span></label>
+        </div>
+        <div class="calc__out" data-out></div>
+        <p class="calc__note">La eficiencia se calcula sobre concentraciones, pero la masa eliminada se calcula sobre el caudal. Las dos cifras cuentan cosas distintas y las dos se piden en el examen.</p>
+      </div>
+
+      <div class="calc" data-calc="ma-ruido">
+        <div class="calc__head">
+          <div class="calc__title"><span class="calc__tag">Calculadora</span><h4>Suma de ruido y distancia</h4></div>
+          <p class="calc__hint">Hasta tres focos y una distancia al receptor.</p>
+        </div>
+        <div class="calc__fields">
+          <label class="field"><span>Foco 1 <em>(a 1 m)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="l1" value="85" step="1" min="0"><span class="unit">dB</span></span></label>
+          <label class="field"><span>Foco 2 <em>(a 1 m)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="l2" value="85" step="1" min="0"><span class="unit">dB</span></span></label>
+          <label class="field"><span>Foco 3 <em>(a 1 m)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="l3" value="0" step="1" min="0"><span class="unit">dB</span></span></label>
+          <label class="field"><span>Distancia</span><span class="field__input"><input type="text" inputmode="decimal" data-in="r" value="30" step="5" min="1"><span class="unit">m</span></span></label>
+        </div>
+        <div class="calc__out" data-out></div>
+        <p class="calc__note">Los niveles se miden a 1 m de cada foco, así que la distancia solo resta 20·log₁₀(r). El foco 3 a 0 dB se ignora. La atenuación supone campo libre sin obstáculos: una pantalla vegetal o un muro mejoran la cifra, pero no se calculan aquí.</p>
+      </div>
+
+      <div class="calc" data-calc="ma-huella">
+        <div class="calc__head">
+          <div class="calc__title"><span class="calc__tag">Calculadora</span><h4>Huella de carbono de la explotación</h4></div>
+          <p class="calc__hint">Gasóleo, electricidad y nitrógeno. Factores orientativos.</p>
+        </div>
+        <div class="calc__fields">
+          <label class="field"><span>Gasóleo</span><span class="field__input"><input type="text" inputmode="decimal" data-in="gas" value="6000" step="100" min="0"><span class="unit">L</span></span></label>
+          <label class="field"><span>Electricidad</span><span class="field__input"><input type="text" inputmode="decimal" data-in="kwh" value="12000" step="100" min="0"><span class="unit">kWh</span></span></label>
+          <label class="field"><span>Nitrógeno aplicado</span><span class="field__input"><input type="text" inputmode="decimal" data-in="n" value="1800" step="10" min="0"><span class="unit">kg N</span></span></label>
+          <label class="field"><span>Superficie</span><span class="field__input"><input type="text" inputmode="decimal" data-in="ha" value="30" step="1" min="0.1"><span class="unit">ha</span></span></label>
+        </div>
+        <div class="calc__out" data-out></div>
+        <p class="calc__note">Factores usados: 2,68 kg CO₂e/L de gasóleo, 0,19 kg CO₂e/kWh y 5,5 kg CO₂e/kg de N. Cambian con el país y con el año del mix eléctrico: si el ejercicio da otros, se usan los del enunciado.</p>
+      </div>
+    </section>
+
+    <section class="topic" id="tablas">
+      <div class="topic__head"><span class="topic__num">07</span><h2>Tablas de referencia</h2></div>
+      <p class="topic__sub">Órdenes de magnitud para orientarse. La norma aplicable manda sobre cualquier tabla.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Composición típica de un agua residual doméstica</caption>
+          <thead><tr><th>Parámetro</th><th class="num">Débil</th><th class="num">Media</th><th class="num">Fuerte</th></tr></thead>
+          <tbody>
+            <tr><td>DBO₅ (mg/L)</td><td class="num">150</td><td class="num">250</td><td class="num">400</td></tr>
+            <tr><td>DQO (mg/L)</td><td class="num">300</td><td class="num">500</td><td class="num">800</td></tr>
+            <tr><td>Sólidos en suspensión (mg/L)</td><td class="num">150</td><td class="num">250</td><td class="num">400</td></tr>
+            <tr><td>N total (mg/L)</td><td class="num">30</td><td class="num">50</td><td class="num">80</td></tr>
+            <tr><td>P total (mg/L)</td><td class="num">5</td><td class="num">10</td><td class="num">15</td></tr>
+            <tr><td>DQO / DBO₅</td><td class="num">2,0</td><td class="num">2,0</td><td class="num">2,0</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Límites de vertido orientativos de una EDAR urbana (Directiva 91/271 y transposición)</caption>
+          <thead><tr><th>Parámetro</th><th class="num">Límite</th><th class="num">Eficiencia mínima</th><th>Nota</th></tr></thead>
+          <tbody>
+            <tr><td>DBO₅</td><td class="num">25 mg/L</td><td class="num">70 – 90 %</td><td>Obligatorio por encima de 2 000 h-e</td></tr>
+            <tr><td>DQO</td><td class="num">125 mg/L</td><td class="num">75 %</td><td>Referencia para aglomeraciones grandes</td></tr>
+            <tr><td>Sólidos en suspensión</td><td class="num">35 mg/L</td><td class="num">90 %</td><td>Se controla en el efluente decantado</td></tr>
+            <tr><td>N total</td><td class="num">15 mg/L</td><td class="num">70 – 80 %</td><td>Solo en zonas sensibles</td></tr>
+            <tr><td>P total</td><td class="num">2 mg/L</td><td class="num">80 %</td><td>Solo en zonas sensibles</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Niveles sonoros de referencia</caption>
+          <thead><tr><th>Situación</th><th class="num">dB(A)</th><th>Qué se percibe</th></tr></thead>
+          <tbody>
+            <tr><td>Umbral de audición</td><td class="num">0</td><td>Silencio absoluto, solo en cámara anecoica</td></tr>
+            <tr><td>Campo por la noche</td><td class="num">20 – 30</td><td>Referencia de ruido de fondo rural</td></tr>
+            <tr><td>Zona residencial nocturna</td><td class="num">45 – 50</td><td>Límite habitual de noche en suelo urbano</td></tr>
+            <tr><td>Conversación normal</td><td class="num">60</td><td>Se entiende sin esfuerzo a un metro</td></tr>
+            <tr><td>Tractor en cabina</td><td class="num">75 – 85</td><td>Protección auditiva recomendada</td></tr>
+            <tr><td>Motocultor sin protección</td><td class="num">95 – 105</td><td>Daño auditivo a partir de 85 dB y 8 horas</td></tr>
+            <tr><td>Umbral de dolor</td><td class="num">120</td><td>Daño inmediato</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Factores de emisión orientativos</caption>
+          <thead><tr><th>Actividad</th><th class="num">Factor</th><th>Unidad</th></tr></thead>
+          <tbody>
+            <tr><td>Gasóleo agrícola</td><td class="num">2,68</td><td>kg CO₂/L</td></tr>
+            <tr><td>Electricidad (mix español reciente)</td><td class="num">0,19</td><td>kg CO₂e/kWh</td></tr>
+            <tr><td>Fertilizante nitrogenado</td><td class="num">5,5</td><td>kg CO₂e/kg N</td></tr>
+            <tr><td>Estiércol bovino gestionado</td><td class="num">0,10</td><td>kg CH₄/kg MS</td></tr>
+            <tr><td>Gas natural</td><td class="num">2,02</td><td>kg CO₂/m³</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="topic" id="trampas">
+      <div class="topic__head"><span class="topic__num">08</span><h2>Errores típicos</h2></div>
+      <p class="topic__sub">Los que se cobran puntos en el examen y sustos en el proyecto.</p>
+
+      <div class="callout callout--danger">
+        <span class="callout__icon">×</span>
+        <span class="callout__title">Confundir mg/L con kg/día</span>
+        <p>Son cosas distintas y no se pueden comparar. Una concentración de 25 mg/L puede ser un problema enorme si el caudal es de 50 000 m³/día. Siempre que el enunciado dé caudal, la respuesta final se da en carga.</p>
+      </div>
+
+      <div class="callout callout--danger">
+        <span class="callout__icon">×</span>
+        <span class="callout__title">Multiplicar la carga por el coeficiente punta</span>
+        <p>El coeficiente punta afecta al caudal, no a la masa de contaminante. Si la población no cambia, la carga diaria de DBO₅ es la misma a las 4 de la mañana que a las 11. Lo que cambia es la concentración, porque el agua se diluye o se concentra.</p>
+      </div>
+
+      <div class="callout callout--warn">
+        <span class="callout__icon">!</span>
+        <span class="callout__title">Sumar decibelios como si fueran kilos</span>
+        <p>70 + 70 no son 140 dB, son 73 dB. La escala es logarítmica y la suma se hace con potencias. Un error de este tipo convierte un proyecto viable en uno imposible.</p>
+      </div>
+
+      <div class="callout callout--warn">
+        <span class="callout__icon">!</span>
+        <span class="callout__title">Usar el caudal medio para dimensionar todo</span>
+        <p>Los decantadores y los canales se dimensionan con la punta; el reactor biológico, con la carga media. Dimensionar todo con el mismo caudal deja la planta corta en hidráulica o sobredimensionada en biología.</p>
+      </div>
+
+      <div class="callout callout--warn">
+        <span class="callout__icon">!</span>
+        <span class="callout__title">Olvidar el efluente en el balance de fango</span>
+        <p>La materia que entra no desaparece: una parte sale en el agua tratada y el resto se convierte en fango. Si el balance no cierra, es porque falta uno de los dos términos.</p>
+      </div>
+
+      <div class="callout callout--tip">
+        <span class="callout__icon">i</span>
+        <span class="callout__title">Un detalle que suma</span>
+        <p>La DBO₅ se mide a 20 °C y en cinco días. En un río frío la degradación es más lenta, así que el mínimo de oxígeno aparece más lejos del vertido. Citar esto en un examen de teoría demuestra que se entiende el modelo, no solo la fórmula.</p>
+      </div>
+    </section>
+
+    <section class="topic" id="tarjetas">
+      <div class="topic__head"><span class="topic__num">09</span><h2>Tarjetas</h2></div>
+      <p class="topic__sub">Tapa la respuesta, dilo en voz alta y gira. Baraja para no memorizar el orden.</p>
+
+      <div class="flash" data-flash>
+        <div class="flash__bar">
+          <span class="flash__count" data-count>1 / 12</span>
+          <span class="spacer"></span>
+          <button class="btn-mini" type="button" data-shuffle>Barajar</button>
+        </div>
+        <div class="flash__stage">
+          <button class="flashcard" type="button" aria-expanded="false">
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Definición</span>
+              <span class="flashcard__q">Diferencia entre concentración y carga.</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">La concentración es masa por volumen (mg/L) y describe la muestra. La carga es masa por tiempo (kg/d) y describe el problema: caudal por concentración. El río responde a la carga.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Unidades</span>
+              <span class="flashcard__q">¿Cuánto es un habitante equivalente?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">60 gramos de DBO₅ al día. Es una unidad de carga, no de población: una industria puede valer miles de habitantes equivalentes con cuatro trabajadores.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Fórmula</span>
+              <span class="flashcard__q">Escribe la eficiencia de depuración y di qué significa.</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">η = (c<sub>e</sub> − c<sub>s</sub>) / c<sub>e</sub> · 100. Es el porcentaje de contaminante retirado, calculado parámetro a parámetro. No dice nada del caudal ni de la masa eliminada.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Modelo</span>
+              <span class="flashcard__q">¿Qué representa k₂ en Streeter-Phelps?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">La reaireación: la velocidad con la que el río recupera oxígeno desde la atmósfera. Depende de la turbulencia y de la profundidad. Cuanto mayor es k₂, más rápido se recupera el cauce.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Concepto</span>
+              <span class="flashcard__q">¿Por qué la DQO es mayor que la DBO₅?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">Porque la DQO oxida también lo que las bacterias no pueden degradar. La diferencia entre ambas es la fracción no biodegradable, y su cociente indica si el agua es tratable por vía biológica.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Ruido</span>
+              <span class="flashcard__q">Dos máquinas de 80 dB(A) juntas: ¿cuánto suman?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">83 dB(A). Duplicar la energía sonora añade 3 dB. Para sumar 10 dB harían falta diez fuentes iguales, no dos.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Aire</span>
+              <span class="flashcard__q">Convierte 20 ppm de SO₂ a mg/m³ (PM 64).</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">20 · 64 / 24,45 = 52,4 mg/m³ a 25 °C. A 0 °C serían 57,1 mg/m³, porque el volumen molar baja a 22,4 L/mol.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Nutrientes</span>
+              <span class="flashcard__q">¿Qué nutriente limita la eutrofización en agua dulce y cuál en el mar?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">En agua dulce suele limitar el fósforo; en el mar, el nitrógeno. Por eso las zonas sensibles continentales exigen eliminación de fósforo y las costeras, de nitrógeno.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Focos</span>
+              <span class="flashcard__q">¿Por qué la contaminación agraria es difusa y por qué importa?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">Porque no sale por un punto único: llega al agua por toda la superficie, con la lluvia y el drenaje. No se puede medir en un tubo ni tratar al final; se gestiona con dosis, cubiertas vegetales y franjas de protección.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Residuos</span>
+              <span class="flashcard__q">Ordena la jerarquía de residuos, de mejor a peor.</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">Prevención, preparación para la reutilización, reciclado, valorización energética y eliminación. El vertedero es siempre la última opción, no la primera.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Impacto</span>
+              <span class="flashcard__q">¿Qué es la Declaración de Impacto Ambiental?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">El pronunciamiento de la administración que decide si el proyecto es viable y con qué condiciones. No es el estudio: el estudio lo redacta el promotor, la declaración la emite la autoridad ambiental.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Cálculo</span>
+              <span class="flashcard__q">Un río de 300 L/s recibe 20 L/s con 100 mg/L. ¿Concentración tras la mezcla si el río trae 1 mg/L?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">(300 · 1 + 20 · 100) / 320 = 7,2 mg/L. La dilución es 16 veces, así que la concentración del vertido se divide casi por 14 en la mezcla.</span>
+            </span>
+          </button>
+        </div>
+        <div class="flash__nav">
+          <button class="btn-mini" type="button" data-prev>Anterior</button>
+          <div class="flash__dots" data-dots></div>
+          <button class="btn-mini" type="button" data-next>Siguiente</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="topic" id="test">
+      <div class="topic__head"><span class="topic__num">10</span><h2>Test</h2></div>
+      <p class="topic__sub">Diez preguntas con explicación. No hay nota guardada: al cerrar la página, se borra.</p>
+
+      <div class="quiz" data-quiz="quiz-medio-ambiente">
+        <div data-body>
+          <div class="quiz__top">
+            <span class="quiz__step" data-step>Pregunta 1 de 10</span>
+            <span class="quiz__score" data-score>Aciertos 0 / 10</span>
+          </div>
+          <div class="quiz__bar"><span data-bar></span></div>
+          <p class="quiz__q" data-q></p>
+          <ul class="quiz__opts" data-opts></ul>
+          <div class="quiz__feedback" data-feedback hidden></div>
+          <div class="quiz__foot">
+            <span class="spacer"></span>
+            <button class="btn btn--primary" type="button" data-next disabled>Siguiente</button>
+          </div>
+        </div>
+        <div class="quiz__result" data-result hidden>
+          <div class="score" data-final>0<span> / 10</span></div>
+          <p data-msg></p>
+          <ul class="quiz__review" data-review></ul>
+          <div class="quiz__foot" style="justify-content:center">
+            <button class="btn btn--primary" type="button" data-retry>Repetir todo</button>
+            <button class="btn btn--ghost" type="button" data-again>Repasar solo las falladas</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="topic" id="glosario">
+      <div class="topic__head"><span class="topic__num">11</span><h2>Glosario</h2></div>
+      <p class="topic__sub">Vocabulario mínimo para leer un enunciado sin dudar.</p>
+      <dl class="glossary">
+        <div><dt>Autodepuración</dt><dd>Capacidad de un cauce de recuperar su calidad tras recibir un vertido, por acción bacteriana y reaireación.</dd></div>
+        <div><dt>Carga másica</dt><dd>Masa de contaminante que entra o sale de un sistema por unidad de tiempo, en kg/día.</dd></div>
+        <div><dt>DBO₅</dt><dd>Demanda bioquímica de oxígeno a cinco días y 20 °C. Mide la materia orgánica biodegradable.</dd></div>
+        <div><dt>DQO</dt><dd>Demanda química de oxígeno. Incluye la materia biodegradable y la que no lo es.</dd></div>
+        <div><dt>Déficit de oxígeno</dt><dd>Diferencia entre la concentración de saturación y la concentración real de oxígeno disuelto.</dd></div>
+        <div><dt>Efluente</dt><dd>Agua que sale de una instalación de tratamiento. Se compara con los límites de vertido.</dd></div>
+        <div><dt>Eutrofización</dt><dd>Enriquecimiento en nutrientes que provoca proliferación de algas y posterior falta de oxígeno.</dd></div>
+        <div><dt>Foco difuso</dt><dd>Origen de contaminación no localizado, como la fertilización agrícola o la escorrentía urbana.</dd></div>
+        <div><dt>Habitante equivalente</dt><dd>Carga de 60 g de DBO₅ al día. Unidad de diseño de las depuradoras.</dd></div>
+        <div><dt>LAeq</dt><dd>Nivel sonoro continuo equivalente ponderado A. Promedio energético del ruido en un periodo.</dd></div>
+        <div><dt>Lixiviado</dt><dd>Líquido que atraviesa un residuo o un suelo y arrastra contaminantes disueltos.</dd></div>
+        <div><dt>Reaireación</dt><dd>Transferencia de oxígeno desde la atmósfera al agua, favorecida por turbulencia y poca profundidad.</dd></div>
+        <div><dt>SS</dt><dd>Sólidos en suspensión. Fracción retenida por filtración; es la materia prima del fango.</dd></div>
+        <div><dt>Zona sensible</dt><dd>Masa de agua declarada vulnerable a eutrofización, con límites de nutrientes más estrictos.</dd></div>
+      </dl>
+    </section>
+
+    <section class="topic" id="plan">
+      <div class="topic__head"><span class="topic__num">12</span><h2>Plan de repaso</h2></div>
+      <p class="topic__sub">Tres pasadas cortas rinden más que una maratón la víspera.</p>
+      <div class="grid grid--3">
+        <div class="card card--tint">
+          <span class="card__tag">Pasada 1 · 20 min</span>
+          <h4>Entender</h4>
+          <p>Lee el mapa y los conceptos clave. Cierra la página y explica en voz alta la diferencia entre concentración y carga, con un ejemplo numérico. Si no sale, vuelve al apartado 02.</p>
+        </div>
+        <div class="card card--tint">
+          <span class="card__tag">Pasada 2 · 30 min</span>
+          <h4>Calcular</h4>
+          <p>Resuelve el ejemplo sin mirar los pasos. Después haz los cuatro ejercicios y mueve los controles de la curva de oxígeno hasta predecir el mínimo antes de tocar el deslizador.</p>
+        </div>
+        <div class="card card--tint">
+          <span class="card__tag">Pasada 3 · 15 min</span>
+          <h4>Comprobar</h4>
+          <p>Haz el test. Cada fallo se convierte en una tarjeta que repites al día siguiente. Si aciertas nueve de diez, el tema está listo.</p>
+        </div>
+      </div>
+      <div class="callout callout--tip">
+        <span class="callout__icon">i</span>
+        <span class="callout__title">Para conectar con la parcela</span>
+        <p>Cuando pases junto a una depuradora, busca el canal de entrada, el decantador y el punto de vertido. Con esos tres elementos ya puedes explicar el proceso completo y situar dónde se mide cada parámetro.</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="foot__inner">
+    <div>
+      <h2>Sigue con otra asignatura</h2>
+      <p>Cuatro cuadernos y un atlas 3D de motores. Material de repaso: fórmulas, ejemplos resueltos, calculadoras y test cortos.</p>
+    </div>
+    <nav class="foot__links" aria-label="Otras asignaturas">
+      <a href="fertirriego.html">Fertirriego <span>01</span></a>
+      <a href="estructuras.html">Resistencia de materiales y estructuras agrícolas <span>03</span></a>
+      <a href="maquinaria.html">Motores y maquinaria agrícola <span>04</span></a>
+      <a href="../motores/index.html">Atlas 3D de motores agrícolas <span>3D</span></a>
+    </nav>
+  </div>
+  <div class="foot__base">
+    <span>Taller de Estudio · Ingeniería Agrícola</span>
+    <a href="../index.html#estudio">Volver al portfolio</a>
+  </div>
+</footer>
+
+<script type="application/json" id="quiz-medio-ambiente">
+[
+  {
+    "q": "La carga másica de un vertido se calcula como…",
+    "opts": ["Caudal dividido por concentración", "Caudal por concentración, con el factor de unidades", "Concentración por tiempo de residencia", "Población por dotación"],
+    "answer": 1,
+    "why": "Carga (kg/d) = Q (m³/d) · c (mg/L) / 1000. La concentración sola no dice cuánto contamina el vertido."
+  },
+  {
+    "q": "Un habitante equivalente son…",
+    "opts": ["60 g de DBO₅ al día", "60 g de DQO al día", "200 L de agua al día", "1 kg de sólidos en suspensión al día"],
+    "answer": 0,
+    "why": "La definición normativa es 60 g de DBO₅ por habitante y día. La dotación de agua es otro parámetro y no define el h-e."
+  },
+  {
+    "q": "Dos fuentes de ruido de 65 dB(A) cada una producen un nivel total de…",
+    "opts": ["130 dB(A)", "68 dB(A)", "71 dB(A)", "65 dB(A)"],
+    "answer": 1,
+    "why": "Duplicar la energía sonora añade 3 dB. La suma logarítmica de dos fuentes iguales es L + 3."
+  },
+  {
+    "q": "En el modelo de Streeter-Phelps, un valor alto de k₂ significa que…",
+    "opts": ["El río consume oxígeno más rápido", "El río se reairea más rápido y se recupera antes", "La DBO₅ del vertido es mayor", "El caudal del río es menor"],
+    "answer": 1,
+    "why": "k₂ es la constante de reaireación. Cuanto mayor es, más rápido vuelve el oxígeno desde la atmósfera y menos profundo es el mínimo."
+  },
+  {
+    "q": "El coeficiente punta de una depuradora se aplica…",
+    "opts": ["A la carga de DBO₅ y al caudal", "Solo al caudal hidráulico", "Solo a la carga de sólidos", "A la eficiencia de depuración"],
+    "answer": 1,
+    "why": "La masa de contaminante no cambia porque se use más agua. El coeficiente punta multiplica el caudal, y con él baja la concentración."
+  },
+  {
+    "q": "Una relación DQO/DBO₅ de 3,5 indica que el agua…",
+    "opts": ["Es muy biodegradable", "Tiene una fracción importante no biodegradable", "No contiene materia orgánica", "Es apta para consumo humano"],
+    "answer": 1,
+    "why": "Por encima de 2,5 hay compuestos recalcitrantes. El tratamiento biológico solo no bastará y hará falta un pretratamiento físico-químico."
+  },
+  {
+    "q": "En agua dulce, el nutriente que suele limitar la eutrofización es…",
+    "opts": ["El nitrógeno", "El fósforo", "El potasio", "El calcio"],
+    "answer": 1,
+    "why": "En aguas continentales el fósforo es el limitante habitual; en el medio marino lo es el nitrógeno."
+  },
+  {
+    "q": "20 ppm de un gas de masa molar 64 equivalen, a 25 °C, a…",
+    "opts": ["20 mg/m³", "52,4 mg/m³", "1280 mg/m³", "0,32 mg/m³"],
+    "answer": 1,
+    "why": "mg/m³ = ppm · PM / 24,45 = 20 · 64 / 24,45 = 52,4. A 0 °C el resultado sería 57,1 mg/m³."
+  },
+  {
+    "q": "La contaminación agraria se considera difusa porque…",
+    "opts": ["Se vierte por una tubería única", "Llega al agua por toda la superficie, con la lluvia y el drenaje", "Solo afecta al aire", "No se puede medir nunca"],
+    "answer": 1,
+    "why": "No hay un punto de vertido que tratar. Se gestiona con dosis ajustadas, cubiertas vegetales y franjas de protección."
+  },
+  {
+    "q": "La Declaración de Impacto Ambiental es…",
+    "opts": ["El estudio que redacta el promotor", "El pronunciamiento de la autoridad ambiental sobre el proyecto", "Un permiso de obra municipal", "Un informe de laboratorio sobre el suelo"],
+    "answer": 1,
+    "why": "El estudio lo redacta el promotor; la declaración la emite la autoridad ambiental y fija las condiciones de obligado cumplimiento."
+  }
+]
+</script>
+
+<script src="assets/estudio.js" defer></script>
+<script src="assets/medio-ambiente.js" defer></script>
+</body>
+</html>

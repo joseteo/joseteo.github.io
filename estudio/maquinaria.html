@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Motores y maquinaria agrícola · Taller de Estudio</title>
+<meta name="description" content="Motores y maquinaria agrícola: par y potencia, curvas del motor, consumo específico, fuerza de tracción, capacidad de trabajo y coste por hectárea. Con formulario, ejemplo resuelto, calculadoras y test.">
+<meta name="theme-color" content="#f6efe5">
+<link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/estudio.css">
+</head>
+<body style="--accent:#b34f37;--accent-ink:#8d3a26;--accent-soft:rgba(179,79,55,.10);--accent-line:rgba(179,79,55,.32)">
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="bar">
+  <a class="bar__brand" href="index.html">
+    <span class="bar__mark">TE</span>
+    <span class="bar__name">Taller de Estudio<em>Ingeniería Agrícola</em></span>
+  </a>
+  <nav class="bar__nav" aria-label="Asignaturas">
+    <a href="fertirriego.html">Fertirriego</a>
+    <a href="medio-ambiente.html">Medio ambiente</a>
+    <a href="estructuras.html">Estructuras</a>
+    <a href="maquinaria.html" aria-current="page">Maquinaria</a>
+    <a href="../motores/index.html">Atlas 3D</a>
+  </nav>
+  <div class="bar__actions">
+    <button class="bar__link" type="button" data-print>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+      <span>Imprimir</span>
+    </button>
+    <a class="bar__link" href="../index.html#estudio">Portfolio</a>
+  </div>
+</header>
+<div class="progress" aria-hidden="true"></div>
+
+<section class="hero">
+  <div class="hero__inner">
+    <div>
+      <p class="hero__kicker">Asignatura 04 · Mecanización agraria</p>
+      <h1>Maquinaria:<br>el par que <em>tira</em>,<br>la potencia que cuesta</h1>
+      <p class="hero__lead">Un tractor no se elige por los caballos de la etiqueta, sino por la curva de par, el lastre y el apero que va a mover. Esta página conecta motor, transmisión y suelo con las cuentas que se piden en examen y se hacen en el taller.</p>
+      <ul class="hero__meta">
+        <li><b>10</b> fórmulas</li>
+        <li><b>4</b> calculadoras</li>
+        <li><b>12</b> tarjetas</li>
+        <li><b>10</b> preguntas</li>
+      </ul>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#mapa">Empezar por el mapa</a>
+        <a class="btn btn--ghost" href="#diagrama">Ver la curva de par</a>
+      </div>
+    </div>
+    <div class="hero__art" aria-hidden="true">
+      <svg viewBox="0 0 200 200">
+        <path class="art-line" d="M14 164h172"/>
+        <circle class="art-line" cx="138" cy="140" r="24"/>
+        <circle class="art-line" cx="138" cy="140" r="10"/>
+        <circle class="art-line" cx="62" cy="150" r="15"/>
+        <circle class="art-line" cx="62" cy="150" r="6"/>
+        <path class="art-line" d="M62 138h76"/>
+        <path class="art-line" d="M78 138v-26h52v26"/>
+        <path class="art-line" d="M92 112v-26h30v26"/>
+        <path class="art-line" d="M100 86v-10"/>
+        <path class="art-line" d="M96 76h8"/>
+        <path class="art-line" d="M54 138v-8M70 138v-8"/>
+        <path class="art-dash" d="M162 140h22"/>
+        <text class="art-label" x="150" y="176">TDF 540</text>
+        <text class="art-label" x="30" y="176">MOTOR</text>
+        <text class="art-hand" x="118" y="70">M · n</text>
+        <text class="art-hand" x="20" y="60">P = M·ω</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="shell" id="contenido">
+  <nav class="toc" aria-label="Índice del tema">
+    <p class="toc__label">En esta página</p>
+    <ol>
+      <li><a href="#mapa"><span>01</span>Mapa del tema</a></li>
+      <li><a href="#conceptos"><span>02</span>Conceptos clave</a></li>
+      <li><a href="#formulario"><span>03</span>Formulario</a></li>
+      <li><a href="#diagrama"><span>04</span>Curvas en vivo</a></li>
+      <li><a href="#ejemplo"><span>05</span>Ejemplo resuelto</a></li>
+      <li><a href="#practica"><span>06</span>Práctica</a></li>
+      <li><a href="#tablas"><span>07</span>Tablas</a></li>
+      <li><a href="#trampas"><span>08</span>Errores típicos</a></li>
+      <li><a href="#tarjetas"><span>09</span>Tarjetas</a></li>
+      <li><a href="#test"><span>10</span>Test</a></li>
+      <li><a href="#glosario"><span>11</span>Glosario</a></li>
+      <li><a href="#plan"><span>12</span>Plan de repaso</a></li>
+    </ol>
+    <div class="toc__foot">
+      <p>la potencia se mide en el banco, el trabajo se hace en el suelo</p>
+      <a href="#test">Ir directo al test</a>
+    </div>
+  </nav>
+
+  <main class="content">
+
+    <section class="topic" id="mapa">
+      <div class="topic__head"><span class="topic__num">01</span><h2>Mapa del tema</h2></div>
+      <p class="topic__sub">La cadena que va del cigüeñal a la reja del arado.</p>
+      <p class="lede">La asignatura se entiende cuando se acepta que la potencia del catálogo no llega al suelo. Entre el volante y la reja hay una transmisión que pierde, unos neumáticos que patinan y un apero que se resiste. <strong>Cada eslabón se calcula por separado y se encadena al final.</strong></p>
+
+      <div class="grid grid--2">
+        <div class="card">
+          <span class="card__tag">Eslabón 1</span>
+          <h4>El motor</h4>
+          <p>Entrega par a un régimen. La curva de par tiene un máximo a régimen medio y cae arriba; la potencia sigue subiendo hasta el régimen nominal. Esa diferencia es la reserva de par, lo que permite aguantar una piedra sin calarse.</p>
+        </div>
+        <div class="card">
+          <span class="card__tag">Eslabón 2</span>
+          <h4>La transmisión</h4>
+          <p>Cambia par por régimen. En las ruedas interesa fuerza; en la toma de fuerza, régimen constante a 540 o 1 000 rpm. Cada salto pierde entre un 5 y un 15 % de potencia.</p>
+        </div>
+        <div class="card">
+          <span class="card__tag">Eslabón 3</span>
+          <h4>El suelo</h4>
+          <p>La fuerza que se puede transmitir depende del peso sobre el eje motriz y del coeficiente de adherencia. Sin lastre se patina; con lastre de más se compacta. El óptimo ronda el 10 al 15 % de patinaje.</p>
+        </div>
+        <div class="card">
+          <span class="card__tag">Eslabón 4</span>
+          <h4>El apero</h4>
+          <p>Consume potencia según su resistencia específica, su ancho y su profundidad. Un arado de vertedera es el apero que más exige; una grada, el que menos. La velocidad multiplica la potencia de forma lineal.</p>
+        </div>
+      </div>
+
+      <div class="note">
+        <p>Regla de campo: para labranza profunda se necesitan entre 15 y 25 CV por metro de ancho de labor y por cada 10 cm de profundidad. Es una regla de dedo, no un cálculo, pero sirve para detectar resultados absurdos.</p>
+      </div>
+    </section>
+
+    <section class="topic" id="conceptos">
+      <div class="topic__head"><span class="topic__num">02</span><h2>Conceptos clave</h2></div>
+      <p class="topic__sub">Los ocho términos que sostienen todos los ejercicios.</p>
+
+      <h3>Par y potencia</h3>
+      <p>El <strong>par</strong> (M) es un esfuerzo de giro, en N·m. La <strong>potencia</strong> es par por velocidad angular: P = M·ω. Un motor puede dar mucho par a pocas vueltas (un tractor) o poco par a muchas (una moto). Lo que hace el trabajo es la potencia, pero lo que aguanta la carga sin calarse es el par. En la práctica se usa <strong>P(kW) = M(N·m) · n(rpm) / 9549</strong>, porque 9549 = 60 000/(2π).</p>
+
+      <h3>Curva de par y reserva</h3>
+      <p>El par máximo aparece entre 1 200 y 1 600 rpm; la potencia máxima, entre 2 000 y 2 300. La <strong>reserva de par</strong> es el cociente entre el par máximo y el par a potencia nominal, menos uno. En un tractor moderno ronda el 30 al 40 %: es lo que le permite atravesar una zona dura sin reducir marcha.</p>
+
+      <h3>Consumo específico</h3>
+      <p>Es el combustible consumido por unidad de energía entregada, en <strong>g/kWh</strong>. Es la medida de la eficiencia del motor, independiente del tamaño. Un motor agrícola moderno está entre 200 y 240 g/kWh; uno antiguo atmosférico, por encima de 260. El consumo horario se obtiene multiplicando por la potencia y dividiendo por la densidad del gasóleo (unos 0,84 kg/L).</p>
+
+      <h3>Toma de fuerza</h3>
+      <p>La <strong>TDF</strong> entrega potencia a régimen constante: 540 rpm en el estándar antiguo y 1 000 rpm en el moderno, que permite ejes más finos para la misma potencia. Solo llega entre el 85 y el 90 % de la potencia del motor, porque la transmisión y la bomba hidráulica se llevan su parte. Un apero diseñado para 540 rpm girando a 600 se sobrevelocita y se rompe.</p>
+
+      <h3>Fuerza de tracción y patinaje</h3>
+      <p>La fuerza que el tractor puede tirar está limitada por la adherencia: <strong>F = m · g · μ</strong>, con m la masa sobre el eje motriz y μ el coeficiente neumático-suelo (0,65 en seco, 0,45 en húmedo, 0,30 en barro). El <strong>patinaje</strong> es la diferencia entre la velocidad teórica y la real. Por debajo del 10 % se desaprovecha el tractor; por encima del 20 % se destruye el suelo y se gasta rueda.</p>
+
+      <h3>Resistencia del apero</h3>
+      <p>Cada labor tiene una <strong>resistencia específica</strong> k, en kN por m² de sección de trabajo. La fuerza es k por ancho por profundidad. Un arado de vertedera trabaja entre 50 y 80 kN/m²; un cultivador, entre 20 y 40. La potencia necesaria es fuerza por velocidad, y por eso labrar más profundo encarece la labor de forma cuadrática: más ancho y más profundidad a la vez.</p>
+
+      <h3>Capacidad de trabajo</h3>
+      <p>La <strong>capacidad teórica</strong> es ancho por velocidad: con el ancho en metros y la velocidad en km/h, el resultado en ha/h sale de dividir por 10. La <strong>capacidad efectiva</strong> descuenta giros, solapes y paradas, con una eficiencia de campo del 75 al 85 %. Confundir las dos es el error clásico al presupuestar una labor.</p>
+
+      <h3>Coste por hectárea</h3>
+      <p>El gasóleo es solo una parte. El coste real suma amortización, mantenimiento, mano de obra y combustible. Para comparar aperos, lo útil es el <strong>consumo por hectárea</strong>: litros por hora divididos por hectáreas por hora. Un apero más ancho gasta más por hora y menos por hectárea, hasta que el tractor no puede con él.</p>
+    </section>
+
+    <section class="topic" id="formulario">
+      <div class="topic__head"><span class="topic__num">03</span><h2>Formulario</h2></div>
+      <p class="topic__sub">Las diez expresiones que resuelven casi cualquier problema de la asignatura.</p>
+
+      <div class="formulas">
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Potencia a partir del par</span>
+            <span class="formula__expr"><i>P</i> = <i>M</i> · <i>ω</i> &nbsp;·&nbsp; <i>P</i>(kW) = <i>M</i> · <i>n</i> / 9549</span>
+          </div>
+          <ul class="formula__where">
+            <li><b>M</b> N·m <em>par motor</em></li>
+            <li><b>n</b> rpm <em>régimen de giro</em></li>
+            <li><b>ω</b> rad/s <em>velocidad angular, 2πn/60</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Cambio de unidades de potencia</span>
+            <span class="formula__expr">1 CV = 0,7355 kW &nbsp;·&nbsp; 1 hp = 0,7457 kW</span>
+          </div>
+          <ul class="formula__where">
+            <li><b>CV</b> <em>caballo métrico, el de los catálogos europeos</em></li>
+            <li><b>hp</b> <em>caballo mecánico, el anglosajón</em></li>
+            <li><em>La diferencia es del 1,4 %: en 200 CV son casi 3 CV.</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Consumo horario</span>
+            <span class="formula__expr"><i>Q</i> = <i>P</i> · <i>c</i><sub>e</sub> / (1000 · <i>ρ</i>)</span>
+          </div>
+          <ul class="formula__where">
+            <li><b>Q</b> L/h <em>caudal de gasóleo</em></li>
+            <li><b>P</b> kW <em>potencia entregada</em></li>
+            <li><b>c<sub>e</sub></b> g/kWh <em>consumo específico, 200 a 260</em></li>
+            <li><b>ρ</b> kg/L <em>densidad del gasóleo, 0,84</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Fuerza de tracción disponible</span>
+            <span class="formula__expr"><i>F</i> = <i>m</i> · <i>g</i> · <i>μ</i> / 1000</span>
+          </div>
+          <ul class="formula__where">
+            <li><b>F</b> kN <em>fuerza máxima sin patinar</em></li>
+            <li><b>m</b> kg <em>masa sobre el eje motriz</em></li>
+            <li><b>μ</b> 0,3 a 0,75 <em>adherencia neumático-suelo</em></li>
+            <li><em>La fuerza real es menor: parte se pierde en hacer rodar el tractor.</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Resistencia de un apero</span>
+            <span class="formula__expr"><i>F</i> = <i>k</i> · <i>a</i> · <i>b</i></span>
+          </div>
+          <ul class="formula__where">
+            <li><b>k</b> kN/m² <em>resistencia específica del suelo y la labor</em></li>
+            <li><b>a</b> m <em>profundidad de trabajo</em></li>
+            <li><b>b</b> m <em>ancho de trabajo</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Potencia de tracción</span>
+            <span class="formula__expr"><i>P</i> = <i>F</i> · <i>v</i> / 3,6</span>
+          </div>
+          <ul class="formula__where">
+            <li><b>P</b> kW <em>potencia en la barra de tiro</em></li>
+            <li><b>F</b> kN <em>fuerza de tiro</em></li>
+            <li><b>v</b> km/h <em>velocidad de avance</em></li>
+            <li><em>Equivale a F·v con v en m/s: 1 km/h = 0,2778 m/s.</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Capacidad de trabajo teórica</span>
+            <span class="formula__expr"><i>C</i><sub>t</sub> = <i>b</i> · <i>v</i> / 10</span>
+          </div>
+          <ul class="formula__where">
+            <li><b>C<sub>t</sub></b> ha/h <em>capacidad teórica</em></li>
+            <li><b>b</b> m <em>ancho de trabajo</em></li>
+            <li><b>v</b> km/h <em>velocidad de avance</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Capacidad efectiva</span>
+            <span class="formula__expr"><i>C</i><sub>e</sub> = <i>C</i><sub>t</sub> · <i>η</i></span>
+          </div>
+          <ul class="formula__where">
+            <li><b>η</b> 0,75 a 0,85 <em>eficiencia de campo</em></li>
+            <li><em>Descuenta giros, solapes, carga y descarga.</em></li>
+            <li><em>En parcelas pequeñas puede bajar al 0,60.</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Patinaje</span>
+            <span class="formula__expr"><i>s</i> = (<i>v</i><sub>t</sub> − <i>v</i><sub>a</sub>) / <i>v</i><sub>t</sub> · 100</span>
+          </div>
+          <ul class="formula__where">
+            <li><b>v<sub>t</sub></b> km/h <em>velocidad teórica por relación de cambio</em></li>
+            <li><b>v<sub>a</sub></b> km/h <em>velocidad real medida</em></li>
+            <li><em>Óptimo entre el 8 y el 15 %. Por encima del 20 % hay que lastrar.</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Consumo por hectárea</span>
+            <span class="formula__expr"><i>L</i>/ha = <i>Q</i> / <i>C</i><sub>e</sub></span>
+          </div>
+          <ul class="formula__where">
+            <li><b>Q</b> L/h <em>consumo horario</em></li>
+            <li><b>C<sub>e</sub></b> ha/h <em>capacidad efectiva</em></li>
+            <li><em>Multiplicando por el precio del gasóleo sale el coste por hectárea.</em></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout callout--tip">
+        <span class="callout__icon">i</span>
+        <span class="callout__title">Truco de examen</span>
+        <p>Antes de dividir por 9549, comprueba que el par está en N·m y el régimen en rpm. Si el enunciado da la potencia en CV, conviértela a kW al principio y no vuelvas a mezclar unidades en todo el problema.</p>
+      </div>
+    </section>
+
+    <section class="topic" id="diagrama">
+      <div class="topic__head"><span class="topic__num">04</span><h2>Curvas en vivo</h2></div>
+      <p class="topic__sub">Mueve el par máximo y los regímenes y mira cómo se desplazan las dos curvas.</p>
+      <p>La curva de par sube desde el ralentí hasta un máximo situado a régimen medio y después cae. La de potencia sigue subiendo porque el régimen crece más deprisa de lo que cae el par, hasta que se cruzan. El <strong>punto de par máximo</strong> es donde el motor aguanta más sin calarse; el de <strong>potencia máxima</strong>, donde hace más trabajo por hora.</p>
+
+      <figure class="figure" data-figure="maq-curvas">
+        <svg viewBox="0 0 560 300" role="img" aria-label="Curvas de par y potencia de un motor agrícola">
+          <g>
+            <line class="dg-thin" x1="70" y1="30" x2="70" y2="212"/>
+            <line class="dg-thin" x1="500" y1="30" x2="500" y2="212"/>
+            <line class="dg-thin" x1="70" y1="212" x2="500" y2="212"/>
+            <line class="dg-grid" x1="70" y1="167" x2="500" y2="167"/>
+            <line class="dg-grid" x1="70" y1="122" x2="500" y2="122"/>
+            <line class="dg-grid" x1="70" y1="77" x2="500" y2="77"/>
+            <text class="dg-small" x="64" y="215" text-anchor="end">0</text>
+            <text class="dg-small" x="64" y="170" text-anchor="end" data-fig="tick-t1">300</text>
+            <text class="dg-small" x="64" y="125" text-anchor="end" data-fig="tick-t2">600</text>
+            <text class="dg-small" x="64" y="80" text-anchor="end" data-fig="tick-t3">900</text>
+            <text class="dg-small" x="506" y="215" text-anchor="start">0</text>
+            <text class="dg-small" x="506" y="170" text-anchor="start" data-fig="tick-p1">40</text>
+            <text class="dg-small" x="506" y="125" text-anchor="start" data-fig="tick-p2">80</text>
+            <text class="dg-small" x="506" y="80" text-anchor="start" data-fig="tick-p3">120</text>
+            <text class="dg-small" x="70" y="226" text-anchor="middle">600</text>
+            <text class="dg-small" x="178" y="226" text-anchor="middle">1200</text>
+            <text class="dg-small" x="285" y="226" text-anchor="middle">1800</text>
+            <text class="dg-small" x="393" y="226" text-anchor="middle">2400</text>
+            <text class="dg-text" x="285" y="248" text-anchor="middle">RÉGIMEN DEL MOTOR rpm</text>
+            <text class="dg-text" x="18" y="120" transform="rotate(-90 18 120)" text-anchor="middle">PAR N·m</text>
+            <text class="dg-text" x="544" y="120" transform="rotate(90 544 120)" text-anchor="middle">POTENCIA kW</text>
+
+            <path class="dg-ink" d="" data-fig="torque"/>
+            <path class="dg-coral" d="" data-fig="power"/>
+            <circle class="dg-fill-ink" cx="0" cy="0" r="4" data-fig="tmark"/>
+            <circle class="dg-fill-2" cx="0" cy="0" r="4" data-fig="pmark"/>
+            <text class="dg-math" x="0" y="0" data-fig="tlabel" text-anchor="middle">M</text>
+            <text class="dg-hand" x="0" y="0" data-fig="plabel" text-anchor="middle">P</text>
+          </g>
+        </svg>
+        <div class="fig-ctrl">
+          <label>
+            <span>Par máximo <output data-out="mmax">800</output> N·m</span>
+            <input type="range" data-in="mmax" min="300" max="1200" step="50" value="800">
+          </label>
+          <label>
+            <span>Régimen de par máximo <output data-out="nt">1400</output> rpm</span>
+            <input type="range" data-in="nt" min="1000" max="1800" step="50" value="1400">
+          </label>
+          <label>
+            <span>Régimen nominal <output data-out="nn">2200</output> rpm</span>
+            <input type="range" data-in="nn" min="1900" max="2400" step="50" value="2200">
+          </label>
+        </div>
+        <p class="fig-read" data-fig="read"></p>
+        <figcaption><b>Lectura:</b> la curva oscura es el par y la roja la potencia. El par máximo y la potencia máxima no coinciden nunca: si coincidieran, el motor no tendría reserva y se calaría al primer esfuerzo. La reserva de par es la distancia entre el par máximo y el par a régimen nominal.</figcaption>
+      </figure>
+    </section>
+
+    <section class="topic" id="ejemplo">
+      <div class="topic__head"><span class="topic__num">05</span><h2>Ejemplo resuelto</h2></div>
+      <p class="topic__sub">Elegir tractor para un arado de vertedera de 4 cuerpos: 1,60 m de ancho, 30 cm de profundidad, 7 km/h.</p>
+
+      <ol class="steps">
+        <li>
+          <h4>Fuerza que opone el arado</h4>
+          <p>La resistencia específica de un arado de vertedera en suelo franco está en torno a 60 kN/m². La sección de trabajo es ancho por profundidad.</p>
+          <span class="calc">F = 60 · 0,30 · 1,60 = <b>28,8 kN</b></span>
+          <p>En una tierra arcillosa y seca, k sube a 80 y la fuerza se va a 38,4 kN. Es el mismo apero y un tractor distinto.</p>
+        </li>
+        <li>
+          <h4>Potencia en la barra de tiro</h4>
+          <p>La potencia es fuerza por velocidad. Con la velocidad en km/h, el factor 3,6 pasa a m/s.</p>
+          <span class="calc">P = 28,8 · 7 / 3,6 = <b>56 kW</b></span>
+          <p>Son 76 CV en el enganche. Si el apero va más rápido, la potencia sube en proporción directa: a 9 km/h serían 72 kW.</p>
+        </li>
+        <li>
+          <h4>Potencia que debe dar el motor</h4>
+          <p>Entre el motor y la barra de tiro se pierde en la transmisión y en el patinaje. Un rendimiento global del 75 % es realista en labranza.</p>
+          <span class="calc">P<sub>motor</sub> = 56 / 0,75 = <b>74,7 kW</b> = 102 CV</span>
+          <p>El tractor comercial más cercano por arriba es de 110 CV. Elegir uno de 90 CV obligaría a bajar el ancho o la profundidad.</p>
+        </li>
+        <li>
+          <h4>Consumo horario</h4>
+          <p>Con un consumo específico de 240 g/kWh y una densidad de 0,84 kg/L, el caudal sale directo. Se usa la potencia del motor, no la de la barra de tiro.</p>
+          <span class="calc">Q = 74,7 · 240 / (1000 · 0,84) = <b>21,3 L/h</b></span>
+          <p>En el banco, ese motor consumiría unos 250 g/kWh a plena carga. A media carga el consumo específico empeora, así que 21 L/h es un mínimo, no un máximo.</p>
+        </li>
+        <li>
+          <h4>Capacidad de trabajo</h4>
+          <p>La capacidad teórica sale de ancho por velocidad. La efectiva descuenta giros en cabecera, que en una parcela de 2 ha son muchos.</p>
+          <span class="calc">C<sub>t</sub> = 1,60 · 7 / 10 = <b>1,12 ha/h</b> → C<sub>e</sub> = 1,12 · 0,80 = <b>0,90 ha/h</b></span>
+          <p>Es decir, 1,11 horas por hectárea. En una parcela pequeña, con eficiencia 0,65, se iría a 1,37 h/ha.</p>
+        </li>
+        <li>
+          <h4>Consumo y coste por hectárea</h4>
+          <p>Dividiendo el consumo horario entre la capacidad efectiva se obtiene el gasto por hectárea, que es la cifra que se compara entre aperos.</p>
+          <span class="calc">21,3 / 0,90 = <b>23,7 L/ha</b> → a 1,35 €/L, <b>32,0 €/ha</b></span>
+          <p>Si se ara más profundo, la fuerza sube, la velocidad baja y el consumo por hectárea puede duplicarse. Es la labor que más gasóleo consume de todo el ciclo.</p>
+        </li>
+        <li>
+          <h4>Comprobar la adherencia</h4>
+          <p>El tractor de 110 CV pesa unos 4 500 kg, de los que el 60 % va al eje trasero: 2 700 kg. Con una adherencia de 0,65 en suelo seco, la fuerza disponible es 17,2 kN.</p>
+          <span class="calc">F<sub>adm</sub> = 2 700 · 9,81 · 0,65 / 1000 = <b>17,2 kN</b></span>
+          <p>El arado pide 28,8 kN: el tractor patinaría antes de moverlo. Hay que lastrar hasta unos 7 500 kg o reducir el apero. Este es el error que no aparece en los catálogos y sí en el campo.</p>
+        </li>
+      </ol>
+
+      <details class="reveal">
+        <summary>Comprobación final: ¿por qué se lastra tanto?</summary>
+        <div class="reveal__body">
+          <p>Porque la fuerza de tracción es proporcional al peso sobre el eje motriz. Duplicar el lastre duplica la fuerza disponible, pero también aumenta la resistencia a la rodadura y la compactación del suelo.</p>
+          <p>El compromiso está en el patinaje: se lastra hasta que baja al 10 o 15 %. Por debajo de ese valor se está cargando peso inútil; por encima, se está perdiendo velocidad y destruyendo la estructura del suelo.</p>
+        </div>
+      </details>
+
+      <div class="callout callout--warn">
+        <span class="callout__icon">!</span>
+        <span class="callout__title">La potencia no se suma, se encadena</span>
+        <p>Un tractor de 110 CV no entrega 110 CV al apero. Entrega alrededor del 75 % en la barra de tiro en labranza. Los catálogos hablan de potencia al motor; los aperos necesitan potencia en el enganche. Traducir entre las dos es la mitad del problema.</p>
+      </div>
+    </section>
+
+    <section class="topic" id="practica">
+      <div class="topic__head"><span class="topic__num">06</span><h2>Práctica</h2></div>
+      <p class="topic__sub">Calcula a mano y comprueba. Tolerancia del 2 % para absorber redondeos.</p>
+
+      <div class="drill" data-drill="d1" data-answer="113.1" data-tol="2.3" data-solution="P = 600 · 1800 / 9549 = 113,1 kW">
+        <p class="drill__q"><b>1.</b> Un motor entrega 600 N·m a 1 800 rpm. ¿Qué potencia desarrolla?</p>
+        <div class="drill__row">
+          <input class="drill__input" type="number" inputmode="decimal" step="0.1" aria-label="Tu respuesta para la potencia">
+          <span class="drill__unit">kW</span>
+          <button class="btn-mini" type="button" data-check>Comprobar</button>
+          <button class="btn-mini" type="button" data-show>Ver solución</button>
+        </div>
+        <p class="drill__fb" data-fb></p>
+      </div>
+
+      <div class="drill" data-drill="d2" data-answer="21.4" data-tol="0.4" data-solution="Q = 75 · 240 / (1000 · 0,84) = 21,4 L/h">
+        <p class="drill__q"><b>2.</b> Un tractor de 75 kW con consumo específico de 240 g/kWh. ¿Cuánto gasóleo gasta por hora? Densidad 0,84 kg/L.</p>
+        <div class="drill__row">
+          <input class="drill__input" type="number" inputmode="decimal" step="0.1" aria-label="Tu respuesta para el consumo horario">
+          <span class="drill__unit">L/h</span>
+          <button class="btn-mini" type="button" data-check>Comprobar</button>
+          <button class="btn-mini" type="button" data-show>Ver solución</button>
+        </div>
+        <p class="drill__fb" data-fb></p>
+      </div>
+
+      <div class="drill" data-drill="d3" data-answer="2.4" data-tol="0.05" data-solution="Ct = 3 · 8 / 10 = 2,4 ha/h">
+        <p class="drill__q"><b>3.</b> Un apero de 3 m de ancho trabajando a 8 km/h. ¿Capacidad teórica?</p>
+        <div class="drill__row">
+          <input class="drill__input" type="number" inputmode="decimal" step="0.1" aria-label="Tu respuesta para la capacidad de trabajo">
+          <span class="drill__unit">ha/h</span>
+          <button class="btn-mini" type="button" data-check>Comprobar</button>
+          <button class="btn-mini" type="button" data-show>Ver solución</button>
+        </div>
+        <p class="drill__fb" data-fb></p>
+      </div>
+
+      <div class="drill" data-drill="d4" data-answer="31.25" data-tol="0.6" data-solution="F = 50 · 0,25 · 2,5 = 31,25 kN">
+        <p class="drill__q"><b>4.</b> Cultivador de 2,5 m a 25 cm de profundidad, con k = 50 kN/m². ¿Fuerza de tiro?</p>
+        <div class="drill__row">
+          <input class="drill__input" type="number" inputmode="decimal" step="0.1" aria-label="Tu respuesta para la fuerza de tiro">
+          <span class="drill__unit">kN</span>
+          <button class="btn-mini" type="button" data-check>Comprobar</button>
+          <button class="btn-mini" type="button" data-show>Ver solución</button>
+        </div>
+        <p class="drill__fb" data-fb></p>
+      </div>
+
+      <div class="calc" data-calc="maq-motor">
+        <div class="calc__head">
+          <div class="calc__title"><span class="calc__tag">Calculadora</span><h4>Par, potencia y consumo del motor</h4></div>
+          <p class="calc__hint">El punto de funcionamiento en un régimen dado.</p>
+        </div>
+        <div class="calc__fields">
+          <label class="field"><span>Par <em>(M)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="m" value="600" step="10" min="0"><span class="unit">N·m</span></span></label>
+          <label class="field"><span>Régimen <em>(n)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="n" value="1800" step="50" min="0"><span class="unit">rpm</span></span></label>
+          <label class="field"><span>Consumo específico</span><span class="field__input"><input type="text" inputmode="decimal" data-in="ce" value="240" step="10" min="100"><span class="unit">g/kWh</span></span></label>
+          <label class="field"><span>Densidad gasóleo</span><span class="field__input"><input type="text" inputmode="decimal" data-in="rho" value="0.84" step="0.01" min="0.7"><span class="unit">kg/L</span></span></label>
+        </div>
+        <div class="calc__out" data-out></div>
+        <p class="calc__note">La potencia es la del punto de funcionamiento, no la máxima del catálogo. Un motor trabajando a media carga tiene peor consumo específico que a plena carga.</p>
+      </div>
+
+      <div class="calc" data-calc="maq-apero">
+        <div class="calc__head">
+          <div class="calc__title"><span class="calc__tag">Calculadora</span><h4>¿Puede el tractor con el apero?</h4></div>
+          <p class="calc__hint">Resistencia del apero y potencia necesaria en el motor.</p>
+        </div>
+        <div class="calc__fields">
+          <label class="field"><span>Ancho de trabajo</span><span class="field__input"><input type="text" inputmode="decimal" data-in="b" value="1.6" step="0.1" min="0"><span class="unit">m</span></span></label>
+          <label class="field"><span>Profundidad</span><span class="field__input"><input type="text" inputmode="decimal" data-in="a" value="0.3" step="0.01" min="0"><span class="unit">m</span></span></label>
+          <label class="field"><span>Resistencia <em>(k)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="k" value="60" step="5" min="1"><span class="unit">kN/m²</span></span></label>
+          <label class="field"><span>Velocidad</span><span class="field__input"><input type="text" inputmode="decimal" data-in="v" value="7" step="0.5" min="0.5"><span class="unit">km/h</span></span></label>
+          <label class="field"><span>Rendimiento</span><span class="field__input"><input type="text" inputmode="decimal" data-in="eta" value="0.75" step="0.05" min="0.3" max="1"><span class="unit">—</span></span></label>
+          <label class="field"><span>Potencia del tractor</span><span class="field__input"><input type="text" inputmode="decimal" data-in="pmotor" value="110" step="10" min="1"><span class="unit">CV</span></span></label>
+        </div>
+        <div class="calc__out" data-out></div>
+        <p class="calc__note">El rendimiento global incluye transmisión y patinaje: 0,75 en labranza, 0,85 en labores superficiales. La comparación final es contra la potencia del tractor en CV, que es como se anuncian.</p>
+      </div>
+
+      <div class="calc" data-calc="maq-capacidad">
+        <div class="calc__head">
+          <div class="calc__title"><span class="calc__tag">Calculadora</span><h4>Capacidad de trabajo y coste</h4></div>
+          <p class="calc__hint">Horas, litros y euros por hectárea.</p>
+        </div>
+        <div class="calc__fields">
+          <label class="field"><span>Ancho</span><span class="field__input"><input type="text" inputmode="decimal" data-in="b" value="1.6" step="0.1" min="0"><span class="unit">m</span></span></label>
+          <label class="field"><span>Velocidad</span><span class="field__input"><input type="text" inputmode="decimal" data-in="v" value="7" step="0.5" min="0.5"><span class="unit">km/h</span></span></label>
+          <label class="field"><span>Eficiencia de campo</span><span class="field__input"><input type="text" inputmode="decimal" data-in="eta" value="0.8" step="0.05" min="0.3" max="1"><span class="unit">—</span></span></label>
+          <label class="field"><span>Consumo horario</span><span class="field__input"><input type="text" inputmode="decimal" data-in="q" value="21.3" step="0.5" min="0"><span class="unit">L/h</span></span></label>
+          <label class="field"><span>Precio gasóleo</span><span class="field__input"><input type="text" inputmode="decimal" data-in="precio" value="1.35" step="0.05" min="0"><span class="unit">€/L</span></span></label>
+        </div>
+        <div class="calc__out" data-out></div>
+        <p class="calc__note">El coste calculado es solo de combustible. Añadir amortización, mantenimiento y mano de obra puede duplicarlo o triplicarlo según la máquina.</p>
+      </div>
+
+      <div class="calc" data-calc="maq-traccion">
+        <div class="calc__head">
+          <div class="calc__title"><span class="calc__tag">Calculadora</span><h4>Lastre, adherencia y patinaje</h4></div>
+          <p class="calc__hint">Comprueba si el tractor puede tirar de la fuerza que pide el apero.</p>
+        </div>
+        <div class="calc__fields">
+          <label class="field"><span>Masa sobre eje motriz</span><span class="field__input"><input type="text" inputmode="decimal" data-in="masa" value="2700" step="100" min="100"><span class="unit">kg</span></span></label>
+          <label class="field"><span>Adherencia <em>(μ)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="mu" value="0.65" step="0.05" min="0.2" max="0.9"><span class="unit">—</span></span></label>
+          <label class="field"><span>Fuerza requerida</span><span class="field__input"><input type="text" inputmode="decimal" data-in="freq" value="28.8" step="1" min="0"><span class="unit">kN</span></span></label>
+          <label class="field"><span>Velocidad</span><span class="field__input"><input type="text" inputmode="decimal" data-in="v" value="7" step="0.5" min="0.5"><span class="unit">km/h</span></span></label>
+          <label class="field"><span>Patinaje medido</span><span class="field__input"><input type="text" inputmode="decimal" data-in="s" value="12" step="1" min="0" max="60"><span class="unit">%</span></span></label>
+        </div>
+        <div class="calc__out" data-out></div>
+        <p class="calc__note">La fuerza disponible se calcula con la masa sobre el eje motriz, no con la masa total del tractor. En un tractor de doble tracción, ese eje puede ser el delantero.</p>
+      </div>
+    </section>
+
+    <section class="topic" id="tablas">
+      <div class="topic__head"><span class="topic__num">07</span><h2>Tablas de referencia</h2></div>
+      <p class="topic__sub">Órdenes de magnitud de taller. El manual del apero manda sobre la tabla.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Resistencia específica de los aperos</caption>
+          <thead><tr><th>Labor</th><th class="num">k (kN/m²)</th><th>Observación</th></tr></thead>
+          <tbody>
+            <tr><td>Arado de vertedera</td><td class="num">50 – 80</td><td>La labor que más potencia exige</td></tr>
+            <tr><td>Arado de discos</td><td class="num">40 – 60</td><td>Menos exigente en suelo pedregoso</td></tr>
+            <tr><td>Cultivador</td><td class="num">20 – 40</td><td>Depende mucho de la humedad</td></tr>
+            <tr><td>Grada de discos</td><td class="num">15 – 25</td><td>Labor superficial y rápida</td></tr>
+            <tr><td>Sembradora</td><td class="num">5 – 12</td><td>Más la carga de la tolva</td></tr>
+            <tr><td>Rodillo compactador</td><td class="num">8 – 15</td><td>Sube en suelo húmedo</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Consumo específico típico de motores agrícolas</caption>
+          <thead><tr><th>Tecnología</th><th class="num">g/kWh</th><th>Nota</th></tr></thead>
+          <tbody>
+            <tr><td>Atmosférico antiguo</td><td class="num">260 – 300</td><td>Sin turbo, inyección en línea</td></tr>
+            <tr><td>Turbo convencional</td><td class="num">230 – 260</td><td>El estándar de los años noventa</td></tr>
+            <tr><td>Common rail moderno</td><td class="num">200 – 230</td><td>Mejor a plena carga que a media</td></tr>
+            <tr><td>Media carga</td><td class="num">+10 – 20 %</td><td>El consumo específico empeora</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Velocidades de trabajo habituales</caption>
+          <thead><tr><th>Labor</th><th class="num">km/h</th><th>Prioridad</th></tr></thead>
+          <tbody>
+            <tr><td>Labranza profunda</td><td class="num">5 – 8</td><td>Fuerza de tiro</td></tr>
+            <tr><td>Labranza superficial</td><td class="num">8 – 12</td><td>Rendimiento del suelo</td></tr>
+            <tr><td>Siembra</td><td class="num">6 – 10</td><td>Regularidad de la profundidad</td></tr>
+            <tr><td>Tratamientos</td><td class="num">5 – 8</td><td>Cobertura y deriva</td></tr>
+            <tr><td>Transporte</td><td class="num">20 – 30</td><td>Seguridad y frenos</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Conversión de potencias</caption>
+          <thead><tr><th>Entrada</th><th class="num">CV</th><th class="num">kW</th><th class="num">hp</th></tr></thead>
+          <tbody>
+            <tr><td>1 kW</td><td class="num">1,360</td><td class="num">1,000</td><td class="num">1,341</td></tr>
+            <tr><td>1 CV</td><td class="num">1,000</td><td class="num">0,7355</td><td class="num">0,9863</td></tr>
+            <tr><td>1 hp</td><td class="num">1,014</td><td class="num">0,7457</td><td class="num">1,000</td></tr>
+            <tr><td>100 CV</td><td class="num">100</td><td class="num">73,6</td><td class="num">98,6</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="topic" id="trampas">
+      <div class="topic__head"><span class="topic__num">08</span><h2>Errores típicos</h2></div>
+      <p class="topic__sub">Los que se cobran puntos en el examen y averías en el taller.</p>
+
+      <div class="callout callout--danger">
+        <span class="callout__icon">×</span>
+        <span class="callout__title">Confundir par con potencia</span>
+        <p>El par se mide en N·m y la potencia en kW. Un motor puede tener mucho par a 1 200 rpm y menos potencia que otro con menos par a 2 400. Comparar tractores por el par máximo sin mirar el régimen no dice nada.</p>
+      </div>
+
+      <div class="callout callout--danger">
+        <span class="callout__icon">×</span>
+        <span class="callout__title">Mezclar CV y kW</span>
+        <p>1 CV son 0,7355 kW. Un apero que pide 75 kW necesita 102 CV, no 75. El error del 36 % es suficiente para comprar un tractor que no puede con la labor.</p>
+      </div>
+
+      <div class="callout callout--warn">
+        <span class="callout__icon">!</span>
+        <span class="callout__title">Usar la potencia del catálogo como potencia en el apero</span>
+        <p>Entre el motor y la barra de tiro se pierde un 20 o un 25 %. Si el cálculo se hace con la potencia nominal, el tractor elegido queda corto en cuanto el suelo se pone duro.</p>
+      </div>
+
+      <div class="callout callout--warn">
+        <span class="callout__icon">!</span>
+        <span class="callout__title">Llamar capacidad real a la teórica</span>
+        <p>La capacidad teórica no existe en el campo. Giros en cabecera, solapes y paradas para cargar reducen la cifra entre un 15 y un 40 %. Presupuestar con la teórica es regalar horas de trabajo.</p>
+      </div>
+
+      <div class="callout callout--warn">
+        <span class="callout__icon">!</span>
+        <span class="callout__title">Lastrar sin medir el patinaje</span>
+        <p>El lastre se añade hasta que el patinaje baja al 10 o 15 %, no hasta que el tractor parece pesado. Pasarse compacta el suelo, gasta más gasóleo y no aumenta la fuerza útil.</p>
+      </div>
+
+      <div class="callout callout--tip">
+        <span class="callout__icon">i</span>
+        <span class="callout__title">Un detalle que suma</span>
+        <p>La TDF de 1 000 rpm permite transmitir la misma potencia con un eje más fino y menos par, porque el par es potencia dividida por régimen. Citar esto en un examen de mecanización demuestra que se entiende la relación, no solo la norma.</p>
+      </div>
+    </section>
+
+    <section class="topic" id="tarjetas">
+      <div class="topic__head"><span class="topic__num">09</span><h2>Tarjetas</h2></div>
+      <p class="topic__sub">Tapa la respuesta, dilo en voz alta y gira. Baraja para no memorizar el orden.</p>
+
+      <div class="flash" data-flash>
+        <div class="flash__bar">
+          <span class="flash__count" data-count>1 / 12</span>
+          <span class="spacer"></span>
+          <button class="btn-mini" type="button" data-shuffle>Barajar</button>
+        </div>
+        <div class="flash__stage">
+          <button class="flashcard" type="button" aria-expanded="false">
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Fórmula</span>
+              <span class="flashcard__q">Relaciona par, régimen y potencia.</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">P(kW) = M(N·m) · n(rpm) / 9549. Equivale a P = M·ω con ω en rad/s. El 9549 sale de 60 000/(2π).</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Concepto</span>
+              <span class="flashcard__q">¿Qué es la reserva de par?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">El margen entre el par máximo y el par a potencia nominal. En un tractor ronda el 30 al 40 % y es lo que permite aguantar una sobrecarga sin reducir marcha ni calarse.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Unidades</span>
+              <span class="flashcard__q">Convierte 90 kW a CV y a hp.</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">90 / 0,7355 = 122,4 CV. 90 / 0,7457 = 120,7 hp. La diferencia entre ambos es solo del 1,4 %.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Consumo</span>
+              <span class="flashcard__q">¿Qué mide el consumo específico y en qué unidades?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">El combustible consumido por unidad de energía entregada, en g/kWh. Permite comparar motores de distinto tamaño. Un agrícola moderno está entre 200 y 240.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Tracción</span>
+              <span class="flashcard__q">¿De qué depende la fuerza máxima que puede tirar un tractor?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">Del peso sobre el eje motriz y de la adherencia: F = m·g·μ. No depende directamente de la potencia: un tractor potente y ligero patina antes de aprovecharla.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Patinaje</span>
+              <span class="flashcard__q">¿Cuál es el patinaje óptimo y qué pasa fuera de rango?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">Entre el 8 y el 15 %. Por debajo se desaprovecha el peso del tractor; por encima del 20 % se destruye la estructura del suelo y se gasta neumático sin avanzar.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Apero</span>
+              <span class="flashcard__q">Escribe la fuerza de tiro de un apero y explica cada término.</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">F = k · a · b, con k la resistencia específica en kN/m², a la profundidad y b el ancho, ambos en metros. El resultado sale en kN.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Capacidad</span>
+              <span class="flashcard__q">Diferencia entre capacidad teórica y efectiva.</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">La teórica es ancho por velocidad (b·v/10). La efectiva multiplica por la eficiencia de campo, 0,75 a 0,85, que descuenta giros, solapes y paradas.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">TDF</span>
+              <span class="flashcard__q">¿Por qué existe la TDF de 1 000 rpm?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">Porque a más régimen hace falta menos par para la misma potencia. Eso permite ejes y engranajes más finos y ligeros, con menos pérdidas.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Coste</span>
+              <span class="flashcard__q">Un tractor gasta 22 L/h y hace 0,9 ha/h. ¿Consumo por hectárea?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">22 / 0,9 = 24,4 L/ha. A 1,35 €/L son 33 €/ha solo de gasóleo. La amortización y el mantenimiento se suman aparte.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Motor</span>
+              <span class="flashcard__q">¿Por qué la potencia máxima está por encima del par máximo?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">Porque la potencia es par por régimen. Aunque el par caiga, el régimen sube más deprisa y el producto sigue creciendo hasta el régimen nominal.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Cálculo</span>
+              <span class="flashcard__q">Apero de 2 m, 6 km/h, eficiencia 0,8. ¿Horas por hectárea?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">Ct = 2·6/10 = 1,2 ha/h. Ce = 1,2·0,8 = 0,96 ha/h. Por tanto 1/0,96 = 1,04 h/ha.</span>
+            </span>
+          </button>
+        </div>
+        <div class="flash__nav">
+          <button class="btn-mini" type="button" data-prev>Anterior</button>
+          <div class="flash__dots" data-dots></div>
+          <button class="btn-mini" type="button" data-next>Siguiente</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="topic" id="test">
+      <div class="topic__head"><span class="topic__num">10</span><h2>Test</h2></div>
+      <p class="topic__sub">Diez preguntas con explicación. No hay nota guardada: al cerrar la página, se borra.</p>
+
+      <div class="quiz" data-quiz="quiz-maquinaria">
+        <div data-body>
+          <div class="quiz__top">
+            <span class="quiz__step" data-step>Pregunta 1 de 10</span>
+            <span class="quiz__score" data-score>Aciertos 0 / 10</span>
+          </div>
+          <div class="quiz__bar"><span data-bar></span></div>
+          <p class="quiz__q" data-q></p>
+          <ul class="quiz__opts" data-opts></ul>
+          <div class="quiz__feedback" data-feedback hidden></div>
+          <div class="quiz__foot">
+            <span class="spacer"></span>
+            <button class="btn btn--primary" type="button" data-next disabled>Siguiente</button>
+          </div>
+        </div>
+        <div class="quiz__result" data-result hidden>
+          <div class="score" data-final>0<span> / 10</span></div>
+          <p data-msg></p>
+          <ul class="quiz__review" data-review></ul>
+          <div class="quiz__foot" style="justify-content:center">
+            <button class="btn btn--primary" type="button" data-retry>Repetir todo</button>
+            <button class="btn btn--ghost" type="button" data-again>Repasar solo las falladas</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="topic" id="glosario">
+      <div class="topic__head"><span class="topic__num">11</span><h2>Glosario</h2></div>
+      <p class="topic__sub">Vocabulario mínimo para leer un enunciado sin dudar.</p>
+      <dl class="glossary">
+        <div><dt>Adherencia</dt><dd>Coeficiente entre la fuerza que puede transmitir el neumático y el peso que soporta. Depende del suelo y del dibujo.</dd></div>
+        <div><dt>Capacidad de trabajo</dt><dd>Superficie labrada por unidad de tiempo. Teórica si no se descuentan pérdidas; efectiva si se descuentan.</dd></div>
+        <div><dt>Consumo específico</dt><dd>Combustible por unidad de energía, en g/kWh. Mide la eficiencia del motor.</dd></div>
+        <div><dt>CV</dt><dd>Caballo métrico, 735,5 W. El de los catálogos europeos.</dd></div>
+        <div><dt>Eficiencia de campo</dt><dd>Fracción del tiempo total que la máquina trabaja efectivamente. Del 0,75 al 0,85 en parcelas grandes.</dd></div>
+        <div><dt>hp</dt><dd>Caballo mecánico anglosajón, 745,7 W. Un 1,4 % mayor que el CV.</dd></div>
+        <div><dt>Lastre</dt><dd>Peso añadido al tractor para aumentar la adherencia y reducir el patinaje.</dd></div>
+        <div><dt>Par motor</dt><dd>Momento de giro que entrega el cigüeñal, en N·m.</dd></div>
+        <div><dt>Patinaje</dt><dd>Diferencia porcentual entre la velocidad teórica y la real de avance por deslizamiento del neumático.</dd></div>
+        <div><dt>Régimen nominal</dt><dd>Velocidad de giro a la que el motor entrega su potencia máxima.</dd></div>
+        <div><dt>Reserva de par</dt><dd>Margen entre el par máximo y el par a potencia nominal. Permite aguantar sobrecargas sin calarse.</dd></div>
+        <div><dt>Resistencia específica</dt><dd>Fuerza por unidad de sección de labor, en kN/m². Caracteriza el suelo y el apero.</dd></div>
+        <div><dt>TDF</dt><dd>Toma de fuerza. Entrega potencia a régimen constante, 540 o 1 000 rpm.</dd></div>
+        <div><dt>Barra de tiro</dt><dd>Punto de enganche donde se mide la fuerza útil de tracción del tractor.</dd></div>
+      </dl>
+    </section>
+
+    <section class="topic" id="plan">
+      <div class="topic__head"><span class="topic__num">12</span><h2>Plan de repaso</h2></div>
+      <p class="topic__sub">Tres pasadas cortas rinden más que una maratón la víspera.</p>
+      <div class="grid grid--3">
+        <div class="card card--tint">
+          <span class="card__tag">Pasada 1 · 20 min</span>
+          <h4>Entender</h4>
+          <p>Lee el mapa y los conceptos clave. Cierra la página y explica en voz alta por qué un tractor potente y ligero patina. Si no sale, vuelve al apartado 02.</p>
+        </div>
+        <div class="card card--tint">
+          <span class="card__tag">Pasada 2 · 30 min</span>
+          <h4>Calcular</h4>
+          <p>Resuelve el ejemplo sin mirar los pasos. Después haz los cuatro ejercicios y mueve el par máximo en la curva hasta predecir dónde caerá la potencia máxima.</p>
+        </div>
+        <div class="card card--tint">
+          <span class="card__tag">Pasada 3 · 15 min</span>
+          <h4>Comprobar</h4>
+          <p>Haz el test. Cada fallo se convierte en una tarjeta que repites al día siguiente. Si aciertas nueve de diez, el tema está listo.</p>
+        </div>
+      </div>
+      <div class="callout callout--tip">
+        <span class="callout__icon">i</span>
+        <span class="callout__title">Para conectar con el taller</span>
+        <p>Cuando veas un tractor, mira la placa del apero y la del tractor: ancho, profundidad y potencia. Con esos tres datos ya puedes estimar si la combinación es razonable o si el apero va a mandar sobre el motor.</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="foot__inner">
+    <div>
+      <h2>Sigue con otra asignatura</h2>
+      <p>Cuatro cuadernos y un atlas 3D de motores. Material de repaso: fórmulas, ejemplos resueltos, calculadoras y test cortos.</p>
+    </div>
+    <nav class="foot__links" aria-label="Otras asignaturas">
+      <a href="fertirriego.html">Fertirriego <span>01</span></a>
+      <a href="medio-ambiente.html">Ciencia y tecnología del medio ambiente <span>02</span></a>
+      <a href="estructuras.html">Resistencia de materiales y estructuras agrícolas <span>03</span></a>
+      <a href="../motores/index.html">Atlas 3D de motores agrícolas <span>3D</span></a>
+    </nav>
+  </div>
+  <div class="foot__base">
+    <span>Taller de Estudio · Ingeniería Agrícola</span>
+    <a href="../index.html#estudio">Volver al portfolio</a>
+  </div>
+</footer>
+
+<script type="application/json" id="quiz-maquinaria">
+[
+  {
+    "q": "La potencia de un motor se calcula como…",
+    "opts": ["Par dividido por régimen", "Par por régimen, con el factor de unidades", "Fuerza por velocidad", "Par por cilindrada"],
+    "answer": 1,
+    "why": "P = M·ω, y en unidades prácticas P(kW) = M(N·m)·n(rpm)/9549. La fuerza por velocidad es la potencia de tracción, no la del motor."
+  },
+  {
+    "q": "90 kW equivalen a…",
+    "opts": ["90 CV", "122 CV", "66 CV", "150 CV"],
+    "answer": 1,
+    "why": "1 CV son 0,7355 kW, así que 90/0,7355 = 122,4 CV. Dividir en vez de multiplicar por 0,7355 es el error habitual."
+  },
+  {
+    "q": "El par máximo de un tractor aparece…",
+    "opts": ["Al régimen nominal", "A régimen medio, por debajo del nominal", "Al ralentí", "Siempre a 2 400 rpm"],
+    "answer": 1,
+    "why": "El par máximo está entre 1 200 y 1 600 rpm; la potencia máxima, entre 2 000 y 2 300. Esa separación es la reserva de par."
+  },
+  {
+    "q": "El consumo específico se mide en…",
+    "opts": ["L/h", "L/ha", "g/kWh", "kg/h"],
+    "answer": 2,
+    "why": "Es combustible por unidad de energía. L/h es consumo horario y L/ha es consumo por superficie: tres cosas distintas."
+  },
+  {
+    "q": "Un tractor de 75 kW con 240 g/kWh gasta aproximadamente…",
+    "opts": ["9 L/h", "18 L/h", "21 L/h", "30 L/h"],
+    "answer": 2,
+    "why": "Q = 75·240/(1000·0,84) = 21,4 L/h. Dividir por 1000 sin la densidad da 18 L/h, que es el error típico."
+  },
+  {
+    "q": "La fuerza máxima que puede tirar un tractor depende sobre todo de…",
+    "opts": ["La potencia del motor", "El peso sobre el eje motriz y la adherencia", "El número de marchas", "El caudal de la bomba hidráulica"],
+    "answer": 1,
+    "why": "F = m·g·μ. La potencia limita la velocidad a la que se hace el trabajo, pero la fuerza la limita la adherencia."
+  },
+  {
+    "q": "Un patinaje del 25 % indica que…",
+    "opts": ["El tractor está bien lastrado", "Falta lastre y se está destruyendo el suelo", "Sobra lastre", "La TDF gira demasiado rápido"],
+    "answer": 1,
+    "why": "El óptimo está entre el 8 y el 15 %. Por encima del 20 % se pierde avance, se gasta neumático y se compacta el suelo."
+  },
+  {
+    "q": "La capacidad teórica de un apero de 4 m a 9 km/h es…",
+    "opts": ["0,36 ha/h", "3,6 ha/h", "36 ha/h", "2,8 ha/h"],
+    "answer": 1,
+    "why": "Ct = b·v/10 = 4·9/10 = 3,6 ha/h. La efectiva, con eficiencia 0,8, sería 2,88 ha/h."
+  },
+  {
+    "q": "La TDF entrega respecto al motor…",
+    "opts": ["El 100 % de la potencia", "Entre el 85 y el 90 %", "La mitad", "Depende solo del apero"],
+    "answer": 1,
+    "why": "La transmisión y los servicios del tractor se llevan su parte. Por eso la potencia a la TDF es siempre menor que la nominal."
+  },
+  {
+    "q": "Si se duplica la velocidad de trabajo manteniendo el apero, la potencia necesaria…",
+    "opts": ["No cambia", "Se duplica", "Se multiplica por cuatro", "Se reduce a la mitad"],
+    "answer": 1,
+    "why": "La potencia es fuerza por velocidad. La fuerza del apero no cambia con la velocidad, así que la potencia crece de forma lineal."
+  }
+]
+</script>
+
+<script src="assets/estudio.js" defer></script>
+<script src="assets/maquinaria.js" defer></script>
+</body>
+</html>

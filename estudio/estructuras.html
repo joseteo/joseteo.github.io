@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resistencia de materiales y estructuras agrícolas · Taller de Estudio</title>
+<meta name="description" content="Resistencia de materiales y análisis estructural para construcciones agrícolas: tensión, flexión, flecha, pandeo Euler, secciones y zapatas. Con formulario, ejemplo resuelto, calculadoras y test.">
+<meta name="theme-color" content="#f6efe5">
+<link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/estudio.css">
+</head>
+<body style="--accent:#96681f;--accent-ink:#6f4b12;--accent-soft:rgba(150,104,31,.10);--accent-line:rgba(150,104,31,.32)">
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="bar">
+  <a class="bar__brand" href="index.html">
+    <span class="bar__mark">TE</span>
+    <span class="bar__name">Taller de Estudio<em>Ingeniería Agrícola</em></span>
+  </a>
+  <nav class="bar__nav" aria-label="Asignaturas">
+    <a href="fertirriego.html">Fertirriego</a>
+    <a href="medio-ambiente.html">Medio ambiente</a>
+    <a href="estructuras.html" aria-current="page">Estructuras</a>
+    <a href="maquinaria.html">Maquinaria</a>
+    <a href="../motores/index.html">Atlas 3D</a>
+  </nav>
+  <div class="bar__actions">
+    <button class="bar__link" type="button" data-print>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+      <span>Imprimir</span>
+    </button>
+    <a class="bar__link" href="../index.html#estudio">Portfolio</a>
+  </div>
+</header>
+<div class="progress" aria-hidden="true"></div>
+
+<section class="hero">
+  <div class="hero__inner">
+    <div>
+      <p class="hero__kicker">Asignatura 03 · Cálculo de estructuras</p>
+      <h1>Estructuras:<br>la sección que <em>aguanta</em><br>y la que no se mueve</h1>
+      <p class="hero__lead">Una nave ganadera se cae por dos motivos: porque la tensión supera el límite del material o porque la flecha asusta y agrieta. Esta página ordena las dos comprobaciones, el pandeo y el camino completo del esfuerzo hasta la sección.</p>
+      <ul class="hero__meta">
+        <li><b>10</b> fórmulas</li>
+        <li><b>4</b> calculadoras</li>
+        <li><b>12</b> tarjetas</li>
+        <li><b>10</b> preguntas</li>
+      </ul>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#mapa">Empezar por el mapa</a>
+        <a class="btn btn--ghost" href="#diagrama">Jugar con la viga</a>
+      </div>
+    </div>
+    <div class="hero__art" aria-hidden="true">
+      <svg viewBox="0 0 200 200">
+        <path class="art-line" d="M30 90h140"/>
+        <path class="art-line" d="M30 90l-10 17h20z"/>
+        <path class="art-line" d="M170 90l-10 17h20z"/>
+        <path class="art-line" d="M19 107h22M159 107h22"/>
+        <path class="art-line" d="M100 36v48"/>
+        <path class="art-line" d="M95 78l5 7 5-7"/>
+        <path class="art-line" d="M30 122h140"/>
+        <path class="art-line" d="M30 122l70 34 70-34"/>
+        <path class="art-dash" d="M30 122v-14M170 122v-14"/>
+        <text class="art-label" x="106" y="40">P</text>
+        <text class="art-label" x="94" y="172">M</text>
+        <text class="art-label" x="24" y="118">A</text>
+        <text class="art-label" x="172" y="118">B</text>
+        <text class="art-hand" x="118" y="60">σ = M/W</text>
+        <text class="art-hand" x="36" y="140">δ</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="shell" id="contenido">
+  <nav class="toc" aria-label="Índice del tema">
+    <p class="toc__label">En esta página</p>
+    <ol>
+      <li><a href="#mapa"><span>01</span>Mapa del tema</a></li>
+      <li><a href="#conceptos"><span>02</span>Conceptos clave</a></li>
+      <li><a href="#formulario"><span>03</span>Formulario</a></li>
+      <li><a href="#diagrama"><span>04</span>Viga en vivo</a></li>
+      <li><a href="#ejemplo"><span>05</span>Ejemplo resuelto</a></li>
+      <li><a href="#practica"><span>06</span>Práctica</a></li>
+      <li><a href="#tablas"><span>07</span>Tablas</a></li>
+      <li><a href="#trampas"><span>08</span>Errores típicos</a></li>
+      <li><a href="#tarjetas"><span>09</span>Tarjetas</a></li>
+      <li><a href="#test"><span>10</span>Test</a></li>
+      <li><a href="#glosario"><span>11</span>Glosario</a></li>
+      <li><a href="#plan"><span>12</span>Plan de repaso</a></li>
+    </ol>
+    <div class="toc__foot">
+      <p>el 90 % de los errores son de unidades, no de mecánica</p>
+      <a href="#test">Ir directo al test</a>
+    </div>
+  </nav>
+
+  <main class="content">
+
+    <section class="topic" id="mapa">
+      <div class="topic__head"><span class="topic__num">01</span><h2>Mapa del tema</h2></div>
+      <p class="topic__sub">Del esfuerzo en el nudo a la comprobación de la sección.</p>
+      <p class="lede">La asignatura tiene fama de difícil por la cantidad de símbolos, pero el recorrido es siempre el mismo: <strong>acciones → esfuerzos → tensiones → comprobación</strong>. Si en algún punto no sabes qué hacer, pregúntate en qué eslabón de esa cadena estás.</p>
+
+      <div class="grid grid--2">
+        <div class="card">
+          <span class="card__tag">Paso 1</span>
+          <h4>Acciones</h4>
+          <p>Peso propio, nieve, viento, sobrecarga de uso y empujes. Se combinan con coeficientes parciales y se reparten según el área tributaria de cada correa o pórtico.</p>
+        </div>
+        <div class="card">
+          <span class="card__tag">Paso 2</span>
+          <h4>Esfuerzos</h4>
+          <p>El cálculo estructural devuelve axil, cortante y momento en cada punto. En una viga biapoyada de luz L con carga puntual P, el momento máximo vale P·L/4 en el centro.</p>
+        </div>
+        <div class="card">
+          <span class="card__tag">Paso 3</span>
+          <h4>Tensiones</h4>
+          <p>El momento se convierte en tensión con la geometría de la sección: σ = M/W. El axil, con el área: σ = N/A. La tensión se compara con el límite del material dividido por el coeficiente de seguridad.</p>
+        </div>
+        <div class="card">
+          <span class="card__tag">Paso 4</span>
+          <h4>Deformación y estabilidad</h4>
+          <p>Además de no romper, la estructura no debe deformarse en exceso (flecha) ni perder la forma (pandeo). Son comprobaciones de servicio y de estabilidad, no de resistencia.</p>
+        </div>
+      </div>
+
+      <div class="note">
+        <p>En construcción agrícola manda lo barato y lo ligero: correas de acero galvanizado, madera estructural y tubo conformado. Eso hace que casi siempre gobierne la flecha o el pandeo, no la rotura.</p>
+      </div>
+    </section>
+
+    <section class="topic" id="conceptos">
+      <div class="topic__head"><span class="topic__num">02</span><h2>Conceptos clave</h2></div>
+      <p class="topic__sub">Los ocho términos que sostienen todos los ejercicios.</p>
+
+      <h3>Tensión normal y tangencial</h3>
+      <p>La <strong>tensión normal</strong> (σ) actúa perpendicular a la sección y puede ser de tracción o de compresión. La <strong>tensión tangencial</strong> (τ) actúa en el plano de la sección y la genera el cortante. Se miden en N/mm², que es lo mismo que MPa. Un acero S275 empieza a ceder a 275 MPa; una madera C24, a 24 MPa. Esa diferencia de un orden de magnitud explica por qué las secciones de madera son mucho más grandes.</p>
+
+      <h3>Deformación y módulo de Young</h3>
+      <p>La <strong>deformación unitaria</strong> ε es el alargamiento dividido por la longitud inicial, adimensional. En régimen elástico, tensión y deformación son proporcionales: <strong>σ = E · ε</strong>. La constante E (módulo de Young) mide la rigidez del material: 210 GPa para el acero, 11 GPa para la madera, 30 GPa para el hormigón. No mide resistencia, mide cuánto se deforma.</p>
+
+      <h3>Flexión: fibra neutra, inercia y módulo resistente</h3>
+      <p>Al flectar, la sección gira alrededor de una <strong>fibra neutra</strong> que no se alarga ni se acorta. Las fibras más alejadas son las que más trabajan, y por eso la tensión crece con la distancia <em>y</em>: <strong>σ = M·y/I</strong>. El cociente I/y se llama <strong>módulo resistente W</strong> y resume toda la geometría en un número. Una sección rectangular de ancho b y canto h tiene I = b·h³/12 y W = b·h²/6: doblar el canto multiplica por cuatro la resistencia y por ocho la rigidez.</p>
+
+      <h3>Cortante</h3>
+      <p>El cortante V genera tensiones tangenciales que son máximas en la fibra neutra y nulas en los extremos. En una sección rectangular, τ<sub>máx</sub> = 1,5·V/A. En perfiles en I, el alma asume casi todo el cortante y las alas casi nada, lo que hace al perfil muy eficiente.</p>
+
+      <h3>Flecha</h3>
+      <p>Es el desplazamiento vertical de la viga. Se calcula integrando la curvatura y depende de E y de I, no de la resistencia del material. Por eso una viga puede cumplir de sobra a tensión y fallar por flecha: es el caso típico de las correas de cubierta. El límite habitual es <strong>L/300</strong> en forjados y <strong>L/250</strong> en cubiertas.</p>
+
+      <h3>Pandeo</h3>
+      <p>Un pilar esbelto comprimido no falla por aplastamiento: se comba lateralmente y pierde capacidad. La carga crítica de Euler es <strong>P<sub>cr</sub> = π²·E·I/(βL)²</strong>. Depende de la rigidez y del cuadrado de la longitud, no de la resistencia. Cuanto más esbelto, menos carga admite: por eso un pilar de 4 m aguanta mucho menos que dos de 2 m con el mismo material.</p>
+
+      <h3>Longitud de pandeo y esbeltez</h3>
+      <p>La <strong>longitud de pandeo</strong> L<sub>k</sub> = β·L corrige la longitud real según los apoyos: β = 1 biarticulado, 0,7 empotrado en un extremo y articulado en el otro, 0,5 biempotrado, 2 en ménsula. La <strong>esbeltez</strong> λ = L<sub>k</sub>/i, con i el radio de giro, decide si el pandeo es un problema: por encima de 100 manda Euler; por debajo de 60, el material plastifica antes.</p>
+
+      <h3>Estados límite y coeficiente de seguridad</h3>
+      <p>El <strong>estado límite último</strong> (ELU) comprueba que la estructura no colapsa. El <strong>estado límite de servicio</strong> (ELS) comprueba que no se agrieta, no vibra ni se deforma en exceso. Los coeficientes parciales majoran las acciones (1,35 para las permanentes y 1,5 para las variables) y minoran la resistencia del material. El coeficiente de seguridad global es el cociente entre lo que aguanta y lo que le pides.</p>
+    </section>
+
+    <section class="topic" id="formulario">
+      <div class="topic__head"><span class="topic__num">03</span><h2>Formulario</h2></div>
+      <p class="topic__sub">Las diez expresiones que resuelven casi cualquier problema de la asignatura.</p>
+
+      <div class="formulas">
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Tensión normal por axil</span>
+            <span class="formula__expr"><i>σ</i> = <i>N</i> / <i>A</i></span>
+          </div>
+          <ul class="formula__where">
+            <li><b>σ</b> N/mm² <em>tensión, igual a MPa</em></li>
+            <li><b>N</b> N <em>esfuerzo axil, tracción o compresión</em></li>
+            <li><b>A</b> mm² <em>área de la sección</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Tensión por flexión</span>
+            <span class="formula__expr"><i>σ</i> = <i>M</i> · <i>y</i> / <i>I</i> = <i>M</i> / <i>W</i></span>
+          </div>
+          <ul class="formula__where">
+            <li><b>M</b> N·mm <em>momento flector</em></li>
+            <li><b>I</b> mm⁴ <em>momento de inercia de la sección</em></li>
+            <li><b>W</b> mm³ <em>módulo resistente, W = I/y</em></li>
+            <li><em>La tensión es máxima en la fibra más alejada de la neutra.</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Cortante en sección rectangular</span>
+            <span class="formula__expr"><i>τ</i><sub>máx</sub> = 1,5 · <i>V</i> / <i>A</i></span>
+          </div>
+          <ul class="formula__where">
+            <li><b>τ<sub>máx</sub></b> N/mm² <em>en la fibra neutra</em></li>
+            <li><b>V</b> N <em>esfuerzo cortante</em></li>
+            <li><em>En perfiles en I, el alma asume casi todo el cortante.</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Ley de Hooke</span>
+            <span class="formula__expr"><i>σ</i> = <i>E</i> · <i>ε</i> &nbsp;·&nbsp; <i>ε</i> = Δ<i>L</i> / <i>L</i></span>
+          </div>
+          <ul class="formula__where">
+            <li><b>E</b> N/mm² <em>módulo de Young: acero 210 000, madera 11 000</em></li>
+            <li><b>ε</b> adimensional <em>deformación unitaria</em></li>
+            <li><em>Válida solo en régimen elástico.</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Momento máximo, carga puntual</span>
+            <span class="formula__expr"><i>M</i><sub>máx</sub> = <i>P</i> · <i>a</i> · <i>b</i> / <i>L</i></span>
+          </div>
+          <ul class="formula__where">
+            <li><b>a, b</b> m <em>distancias del apoyo a la carga</em></li>
+            <li><b>L</b> m <em>luz total, a + b</em></li>
+            <li><em>Si la carga está en el centro, a = b = L/2 y queda P·L/4.</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Flecha, carga puntual descentrada</span>
+            <span class="formula__expr"><i>δ</i> = <i>P</i> · <i>a</i>² · <i>b</i>² / (3 · <i>E</i> · <i>I</i> · <i>L</i>)</span>
+          </div>
+          <ul class="formula__where">
+            <li><b>δ</b> m <em>en el punto de aplicación de la carga</em></li>
+            <li><b>P</b> kN <em>carga puntual</em></li>
+            <li><em>Con carga repartida q: δ = 5·q·L⁴/(384·E·I).</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Carga crítica de Euler</span>
+            <span class="formula__expr"><i>P</i><sub>cr</sub> = π² · <i>E</i> · <i>I</i> / (<i>β</i> · <i>L</i>)²</span>
+          </div>
+          <ul class="formula__where">
+            <li><b>P<sub>cr</sub></b> N <em>carga de pandeo</em></li>
+            <li><b>β</b> 0,5 a 2 <em>coeficiente según los apoyos</em></li>
+            <li><em>No interviene la resistencia del material: solo E e I.</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Esbeltez mecánica</span>
+            <span class="formula__expr"><i>λ</i> = <i>L</i><sub>k</sub> / <i>i</i> &nbsp;·&nbsp; <i>i</i> = √(<i>I</i> / <i>A</i>)</span>
+          </div>
+          <ul class="formula__where">
+            <li><b>L<sub>k</sub></b> mm <em>longitud de pandeo, β·L</em></li>
+            <li><b>i</b> mm <em>radio de giro de la sección</em></li>
+            <li><em>λ mayor de 100: pandeo elástico. Menor de 60: plastificación.</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Coeficiente de seguridad</span>
+            <span class="formula__expr"><i>CS</i> = <i>σ</i><sub>límite</sub> / <i>σ</i><sub>trabajo</sub></span>
+          </div>
+          <ul class="formula__where">
+            <li><b>σ<sub>límite</sub></b> N/mm² <em>fy del acero, fm de la madera</em></li>
+            <li><b>CS</b> 1,5 a 3 <em>según el material y la norma</em></li>
+            <li><em>En pandeo se aplica sobre P<sub>cr</sub>, no sobre la tensión.</em></li>
+          </ul>
+        </div>
+
+        <div class="formula">
+          <div class="formula__main">
+            <span class="formula__name">Tensión del terreno bajo zapata</span>
+            <span class="formula__expr"><i>σ</i> = <i>N</i>/<i>A</i> ± <i>M</i>/<i>W</i></span>
+          </div>
+          <ul class="formula__where">
+            <li><b>N</b> kN <em>carga vertical transmitida</em></li>
+            <li><b>A</b> m² <em>superficie de la zapata</em></li>
+            <li><b>W</b> m³ <em>módulo resistente en planta</em></li>
+            <li><em>Si σ<sub>mín</sub> sale negativa, la zapata despega del terreno.</em></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout callout--tip">
+        <span class="callout__icon">i</span>
+        <span class="callout__title">Truco de examen</span>
+        <p>Pasa todo a N y mm antes de sustituir. Un momento en kN·m hay que multiplicarlo por 10⁶ para llegar a N·mm, y un módulo resistente en cm³ por 10³. Si el resultado sale 1 000 veces mayor o menor, el error está en esa conversión.</p>
+      </div>
+    </section>
+
+    <section class="topic" id="diagrama">
+      <div class="topic__head"><span class="topic__num">04</span><h2>Viga en vivo</h2></div>
+      <p class="topic__sub">Mueve la carga a lo largo de la viga y mira cómo cambian el momento y la deformada.</p>
+      <p>En una viga biapoyada, el momento máximo aparece siempre bajo la carga y vale <strong>P·a·b/L</strong>. El máximo absoluto se alcanza con la carga en el centro, pero el caso descentrado es el que se da en la realidad: una correa que recibe el peso de un panel o de un depósito. La deformada se dibuja amplificada para que se vea.</p>
+
+      <figure class="figure" data-figure="est-viga-fig">
+        <svg viewBox="0 0 560 336" role="img" aria-label="Viga biapoyada con carga puntual, diagrama de momentos y deformada">
+          <g>
+            <line class="dg-line" x1="70" y1="70" x2="500" y2="70"/>
+            <path class="dg-thin" d="M70 70l-11 18h22z"/>
+            <path class="dg-thin" d="M500 70l-11 18h22z"/>
+            <line class="dg-thin" x1="52" y1="89" x2="88" y2="89"/>
+            <line class="dg-thin" x1="482" y1="89" x2="518" y2="89"/>
+            <text class="dg-small" x="70" y="106" text-anchor="middle">A</text>
+            <text class="dg-small" x="500" y="106" text-anchor="middle">B</text>
+
+            <g data-fig="load-group" transform="translate(285,0)">
+              <line class="dg-coral" x1="0" y1="26" x2="0" y2="62"/>
+              <path class="dg-coral" d="M-5 56l5 8 5-8"/>
+              <text class="dg-hand" x="9" y="24" data-fig="load-label">P</text>
+            </g>
+
+            <text class="dg-math" x="70" y="124" text-anchor="middle" data-fig="ra">RA</text>
+            <text class="dg-math" x="500" y="124" text-anchor="middle" data-fig="rb">RB</text>
+
+            <path class="dg-dash" d="" data-fig="defl"/>
+
+            <line class="dg-thin" x1="70" y1="210" x2="500" y2="210"/>
+            <path class="dg-area" d="" data-fig="marea"/>
+            <path class="dg-accent" d="" data-fig="mline"/>
+            <text class="dg-math" x="0" y="0" data-fig="mlabel">M</text>
+            <text class="dg-text" x="70" y="322">MOMENTO FLECTOR</text>
+            <text class="dg-small" x="500" y="322" text-anchor="end">kN·m</text>
+          </g>
+        </svg>
+        <div class="fig-ctrl">
+          <label>
+            <span>Luz <output data-out="l">6</output> m</span>
+            <input type="range" data-in="l" min="2" max="8" step="0.5" value="6">
+          </label>
+          <label>
+            <span>Carga <output data-out="p">8</output> kN</span>
+            <input type="range" data-in="p" min="1" max="20" step="1" value="8">
+          </label>
+          <label>
+            <span>Posición <output data-out="a">50</output> %</span>
+            <input type="range" data-in="a" min="10" max="90" step="5" value="50">
+          </label>
+          <label>
+            <span>Rigidez EI <output data-out="ei">4000</output> kN·m²</span>
+            <input type="range" data-in="ei" min="500" max="8000" step="100" value="4000">
+          </label>
+        </div>
+        <p class="fig-read" data-fig="read"></p>
+        <figcaption><b>Lectura:</b> el triángulo es el diagrama de momentos: nulo en los apoyos y máximo bajo la carga. La línea discontinua es la deformada, amplificada. Si duplicas la luz, el momento se duplica pero la flecha se multiplica por ocho: por eso las luces grandes se resuelven con canto, no con más acero.</figcaption>
+      </figure>
+    </section>
+
+    <section class="topic" id="ejemplo">
+      <div class="topic__head"><span class="topic__num">05</span><h2>Ejemplo resuelto</h2></div>
+      <p class="topic__sub">Correa de cubierta de una nave ganadera: 6 m de luz, separación 1,20 m, IPE 160 en S275.</p>
+
+      <ol class="steps">
+        <li>
+          <h4>Carga lineal sobre la correa</h4>
+          <p>La cubierta transmite una carga superficial que hay que convertir en carga por metro. El área tributaria de cada correa es su separación por un metro de longitud.</p>
+          <span class="calc">q = 1,0 kN/m² · 1,20 m = <b>1,20 kN/m</b></span>
+          <p>Dentro del 1,0 kN/m² van el panel, los rastreles y la nieve. El peso propio del perfil se añade después: es pequeño, pero en luces grandes deja de serlo.</p>
+        </li>
+        <li>
+          <h4>Momento máximo</h4>
+          <p>Con carga repartida en viga biapoyada, el momento máximo está en el centro y vale q·L²/8.</p>
+          <span class="calc">M = 1,20 · 6² / 8 = <b>5,40 kN·m</b></span>
+          <p>En N·mm son 5,40 · 10⁶, que es la unidad en la que se trabaja con módulos resistentes en mm³.</p>
+        </li>
+        <li>
+          <h4>Tensión en la fibra más alejada</h4>
+          <p>El IPE 160 tiene un módulo resistente W = 108,7 cm³, es decir 108 700 mm³.</p>
+          <span class="calc">σ = 5,40 · 10⁶ / 108 700 = <b>49,7 MPa</b></span>
+          <p>El límite del S275 es 275 MPa. Con un coeficiente de seguridad de 1,5 la tensión admisible es 183 MPa, así que la correa trabaja al 27 % de su capacidad. Va sobrada a resistencia.</p>
+        </li>
+        <li>
+          <h4>Flecha</h4>
+          <p>Aquí manda la rigidez, no la resistencia. El IPE 160 tiene I = 869,3 cm⁴, que son 869,3 · 10⁻⁸ m⁴.</p>
+          <span class="calc">δ = 5 · 1,20 · 6⁴ / (384 · 210·10⁶ · 869,3·10⁻⁸) = <b>11,1 mm</b></span>
+          <p>La relación es L/540. El límite de cubierta es L/250, que serían 24 mm. Cumple con holgura, pero ya es la comprobación que se acerca al límite, no la de tensión.</p>
+        </li>
+        <li>
+          <h4>Añadir el peso propio</h4>
+          <p>El IPE 160 pesa 15,8 kg/m, es decir 0,155 kN/m. Se suma a la carga anterior y se repite el cálculo.</p>
+          <span class="calc">q = 1,355 kN/m → M = <b>6,10 kN·m</b> → σ = <b>56,1 MPa</b></span>
+          <p>La tensión sube un 13 % y la flecha otro tanto, hasta 12,5 mm. Sigue cumpliendo. Ignorar el peso propio es un error pequeño aquí y grave en una viga de hormigón.</p>
+        </li>
+        <li>
+          <h4>Comprobar el cortante</h4>
+          <p>El cortante máximo en un apoyo vale q·L/2 = 4,07 kN. En el alma del IPE 160, de 4,5 mm de espesor y 152 mm de canto, la tensión tangencial es del orden de 6 MPa.</p>
+          <span class="calc">τ ≈ V / (h · t) = 4 070 / (152 · 4,5) = <b>5,9 MPa</b></span>
+          <p>Frente a los 159 MPa admisibles a cortante del S275, es despreciable. En perfiles en I el cortante casi nunca gobierna.</p>
+        </li>
+      </ol>
+
+      <details class="reveal">
+        <summary>Comprobación final: ¿por qué no se elige un IPE más pequeño?</summary>
+        <div class="reveal__body">
+          <p>Un IPE 120 tiene W = 53 cm³ e I = 318 cm⁴. A tensión daría 115 MPa, todavía admisible. Pero la flecha se iría a 30 mm, por encima de los 24 mm de L/250. El perfil pequeño falla por servicio, no por resistencia.</p>
+          <p>Ese es el patrón habitual en cubiertas ligeras: se elige la sección por flecha y luego se comprueba que la tensión sobra. Si el cálculo se hace solo a tensión, la nave se construye y la cubierta se ve combada desde el primer día.</p>
+        </div>
+      </details>
+
+      <div class="callout callout--warn">
+        <span class="callout__icon">!</span>
+        <span class="callout__title">La nieve no es una carga permanente</span>
+        <p>La nieve es una acción variable y se combina con un coeficiente de 1,5, no de 1,35. Además, en cubiertas con pendiente baja puede acumularse de forma desigual y duplicar la carga en una franja. Los fallos de cubiertas agrícolas casi siempre son por nieve acumulada, no por sobrecarga uniforme.</p>
+      </div>
+    </section>
+
+    <section class="topic" id="practica">
+      <div class="topic__head"><span class="topic__num">06</span><h2>Práctica</h2></div>
+      <p class="topic__sub">Calcula a mano y comprueba. Tolerancia del 2 % para absorber redondeos.</p>
+
+      <div class="drill" data-drill="d1" data-answer="12" data-tol="0.3" data-solution="σ = 120 000 N / 10 000 mm² = 12 MPa">
+        <p class="drill__q"><b>1.</b> Un pilar de madera de 10 × 10 cm recibe una compresión de 120 kN. ¿Qué tensión soporta?</p>
+        <div class="drill__row">
+          <input class="drill__input" type="number" inputmode="decimal" step="0.1" aria-label="Tu respuesta para la tensión">
+          <span class="drill__unit">MPa</span>
+          <button class="btn-mini" type="button" data-check>Comprobar</button>
+          <button class="btn-mini" type="button" data-show>Ver solución</button>
+        </div>
+        <p class="drill__fb" data-fb></p>
+      </div>
+
+      <div class="drill" data-drill="d2" data-answer="12" data-tol="0.3" data-solution="M = P·L/4 = 8 · 6 / 4 = 12 kN·m">
+        <p class="drill__q"><b>2.</b> Viga biapoyada de 6 m con una carga puntual de 8 kN en el centro. ¿Momento máximo?</p>
+        <div class="drill__row">
+          <input class="drill__input" type="number" inputmode="decimal" step="0.1" aria-label="Tu respuesta para el momento">
+          <span class="drill__unit">kN·m</span>
+          <button class="btn-mini" type="button" data-check>Comprobar</button>
+          <button class="btn-mini" type="button" data-show>Ver solución</button>
+        </div>
+        <p class="drill__fb" data-fb></p>
+      </div>
+
+      <div class="drill" data-drill="d3" data-answer="8.57" data-tol="0.2" data-solution="δ = 8 000 · 6³ / (48 · 210·10⁹ · 2·10⁻⁵) = 8,57 mm">
+        <p class="drill__q"><b>3.</b> Con P = 8 kN, L = 6 m, E = 210 GPa e I = 2 000 cm⁴, ¿cuánto baja la viga en el centro? Da el resultado en mm.</p>
+        <div class="drill__row">
+          <input class="drill__input" type="number" inputmode="decimal" step="0.1" aria-label="Tu respuesta para la flecha">
+          <span class="drill__unit">mm</span>
+          <button class="btn-mini" type="button" data-check>Comprobar</button>
+          <button class="btn-mini" type="button" data-show>Ver solución</button>
+        </div>
+        <p class="drill__fb" data-fb></p>
+      </div>
+
+      <div class="drill" data-drill="d4" data-answer="230.3" data-tol="4" data-solution="Pcr = π² · 210 000 · 1·10⁶ / 3 000² = 230 290 N = 230,3 kN">
+        <p class="drill__q"><b>4.</b> Pilar biarticulado de 3 m, E = 210 GPa, I = 100 cm⁴. ¿Carga crítica de Euler en kN?</p>
+        <div class="drill__row">
+          <input class="drill__input" type="number" inputmode="decimal" step="1" aria-label="Tu respuesta para la carga crítica">
+          <span class="drill__unit">kN</span>
+          <button class="btn-mini" type="button" data-check>Comprobar</button>
+          <button class="btn-mini" type="button" data-show>Ver solución</button>
+        </div>
+        <p class="drill__fb" data-fb></p>
+      </div>
+
+      <div class="calc" data-calc="est-viga">
+        <div class="calc__head">
+          <div class="calc__title"><span class="calc__tag">Calculadora</span><h4>Viga biapoyada con carga puntual</h4></div>
+          <p class="calc__hint">Sección rectangular y acero S275.</p>
+        </div>
+        <div class="calc__fields">
+          <label class="field"><span>Luz <em>(L)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="l" value="6" step="0.5" min="0.5"><span class="unit">m</span></span></label>
+          <label class="field"><span>Carga <em>(P)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="p" value="8" step="1" min="0"><span class="unit">kN</span></span></label>
+          <label class="field"><span>Posición <em>(a)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="a" value="3" step="0.5" min="0"><span class="unit">m</span></span></label>
+          <label class="field"><span>Ancho <em>(b)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="b" value="10" step="1" min="1"><span class="unit">cm</span></span></label>
+          <label class="field"><span>Canto <em>(h)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="h" value="20" step="1" min="1"><span class="unit">cm</span></span></label>
+          <label class="field"><span>Módulo <em>(E)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="e" value="210" step="10" min="1"><span class="unit">GPa</span></span></label>
+        </div>
+        <div class="calc__out" data-out></div>
+        <p class="calc__note">La sección es rectangular maciza. Para un perfil comercial, usa su W e I de la tabla del apartado 07 en lugar de b y h. El límite de tensión que se comprueba es 183 MPa, que es el S275 con coeficiente 1,5.</p>
+      </div>
+
+      <div class="calc" data-calc="est-pandeo">
+        <div class="calc__head">
+          <div class="calc__title"><span class="calc__tag">Calculadora</span><h4>Pandeo de Euler y esbeltez</h4></div>
+          <p class="calc__hint">Cambia las condiciones de apoyo y mira cuánto pierde el pilar.</p>
+        </div>
+        <div class="calc__fields">
+          <label class="field"><span>Longitud <em>(L)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="l" value="3" step="0.5" min="0.5"><span class="unit">m</span></span></label>
+          <label class="field"><span>Apoyos <em>(β)</em></span><span class="field__input">
+            <select data-in="beta">
+              <option value="1">Biarticulado (β 1,0)</option>
+              <option value="0.7">Empotrado y articulado (β 0,7)</option>
+              <option value="0.5">Biempotrado (β 0,5)</option>
+              <option value="2">Ménsula (β 2,0)</option>
+            </select>
+          </span></label>
+          <label class="field"><span>Módulo <em>(E)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="e" value="210" step="10" min="1"><span class="unit">GPa</span></span></label>
+          <label class="field"><span>Inercia <em>(I)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="i" value="100" step="10" min="0.1"><span class="unit">cm⁴</span></span></label>
+          <label class="field"><span>Área <em>(A)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="area" value="10" step="1" min="0.1"><span class="unit">cm²</span></span></label>
+        </div>
+        <div class="calc__out" data-out></div>
+        <p class="calc__note">La carga crítica no depende de la resistencia del material. Si el resultado es mayor que el axil de plastificación (A · fy), el pilar rompe antes de pandear y manda la comprobación a tensión.</p>
+      </div>
+
+      <div class="calc" data-calc="est-seccion">
+        <div class="calc__head">
+          <div class="calc__title"><span class="calc__tag">Calculadora</span><h4>Propiedades de una sección rectangular</h4></div>
+          <p class="calc__hint">Área, inercia, módulo resistente y radio de giro.</p>
+        </div>
+        <div class="calc__fields">
+          <label class="field"><span>Ancho <em>(b)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="b" value="10" step="1" min="0.5"><span class="unit">cm</span></span></label>
+          <label class="field"><span>Canto <em>(h)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="h" value="20" step="1" min="0.5"><span class="unit">cm</span></span></label>
+        </div>
+        <div class="calc__out" data-out></div>
+        <p class="calc__note">Doblar el canto multiplica por 4 el módulo resistente y por 8 la inercia. Doblar el ancho solo lo duplica. Por eso las secciones de flexión son altas y estrechas.</p>
+      </div>
+
+      <div class="calc" data-calc="est-zapata">
+        <div class="calc__head">
+          <div class="calc__title"><span class="calc__tag">Calculadora</span><h4>Zapata con carga excéntrica</h4></div>
+          <p class="calc__hint">Comprueba si el terreno aguanta y si la zapata despega.</p>
+        </div>
+        <div class="calc__fields">
+          <label class="field"><span>Axil <em>(N)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="n" value="120" step="10" min="0"><span class="unit">kN</span></span></label>
+          <label class="field"><span>Momento <em>(M)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="m" value="18" step="1" min="0"><span class="unit">kN·m</span></span></label>
+          <label class="field"><span>Lado <em>(B)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="b" value="1.5" step="0.1" min="0.3"><span class="unit">m</span></span></label>
+          <label class="field"><span>Lado <em>(L)</em></span><span class="field__input"><input type="text" inputmode="decimal" data-in="l" value="1.5" step="0.1" min="0.3"><span class="unit">m</span></span></label>
+          <label class="field"><span>Terreno admisible</span><span class="field__input"><input type="text" inputmode="decimal" data-in="sadm" value="150" step="10" min="1"><span class="unit">kN/m²</span></span></label>
+        </div>
+        <div class="calc__out" data-out></div>
+        <p class="calc__note">El momento se supone en la dirección del lado L. Si la excentricidad supera L/6, la resultante sale del tercio central y parte de la zapata deja de apoyar: el cálculo deja de ser válido con esta fórmula.</p>
+      </div>
+    </section>
+
+    <section class="topic" id="tablas">
+      <div class="topic__head"><span class="topic__num">07</span><h2>Tablas de referencia</h2></div>
+      <p class="topic__sub">Valores de manual. La norma y el fabricante mandan sobre la tabla.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Materiales estructurales habituales</caption>
+          <thead><tr><th>Material</th><th class="num">Resistencia</th><th class="num">E (GPa)</th><th class="num">σ admisible (CS 1,5)</th></tr></thead>
+          <tbody>
+            <tr><td>Acero S235</td><td class="num">235 MPa</td><td class="num">210</td><td class="num">157 MPa</td></tr>
+            <tr><td>Acero S275</td><td class="num">275 MPa</td><td class="num">210</td><td class="num">183 MPa</td></tr>
+            <tr><td>Madera maciza C18</td><td class="num">18 MPa</td><td class="num">9</td><td class="num">12 MPa</td></tr>
+            <tr><td>Madera maciza C24</td><td class="num">24 MPa</td><td class="num">11</td><td class="num">16 MPa</td></tr>
+            <tr><td>Madera laminada GL24h</td><td class="num">24 MPa</td><td class="num">11,5</td><td class="num">16 MPa</td></tr>
+            <tr><td>Hormigón HA-25</td><td class="num">25 MPa</td><td class="num">30</td><td class="num">16,7 MPa</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Acciones a considerar en una cubierta agrícola</caption>
+          <thead><tr><th>Acción</th><th class="num">Valor habitual</th><th>Tipo</th></tr></thead>
+          <tbody>
+            <tr><td>Peso propio de panel y rastreles</td><td class="num">0,15 – 0,35 kN/m²</td><td>Permanente</td></tr>
+            <tr><td>Nieve (zona media peninsular)</td><td class="num">0,5 – 0,7 kN/m²</td><td>Variable</td></tr>
+            <tr><td>Nieve (zona de montaña)</td><td class="num">1,0 – 2,0 kN/m²</td><td>Variable</td></tr>
+            <tr><td>Viento (presión dinámica)</td><td class="num">0,42 – 0,52 kN/m²</td><td>Variable</td></tr>
+            <tr><td>Sobrecarga de mantenimiento</td><td class="num">0,4 kN/m²</td><td>Variable</td></tr>
+            <tr><td>Equipos suspendidos (ventiladores)</td><td class="num">0,2 – 0,5 kN</td><td>Permanente puntual</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Perfiles comerciales de acero (valores de catálogo)</caption>
+          <thead><tr><th>Perfil</th><th class="num">A (cm²)</th><th class="num">I (cm⁴)</th><th class="num">W (cm³)</th><th class="num">Peso (kg/m)</th></tr></thead>
+          <tbody>
+            <tr><td>IPE 120</td><td class="num">13,2</td><td class="num">318</td><td class="num">53,0</td><td class="num">10,4</td></tr>
+            <tr><td>IPE 160</td><td class="num">20,1</td><td class="num">869</td><td class="num">108,7</td><td class="num">15,8</td></tr>
+            <tr><td>IPE 200</td><td class="num">28,5</td><td class="num">1 943</td><td class="num">194,3</td><td class="num">22,4</td></tr>
+            <tr><td>IPN 140</td><td class="num">18,2</td><td class="num">573</td><td class="num">81,9</td><td class="num">14,3</td></tr>
+            <tr><td>IPN 200</td><td class="num">33,5</td><td class="num">2 140</td><td class="num">214,0</td><td class="num">26,3</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Límites de flecha habituales</caption>
+          <thead><tr><th>Elemento</th><th class="num">Límite</th><th>Por qué</th></tr></thead>
+          <tbody>
+            <tr><td>Correa de cubierta</td><td class="num">L/250</td><td>Evitar embolsamiento de agua y desajuste de paneles</td></tr>
+            <tr><td>Viga de forjado</td><td class="num">L/300</td><td>Evitar fisuras en tabiques y pavimentos</td></tr>
+            <tr><td>Dintel de nave</td><td class="num">L/400</td><td>Puertas y cerramientos sensibles al movimiento</td></tr>
+            <tr><td>Voladizo</td><td class="num">L/150</td><td>Se mide sobre la longitud del voladizo</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="topic" id="trampas">
+      <div class="topic__head"><span class="topic__num">08</span><h2>Errores típicos</h2></div>
+      <p class="topic__sub">Los que se cobran puntos en el examen y sustos en la obra.</p>
+
+      <div class="callout callout--danger">
+        <span class="callout__icon">×</span>
+        <span class="callout__title">Mezclar kN·m con N·mm</span>
+        <p>Un momento de 5 kN·m son 5 · 10⁶ N·mm, no 5 000. Si divides 5 entre un W de 108 700 mm³ te sale 0,00005 MPa y el resultado no tiene sentido. Pasa siempre a N y mm antes de sustituir.</p>
+      </div>
+
+      <div class="callout callout--danger">
+        <span class="callout__icon">×</span>
+        <span class="callout__title">Usar cm⁴ como si fueran mm⁴</span>
+        <p>1 cm⁴ son 10 000 mm⁴. En la flecha, ese factor va elevado y cambia el resultado en cuatro órdenes de magnitud. Es el error más caro de la asignatura porque la flecha parece correcta y no lo es.</p>
+      </div>
+
+      <div class="callout callout--warn">
+        <span class="callout__icon">!</span>
+        <span class="callout__title">Comprobar solo a tensión</span>
+        <p>Una correa puede trabajar al 20 % de su resistencia y tener una flecha de L/120. En cubiertas ligeras la flecha gobierna casi siempre. Comprobar solo la tensión es aprobar el examen y suspender la obra.</p>
+      </div>
+
+      <div class="callout callout--warn">
+        <span class="callout__icon">!</span>
+        <span class="callout__title">Confundir L con la longitud de pandeo</span>
+        <p>Un pilar empotrado en la base y articulado arriba tiene L<sub>k</sub> = 0,7·L. Usar L directamente sobreestima la carga crítica un 50 % y deja el pilar sin margen real.</p>
+      </div>
+
+      <div class="callout callout--warn">
+        <span class="callout__icon">!</span>
+        <span class="callout__title">Olvidar el peso propio en hormigón</span>
+        <p>En una viga de acero pesa poco. En una de hormigón, 25 kN/m³ hacen que el peso propio sea la mitad de la carga total. Dejarlo fuera no es un redondeo, es otro problema.</p>
+      </div>
+
+      <div class="callout callout--tip">
+        <span class="callout__icon">i</span>
+        <span class="callout__title">Un detalle que suma</span>
+        <p>La madera tiene distinto límite a flexión según la dirección de las fibras y la humedad. Citar la clase resistente (C24, GL24h) y el contenido de humedad en un examen de materiales demuestra que se entiende el material, no solo la fórmula.</p>
+      </div>
+    </section>
+
+    <section class="topic" id="tarjetas">
+      <div class="topic__head"><span class="topic__num">09</span><h2>Tarjetas</h2></div>
+      <p class="topic__sub">Tapa la respuesta, dilo en voz alta y gira. Baraja para no memorizar el orden.</p>
+
+      <div class="flash" data-flash>
+        <div class="flash__bar">
+          <span class="flash__count" data-count>1 / 12</span>
+          <span class="spacer"></span>
+          <button class="btn-mini" type="button" data-shuffle>Barajar</button>
+        </div>
+        <div class="flash__stage">
+          <button class="flashcard" type="button" aria-expanded="false">
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Definición</span>
+              <span class="flashcard__q">¿Qué es el módulo resistente W?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">El cociente entre la inercia y la distancia a la fibra más alejada, W = I/y. Resume la geometría de la sección para flexión: σ = M/W. Se mide en mm³ o cm³.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Fórmula</span>
+              <span class="flashcard__q">Momento máximo de una viga biapoyada con carga puntual en el centro.</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">M = P·L/4. Si la carga está descentrada, M = P·a·b/L bajo la carga, con a + b = L.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Concepto</span>
+              <span class="flashcard__q">¿Qué mide el módulo de Young y qué no mide?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">Mide la rigidez: cuánto se deforma el material para una tensión dada. No mide su resistencia. Un acero y un plástico pueden tener E parecido y límites elásticos muy distintos.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Pandeo</span>
+              <span class="flashcard__q">Escribe la carga crítica de Euler y explica cada término.</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">Pcr = π²·E·I/(β·L)². E es el módulo, I la inercia mínima de la sección, β corrige los apoyos y L es la longitud real. No aparece la resistencia del material.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Esbeltez</span>
+              <span class="flashcard__q">¿Qué significa λ = 130?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">Que el pilar es muy esbelto y pandeará en régimen elástico, muy por debajo de la carga de plastificación. Por encima de 100 manda Euler; por debajo de 60, el material cede antes.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Sección</span>
+              <span class="flashcard__q">Si duplicas el canto de una sección rectangular, ¿qué pasa con I y con W?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">La inercia se multiplica por 8 (h³) y el módulo resistente por 4 (h²). La flecha se divide por 8 y la tensión por 4. Es la palanca más eficiente que hay en flexión.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Servicio</span>
+              <span class="flashcard__q">¿Por qué se limita la flecha a L/300?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">Porque la estructura puede resistir y aun así agrietar tabiques, atrancar puertas o embolsar agua en la cubierta. Es un estado límite de servicio, no de rotura.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Cortante</span>
+              <span class="flashcard__q">¿Dónde es máxima la tensión tangencial en una sección rectangular?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">En la fibra neutra, con τ = 1,5·V/A. En los extremos superior e inferior es nula. En un perfil en I, el alma asume casi todo el cortante.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Unidades</span>
+              <span class="flashcard__q">Convierte 5 kN·m y 108 cm³ a N·mm y mm³.</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">5 kN·m son 5 · 10⁶ N·mm. 108 cm³ son 108 000 mm³. La tensión sale 5·10⁶ / 108 000 = 46,3 MPa.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Zapata</span>
+              <span class="flashcard__q">¿Qué significa que σ<sub>mín</sub> salga negativa?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">Que la resultante cae fuera del tercio central y parte de la zapata despega del terreno. La fórmula σ = N/A ± M/W deja de ser válida y hay que repartir solo en la zona comprimida.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Acciones</span>
+              <span class="flashcard__q">¿La nieve es acción permanente o variable?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">Variable, con coeficiente 1,5. Solo es permanente el peso propio. Además puede acumularse de forma desigual en cubiertas de pendiente baja.</span>
+            </span>
+          </button>
+          <button class="flashcard" type="button" aria-expanded="false" hidden>
+            <span class="flashcard__face">
+              <span class="flashcard__tag">Cálculo</span>
+              <span class="flashcard__q">Una viga de 4 m con 10 kN en el centro y W = 50 cm³. ¿Tensión?</span>
+              <span class="flashcard__hint">toca para girar</span>
+            </span>
+            <span class="flashcard__face flashcard__face--back">
+              <span class="flashcard__tag">Respuesta</span>
+              <span class="flashcard__a">M = 10·4/4 = 10 kN·m = 10·10⁶ N·mm. σ = 10·10⁶ / 50 000 = 200 MPa. Con S275 y CS 1,5 (183 MPa) no cumple.</span>
+            </span>
+          </button>
+        </div>
+        <div class="flash__nav">
+          <button class="btn-mini" type="button" data-prev>Anterior</button>
+          <div class="flash__dots" data-dots></div>
+          <button class="btn-mini" type="button" data-next>Siguiente</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="topic" id="test">
+      <div class="topic__head"><span class="topic__num">10</span><h2>Test</h2></div>
+      <p class="topic__sub">Diez preguntas con explicación. No hay nota guardada: al cerrar la página, se borra.</p>
+
+      <div class="quiz" data-quiz="quiz-estructuras">
+        <div data-body>
+          <div class="quiz__top">
+            <span class="quiz__step" data-step>Pregunta 1 de 10</span>
+            <span class="quiz__score" data-score>Aciertos 0 / 10</span>
+          </div>
+          <div class="quiz__bar"><span data-bar></span></div>
+          <p class="quiz__q" data-q></p>
+          <ul class="quiz__opts" data-opts></ul>
+          <div class="quiz__feedback" data-feedback hidden></div>
+          <div class="quiz__foot">
+            <span class="spacer"></span>
+            <button class="btn btn--primary" type="button" data-next disabled>Siguiente</button>
+          </div>
+        </div>
+        <div class="quiz__result" data-result hidden>
+          <div class="score" data-final>0<span> / 10</span></div>
+          <p data-msg></p>
+          <ul class="quiz__review" data-review></ul>
+          <div class="quiz__foot" style="justify-content:center">
+            <button class="btn btn--primary" type="button" data-retry>Repetir todo</button>
+            <button class="btn btn--ghost" type="button" data-again>Repasar solo las falladas</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="topic" id="glosario">
+      <div class="topic__head"><span class="topic__num">11</span><h2>Glosario</h2></div>
+      <p class="topic__sub">Vocabulario mínimo para leer un enunciado sin dudar.</p>
+      <dl class="glossary">
+        <div><dt>Axil</dt><dd>Esfuerzo normal a la sección, de tracción o compresión. Genera tensión uniforme σ = N/A.</dd></div>
+        <div><dt>Cortante</dt><dd>Esfuerzo tangencial a la sección. Genera tensiones τ máximas en la fibra neutra.</dd></div>
+        <div><dt>ELU</dt><dd>Estado límite último. Comprueba que la estructura no colapsa.</dd></div>
+        <div><dt>ELS</dt><dd>Estado límite de servicio. Comprueba flechas, fisuración y vibraciones.</dd></div>
+        <div><dt>Esbeltez</dt><dd>Cociente entre la longitud de pandeo y el radio de giro. Decide si el pandeo es crítico.</dd></div>
+        <div><dt>Fibra neutra</dt><dd>Línea de la sección que no se alarga ni se acorta al flectar.</dd></div>
+        <div><dt>Flecha</dt><dd>Desplazamiento vertical máximo de una viga. Se limita a una fracción de la luz.</dd></div>
+        <div><dt>Inercia (I)</dt><dd>Momento de inercia de la sección respecto al eje de flexión. Mide la oposición a girar.</dd></div>
+        <div><dt>Longitud de pandeo</dt><dd>Longitud equivalente Lk = β·L que depende de las condiciones de apoyo del pilar.</dd></div>
+        <div><dt>Módulo resistente</dt><dd>W = I/y. Convierte el momento en tensión: σ = M/W.</dd></div>
+        <div><dt>Pandeo</dt><dd>Pérdida de estabilidad de un elemento comprimido esbelto por flexión lateral.</dd></div>
+        <div><dt>Radio de giro</dt><dd>i = √(I/A). Resume el reparto de área respecto al eje.</dd></div>
+        <div><dt>Tercio central</dt><dd>Zona de la base de una zapata donde debe caer la resultante para que no despegue.</dd></div>
+        <div><dt>Zapata</dt><dd>Elemento de cimentación que reparte la carga del pilar sobre el terreno.</dd></div>
+      </dl>
+    </section>
+
+    <section class="topic" id="plan">
+      <div class="topic__head"><span class="topic__num">12</span><h2>Plan de repaso</h2></div>
+      <p class="topic__sub">Tres pasadas cortas rinden más que una maratón la víspera.</p>
+      <div class="grid grid--3">
+        <div class="card card--tint">
+          <span class="card__tag">Pasada 1 · 20 min</span>
+          <h4>Entender</h4>
+          <p>Lee el mapa y los conceptos clave. Cierra la página y explica en voz alta por qué una viga puede cumplir a tensión y fallar por flecha. Si no sale, vuelve al apartado 02.</p>
+        </div>
+        <div class="card card--tint">
+          <span class="card__tag">Pasada 2 · 30 min</span>
+          <h4>Calcular</h4>
+          <p>Resuelve el ejemplo sin mirar los pasos. Después haz los cuatro ejercicios y mueve la carga en la viga hasta predecir dónde estará el momento máximo antes de soltar el deslizador.</p>
+        </div>
+        <div class="card card--tint">
+          <span class="card__tag">Pasada 3 · 15 min</span>
+          <h4>Comprobar</h4>
+          <p>Haz el test. Cada fallo se convierte en una tarjeta que repites al día siguiente. Si aciertas nueve de diez, el tema está listo.</p>
+        </div>
+      </div>
+      <div class="callout callout--tip">
+        <span class="callout__icon">i</span>
+        <span class="callout__title">Para conectar con la nave</span>
+        <p>Entra en cualquier nave agrícola y busca las correas, los pórticos y los arriostramientos. Si las correas están combadas hacia abajo entre pórticos, estás viendo una estructura dimensionada por tensión y no por flecha.</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="foot__inner">
+    <div>
+      <h2>Sigue con otra asignatura</h2>
+      <p>Cuatro cuadernos y un atlas 3D de motores. Material de repaso: fórmulas, ejemplos resueltos, calculadoras y test cortos.</p>
+    </div>
+    <nav class="foot__links" aria-label="Otras asignaturas">
+      <a href="fertirriego.html">Fertirriego <span>01</span></a>
+      <a href="medio-ambiente.html">Ciencia y tecnología del medio ambiente <span>02</span></a>
+      <a href="maquinaria.html">Motores y maquinaria agrícola <span>04</span></a>
+      <a href="../motores/index.html">Atlas 3D de motores agrícolas <span>3D</span></a>
+    </nav>
+  </div>
+  <div class="foot__base">
+    <span>Taller de Estudio · Ingeniería Agrícola</span>
+    <a href="../index.html#estudio">Volver al portfolio</a>
+  </div>
+</footer>
+
+<script type="application/json" id="quiz-estructuras">
+[
+  {
+    "q": "El módulo resistente de una sección sirve para…",
+    "opts": ["Calcular la flecha", "Convertir el momento en tensión", "Calcular el cortante", "Medir la esbeltez"],
+    "answer": 1,
+    "why": "W = I/y, de modo que σ = M/W. La flecha depende de E·I, no de W."
+  },
+  {
+    "q": "Si se duplica el canto de una sección rectangular, la inercia se multiplica por…",
+    "opts": ["2", "4", "8", "16"],
+    "answer": 2,
+    "why": "I = b·h³/12. Al duplicar h, el cubo se multiplica por 8. El módulo resistente, que va con h², se multiplica por 4."
+  },
+  {
+    "q": "El momento máximo de una viga biapoyada con carga puntual en el centro es…",
+    "opts": ["P·L/8", "P·L/4", "P·L/2", "P·L"],
+    "answer": 1,
+    "why": "Con a = b = L/2, M = P·a·b/L = P·L/4. Con carga repartida sería q·L²/8."
+  },
+  {
+    "q": "La carga crítica de Euler depende de…",
+    "opts": ["La resistencia del material y el área", "El módulo de Young y la inercia", "Solo la longitud del pilar", "El cortante y el momento"],
+    "answer": 1,
+    "why": "Pcr = π²·E·I/(βL)². No aparece el límite elástico: un acero más resistente no pandea menos si tiene la misma rigidez."
+  },
+  {
+    "q": "Un pilar biarticulado de 4 m tiene la misma sección que otro de 2 m. Su carga crítica es…",
+    "opts": ["La mitad", "El doble", "La cuarta parte", "Cuatro veces mayor"],
+    "answer": 2,
+    "why": "La carga va con el inverso del cuadrado de la longitud. Al duplicar L, Pcr se divide por 4."
+  },
+  {
+    "q": "La flecha de una viga depende de…",
+    "opts": ["E·I y de la luz elevada a 3 o 4", "Solo de W", "Solo del cortante", "Del límite elástico del material"],
+    "answer": 0,
+    "why": "En carga puntual δ va con L³; en carga repartida, con L⁴. Siempre dividida por E·I. La resistencia no interviene."
+  },
+  {
+    "q": "En una sección rectangular, la tensión tangencial máxima…",
+    "opts": ["Está en los extremos superior e inferior", "Está en la fibra neutra y vale 1,5·V/A", "Es uniforme en toda la sección", "Vale V/A en todos los puntos"],
+    "answer": 1,
+    "why": "La distribución es parabólica: nula en los bordes y máxima en la fibra neutra, con el factor 1,5 de la parábola."
+  },
+  {
+    "q": "La nieve en una cubierta se considera…",
+    "opts": ["Acción permanente con coeficiente 1,35", "Acción variable con coeficiente 1,5", "Acción accidental", "No se combina con el viento"],
+    "answer": 1,
+    "why": "Solo el peso propio es permanente. La nieve es variable y se combina con 1,5, además de poder acumularse de forma desigual."
+  },
+  {
+    "q": "Un pilar empotrado en la base y articulado arriba tiene una longitud de pandeo de…",
+    "opts": ["L", "0,7·L", "0,5·L", "2·L"],
+    "answer": 1,
+    "why": "β = 0,7 para empotrado-articulado. Biarticulado es 1, biempotrado 0,5 y ménsula 2."
+  },
+  {
+    "q": "En una zapata, si la resultante cae fuera del tercio central…",
+    "opts": ["La tensión es uniforme", "Parte de la zapata despega y la fórmula σ = N/A ± M/W no vale", "El terreno trabaja mejor", "El momento se anula"],
+    "answer": 1,
+    "why": "Aparece tracción en el terreno, que no la admite. Hay que recalcular con la zona comprimida o aumentar la zapata."
+  }
+]
+</script>
+
+<script src="assets/estudio.js" defer></script>
+<script src="assets/estructuras.js" defer></script>
+</body>
+</html>
